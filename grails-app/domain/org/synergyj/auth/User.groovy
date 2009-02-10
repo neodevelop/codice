@@ -1,21 +1,40 @@
 package org.synergyj.auth
 
+import org.synergyj.auth.Role
+
+/**
+ * User domain class.
+ */
 class User {
-	String userName
-	String password
-	String fullName
-	String mail
+	static transients = ['pass']
+	static hasMany = [authorities: Role]
+	static belongsTo = Role
+
+	/** Username */
+	String username
+	/** User Real Name*/
+	String userRealName
+	/** MD5 Password */
+	String passwd
+	/** enabled */
+	Boolean enabled = true
+
+	String email
+	Boolean emailShow
+
+	/** description */
+	String description = ''
+
+	/** plain password to create a MD5 password */
+	String pass = ''
+	
 	Date created = new Date()
 	Date lastLogin = new Date()
-	
+
 	static constraints = {
-		userName blank:false,unique:true,size:5..50
-		password blank:false,size:5..50
-		fullName blank:false,size:5..100
-		mail email:true,blank:false
-	}
-	
-	String toString(){
-		userName
+		username(blank: false, unique: true)
+		userRealName(blank: false)
+		passwd(blank: false)
+		enabled()
 	}
 }
