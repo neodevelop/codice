@@ -13,16 +13,4 @@ security {
 	/** use RequestMap from DomainClass */
 	useRequestMapDomainClass = true
 	
-	/**
-	requestMapString = """
-		CONVERT_URL_TO_LOWERCASE_BEFORE_COMPARISON
-		PATTERN_TYPE_APACHE_ANT
-
-		/login/**=IS_AUTHENTICATED_ANONYMOUSLY
-		/cms/**=ROLE_USER
-		/content/**=ROLE_SUPERVISOR
-		/**=IS_AUTHENTICATED_ANONYMOUSLY
-	"""
-	**/
-	
 }
