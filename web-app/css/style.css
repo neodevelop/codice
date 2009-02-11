@@ -77,18 +77,20 @@ ul{
 }
 #header img.logo{
 	position:absolute;
-	left:40px;
-	top:98px;
+	left:20px;
+	top:37px;
+	/****
 	width:249px;
 	height:72px;
+	****/
 }
 #header h1{
 	background:url(../images/slogan.gif) 0 0 no-repeat;
-	width:484px;
-	height:32px;
+	width:522;
+	height:37px;
 	position:absolute;
-	left:411px;
-	top:108px;
+	left:400px;
+	top:105px;
 	text-indent:-10000px;
 }
 #header p{
