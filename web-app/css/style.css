@@ -10,12 +10,15 @@ div, h1, h2, p, form, label, input, textarea, img, span{
 	margin:0; padding:0;
 }
 
+
 ul{
 	margin:0; 
 	padding:0; 
 	list-style-type:none;
 	font-size:0;
 }
+
+
 .spacer{
 	clear:both; 
 	font-size:0; 
@@ -316,6 +319,33 @@ ul{
 	width:608px;
 	height:20px;
 	float:left;
+}
+
+#right ul{
+	padding:0;
+	margin:0;
+	display:block;
+}
+
+#right ul li{
+	display:block;
+	height:20px;
+	line-height:0;
+}
+
+#right ul li a{
+	display:block;
+	padding:0 0 0 30px;
+	font:normal 11px/20px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#47472D;
+	background-color:inherit;
+	text-decoration:underline;
+	height:20px;
+}
+
+#right ul li a:hover{
+	color:#974D04;
+	text-decoration:none;
 }
 /*------------------------------------------------right--------------------*/
 
