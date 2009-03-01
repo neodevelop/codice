@@ -1,5 +1,5 @@
 <head>
-	<meta name="layout" content="main" />
+	<meta name="layout" content="codice" />
 	<title>User Registration</title>
 </head>
 
@@ -24,7 +24,7 @@
 		<div class="dialog">
 		<table>
 		<tbody>
-
+			<h3>Registrate</h3>
 			<tr class='prop'>
 				<td valign='top' class='name'><label for='username'>Login Name:</label></td>
 				<td valign='top' class='value ${hasErrors(bean:person,field:'username','errors')}'>
