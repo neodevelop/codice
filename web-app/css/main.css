@@ -78,7 +78,7 @@ input:focus, select:focus, textarea:focus {
     padding: 4px 6px;
 }
 .menuButton a.home {
-    background: url(../images/skin/house.png) center left no-repeat;
+    background: url(../images/skin/house1.png) center left no-repeat;
     color: #333;
     padding-left: 25px;
 }
@@ -88,7 +88,7 @@ input:focus, select:focus, textarea:focus {
     padding-left: 25px;
 }
 .menuButton a.create {
-    background: url(../images/skin/database_add.png) center left no-repeat;
+    background: url(../images/skin/database_new.png) center left no-repeat;
     color: #333;
     padding-left: 25px;
 }
