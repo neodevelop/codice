@@ -349,6 +349,103 @@ ul{
 }
 /*------------------------------------------------right--------------------*/
 
+/*------------------------------------------------rightWithContent--------------------*/
+#rightWithContent{
+	width:750px;
+	float:right;
+	border: 2px solid #D0CFCD;
+	/* background:url(../images/right_panel_bg.gif) 0 0 repeat-y; */
+	background-color: #FDFDF7;
+}
+#rightWithContent p.rightTop{
+	display:block;
+	/* background:url(../images/right_top.gif) 0 0 no-repeat; */
+	background-color: #FDFDF7;
+	width:750px;
+	height:26px;
+}
+#rightWithContent h2{
+	font:bold 30px/22px Arial, Helvetica, sans-serif;
+	color:#222222;
+	background-color:inherit;
+	margin:0 0 16px 0;
+	padding:0 0 0 38px;
+	display:block;
+}
+#rightWithContent p.rightTxt1{
+	font:normal 13px/18px Arial, Helvetica, sans-serif;
+	color:#62625C;
+	background-color:inherit;
+	padding:0 38px 10px 38px;
+}
+#rightWithContent p.rightTxt1 span{
+	font:bold 13px/18px Arial, Helvetica, sans-serif;
+	color:#5F860B;
+	background-color:inherit;
+}
+#rightWithContent p.rightTxt2{
+	font:normal 13px/18px Arial, Helvetica, sans-serif;
+	color:#62625C;
+	background-color:inherit;
+	padding:0 0 20px 38px;
+	float:left;
+	width:349px;
+	margin:0 27px 0 0;
+}
+#rightWithContent p.rightTxt2 span{
+	font:bold 17px/18px Arial, Helvetica, sans-serif;
+	color:#D76E08;
+	background-color:inherit;
+	border-bottom:#BCBCB5 dashed 1px;
+	width:340px;
+	display:block;
+	margin:0 0 15px 0;
+}
+#rightWithContent p.rightPic{
+	display:block;
+	background:url(../images/right_panel_pic.gif) 0 0 no-repeat;
+	width:166px;
+	height:155px;
+	float:left;
+	margin:0 0 22px 0;
+}
+#rightWithContent p.rightBottom{
+	display:block;
+	/* background:url(../images/right_bottom.gif) 0 0 no-repeat; */
+	background-color: #FDFDF7;
+	width:608px;
+	height:20px;
+	float:left;
+}
+
+#rightWithContent ul{
+	padding:0;
+	margin:0;
+	display:block;
+}
+
+#rightWithContent ul li{
+	display:block;
+	height:20px;
+	line-height:0;
+}
+
+#rightWithContent ul li a{
+	display:block;
+	padding:0 0 0 30px;
+	font:normal 11px/20px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#47472D;
+	background-color:inherit;
+	text-decoration:underline;
+	height:20px;
+}
+
+#rightWithContent ul li a:hover{
+	color:#974D04;
+	text-decoration:none;
+}
+/*------------------------------------------------right--------------------*/
+
 /*------------------------------------------------body--------------------*/
 
 /*------------------------------------------------bodyBottom--------------------*/
