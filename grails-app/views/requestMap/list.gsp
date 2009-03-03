@@ -43,7 +43,7 @@
 		</div>
 
 		<div class="paginateButtons">
-			<g:paginate total="${org.synergyj.auth.RequestMap.count()}" />
+			<g:paginate total="${com.synergyj.auth.RequestMap.count()}" />
 		</div>
 
 	</div>

@@ -4,9 +4,9 @@ security {
 
 	active = true
 
-	loginUserDomainClass = "org.synergyj.auth.User"
-	authorityDomainClass = "org.synergyj.auth.Role"
-	requestMapClass = "org.synergyj.auth.RequestMap"
+	loginUserDomainClass = "com.synergyj.auth.User"
+	authorityDomainClass = "com.synergyj.auth.Role"
+	requestMapClass = "com.synergyj.auth.RequestMap"
 	
 	defaultRole = 'ROLE_USER'
 	
