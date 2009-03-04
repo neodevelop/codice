@@ -18,7 +18,7 @@
 			<li><a href="#">Testimonials</a></li>
 			<li class="last"><a href="#">Contact Us</a></li>
 		</ul>
-		<a href="index.html">
+		<a href="home">
 			<img src="${createLinkTo(dir:'images',file:'logo.jpg')}"  class="logo" border="0" />
 		</a>
 		<h1>Bienvenido a la comunidad de desarrolladores G/G</h1>
