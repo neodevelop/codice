@@ -112,7 +112,7 @@ div.errors {
 }
 div.errors ul {
     list-style: none;
-    padding: 0;	
+    padding: 0;
 }
 div.errors li {
 	background: url(../images/skin/exclamation.png) 8px 0% no-repeat;
