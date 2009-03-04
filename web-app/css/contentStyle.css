@@ -121,7 +121,8 @@ ul{
 	font:bold 16px Arial, Helvetica, sans-serif;
 	text-align: center;
 	color: #FFFFFF;
-	background-color:#89AAD6;
+	
+	background: url(../images/menu1.jpg) 0 0 repeat-x;
 	margin:0 0 0 0;
 	padding:3 3 3 3px;
 	-moz-border-radius:10 10 0 0px; 
