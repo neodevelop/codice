@@ -6,18 +6,9 @@ body{
 	background-color:#EFEFDF;
 	color:#000;
 }
-div, h1, h2, p, form, label, input, textarea, img, span{
+div, h2, p, form, label, input, textarea, img, span{
 	margin:0; padding:0;
 }
-
-
-ul{
-	margin:0; 
-	padding:0; 
-	list-style-type:none;
-	font-size:0;
-}
-
 
 .spacer{
 	clear:both; 
@@ -423,6 +414,7 @@ ul{
 	color:#974D04;
 	text-decoration:none;
 }
+
 /*------------------------------------------------right--------------------*/
 
 /*------------------------------------------------body--------------------*/
