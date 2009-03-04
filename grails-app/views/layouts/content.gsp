@@ -19,10 +19,11 @@
 			<li class="last"><a href="#">Contact Us</a></li>
 		</ul>
 
-		<a href="home">
+		<g:link controller='cms' action='index'>
 			<img src="${createLinkTo(dir:'images',file:'logo_mini.gif')}"  class="logo" border="0" />
-		</a>
+		</g:link>
 
+		<h1>grails.org.mx</h1>
 
 	</div>
 	<!--header end -->
@@ -31,7 +32,14 @@
 
 		<!-- Start Here maybe a little menu-->
 		<!-- This menu depends on the User Role and Authorities-->
-
+		<div id="left1" class="left1">
+			<h2>.: Username :.</h2>
+			<ul>
+				<li><a href="#">» Element 1</a></li>
+				<li><a href="#">» Element 2</a></li>
+				<li><a href="#">» Element 3</a></li>
+			</ul>
+		</div>
 		<!-- End Here maybe a little menu-->
 
 		<!--right panel start -->
