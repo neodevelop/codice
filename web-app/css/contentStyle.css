@@ -140,6 +140,11 @@ ul{
 	border: 1px solid #89AAD6;
 	padding:5 5 5 5px;
 	display:block;
+	-moz-border-radius:0 0 10 10px; 
+	-webkit-border-radius:0 0 10 10px; 
+	-ms-border-radius:0 0 10 10px; 
+	border-radius: 0 0 10 10px; 
+	-khtml-border-radius: 0 0 10 10px;
 }
 
 #left1 ul li{
