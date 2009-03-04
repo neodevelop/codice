@@ -2,10 +2,10 @@
 <head>
 	<title><g:layoutTitle default=". : Codice CMS : ." /></title>
 	<link rel="stylesheet" href="${createLinkTo(dir:'css',file:'main.css')}" />
-	<link rel="stylesheet" href="${createLinkTo(dir:'css',file:'style.css')}" />
+	<link rel="stylesheet" href="${createLinkTo(dir:'css',file:'contentStyle.css')}" />
 	<link rel="shortcut icon" href="${createLinkTo(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
-    <g:layoutHead />
-    <g:javascript library="application" />
+	<g:layoutHead />
+	<g:javascript library="application" />
 </head>
 <body>
 	<!--header start -->
@@ -18,23 +18,24 @@
 			<li><a href="#">Testimonials</a></li>
 			<li class="last"><a href="#">Contact Us</a></li>
 		</ul>
-		<a href="index.html">
-			<img src="${createLinkTo(dir:'images',file:'logo.jpg')}"  class="logo" border="0" />
+
+		<a href="home">
+			<img src="${createLinkTo(dir:'images',file:'logo_mini.gif')}"  class="logo" border="0" />
 		</a>
-		<h1>Bienvenido a la comunidad de desarrolladores G/G</h1>
-		<p>herramientas para el desarrollo <span class="txt1">agil</span> de software basado en Java con <span class="txt1">Groovy</span> y <span class="txt1">Grails</span></p>
-		<p class="topText">Nos gusta el desarrollo de software, y por eso compartimos el conocimiento contigo a traves de :<span class="smallTxt">podcast, articulos, screencast, foros</span></p>
-		<a href="#" class="readMore"></a>
+
+
 	</div>
 	<!--header end -->
 	<!--body start -->
 	<div id="body">
-		
+
 		<!-- Start Here maybe a little menu-->
+		<!-- This menu depends on the User Role and Authorities-->
+
 		<!-- End Here maybe a little menu-->
-		
+
 		<!--right panel start -->
-		<div id="rightWithContent">
+		<div id="right">
 			<p class="rightTop"></p>
 			<!--Start content body-->
 			<g:layoutBody />
