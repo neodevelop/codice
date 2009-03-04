@@ -1,5 +1,5 @@
 <head>
-	<meta name="layout" content="codice" />
+	<meta name="layout" content="main" />
 	<title>Show User</title>
 </head>
 
