@@ -88,25 +88,13 @@ ul{
 	****/
 }
 #header h1{
-	background:url(../images/slogan.gif) 0 0 no-repeat;
-	width:522;
-	height:37px;
+	background:url(../images/title.jpg) 0 0 no-repeat;
+	width:314px;
+	height:42px;
 	position:absolute;
-	left:400px;
-	top:105px;
+	left:11px;
+	top:50px;
 	text-indent:-10000px;
-}
-#header p{
-	font:normal 12px/19px Arial, Helvetica, sans-serif;
-	color:#fff;
-	background-color:inherit;
-	position:absolute;
-	left:411px;
-	top:142px;
-}
-#header p span.txt1{
-	color:#fff;
-	background-color:#1E6887;
 }
 #header img.icon{
 	position:absolute;
@@ -114,33 +102,6 @@ ul{
 	top:190px;
 	width:174px;
 	height:80px;
-}
-#header p.topText{
-	font:normal 18px/23px Arial, Helvetica, sans-serif;
-	color:#E8E8E8;
-	background-color:inherit;
-	position:absolute;
-	left:285px;
-	top:203px;
-	width:588px;
-}
-#header p.topText span.smallTxt{
-	font:normal 12px/18px Arial, Helvetica, sans-serif;
-	color:#FF9C3A;
-	background-color:inherit;
-	padding:0 0 0 8px;
-}
-#header a.readMore{
-	display:block;
-	background:url(../images/read_more.gif) 0 0 no-repeat;
-	width:50px;
-	height:38px;
-	position:absolute;
-	left:895px;
-	top:203px;
-}
-#header a.readMore:hover{
-	background:url(../images/read_more_hover.gif) 0 0 no-repeat;
 }
 /*------------------------------------------------header--------------------*/
 
@@ -151,109 +112,53 @@ ul{
 	margin:0 auto;
 }
 /*------------------------------------------------left--------------------*/
-#left{
-	width:357px;
-	float:left;
-}
 #left1{
-	width:324px;
-	background:url(../images/lft_box_bg.gif) 0 0 no-repeat #EAEADA;
-	border:#DDDDCA solid 7px;
-	margin:0 0 4px 0;
-	padding:5px 10px 6px 9px;
-	color:#878767;
-}
-#left1 p.pic1{
-	display:block;
-	background:url(../images/lft_pic1.gif) 0 0 no-repeat;
-	width:88px;
-	height:78px;
-	margin:5px 0 0 0;
+	width:200px;
 	float:left;
 }
-#left1 p.boxTxt1{
-	float:right;
-	padding:0 0 0 15px;
-	border-left:#F9F9F1 solid 2px;
-	font:normal 11px/16px "Trebuchet MS", Arial, Helvetica, sans-serif;
-	width:199px;
-}
-#left1 p.boxTxt1 span{
-	font:normal 19px/17px Arial, Helvetica, sans-serif;
-	color:#D76E08;
-	background-color:inherit;
-	padding:0 0 0 25px;
-	margin:0 0 10px 0;
-	background:url(../images/one.gif) 0 0 no-repeat;
-	height:17px;
+
+#left1 h2{
+	font:bold 16px Arial, Helvetica, sans-serif;
+	text-align: center;
+	color: #FFFFFF;
+	background-color:#89AAD6;
+	margin:0 0 0 0;
+	padding:3 3 3 3px;
+	-moz-border-radius:10 10 0 0px; 
+	-webkit-border-radius:10 10 0 0px; 
+	-ms-border-radius:10 10 0 0px; 
+	border-radius: 10 10 0 0px; 
+	-khtml-border-radius: 10 10 0 0px;
 	display:block;
 }
-#left2{
-	width:316px;
-	background:url(../images/lft_box_bg.gif) 0 0 no-repeat #EAEADA;
-	border:#DDDDCA solid 7px;
-	margin:0 0 4px 0;
-	padding:5px 10px 6px 17px;
-	color:#878767;
-}
-#left2 p.pic2{
-	display:block;
-	background:url(../images/lft_pic2.gif) 0 0 no-repeat;
-	width:74px;
-	height:74px;
-	margin:8px 0 0 0;
-	float:left;
-}
-#left2 p.boxTxt2{
-	float:right;
-	padding:0 0 0 15px;
-	border-left:#F9F9F1 solid 2px;
-	font:normal 11px/16px "Trebuchet MS", Arial, Helvetica, sans-serif;
-	width:199px;
-}
-#left2 p.boxTxt2 span{
-	font:normal 19px/17px Arial, Helvetica, sans-serif;
-	color:#D76E08;
-	background-color:inherit;
-	padding:0 0 0 25px;
-	margin:0 0 10px 0;
-	background:url(../images/two.gif) 0 0 no-repeat;
-	height:17px;
+
+#left1 ul{
+	background-color:#D5E1F0;
+	font:14px Arial, Helvetica, sans-serif;
+	text-align: left;
+	color: #467AA7;
+	border: 1px solid #89AAD6;
+	padding:5 5 5 5px;
 	display:block;
 }
-#left3{
-	width:324px;
-	background:url(../images/lft_box_bg.gif) 0 0 no-repeat #EAEADA;
-	border:#DDDDCA solid 7px;
-	margin:0;
-	padding:5px 10px 6px 9px;
-	color:#878767;
+
+#left1 ul li{
+	margin: 4px 0px 0px 10px;
 }
-#left3 p.pic3{
-	display:block;
-	background:url(../images/lft_pic3.gif) 0 0 no-repeat;
-	width:94px;
-	height:71px;
-	margin:5px 0 0 0;
-	float:left;
+
+#left1 ul li a{
+	color: #467AA7;
 }
-#left3 p.boxTxt3{
-	float:right;
-	padding:0 0 0 15px;
-	border-left:#F9F9F1 solid 2px;
-	font:normal 11px/16px "Trebuchet MS", Arial, Helvetica, sans-serif;
-	width:199px;
+
+#left1 ul li a:visited{
+	color: #467AA7;
 }
-#left3 p.boxTxt3 span{
-	font:normal 19px/17px Arial, Helvetica, sans-serif;
-	color:#D76E08;
-	background-color:inherit;
-	padding:0 0 0 25px;
-	margin:0 0 10px 0;
-	background:url(../images/three.gif) 0 0 no-repeat;
-	height:17px;
-	display:block;
+
+#left1 ul li a:hover{
+	color: #305676;
+	text-decoration: underline;
 }
+
 /*------------------------------------------------left--------------------*/
 
 /*------------------------------------------------right--------------------*/
