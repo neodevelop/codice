@@ -10,6 +10,10 @@ div, h2, p, form, label, input, textarea, img, span{
 	margin:0; padding:0;
 }
 
+ul{
+	list-style: none;
+}
+
 .spacer{
 	clear:both; 
 	font-size:0; 
@@ -84,7 +88,7 @@ div, h2, p, form, label, input, textarea, img, span{
 	height:42px;
 	position:absolute;
 	left:11px;
-	top:50px;
+	top:35px;
 	text-indent:-10000px;
 }
 #header img.icon{
@@ -397,7 +401,6 @@ div, h2, p, form, label, input, textarea, img, span{
 #right ul li{
 	display:block;
 	height:20px;
-	line-height:0;
 }
 
 #right ul li a{
