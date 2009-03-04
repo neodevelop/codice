@@ -6,18 +6,13 @@ body{
 	background-color:#EFEFDF;
 	color:#000;
 }
-div, h1, h2, p, form, label, input, textarea, img, span{
+div, h2, p, form, label, input, textarea, img, span{
 	margin:0; padding:0;
 }
 
-
 ul{
-	margin:0; 
-	padding:0; 
-	list-style-type:none;
-	font-size:0;
+	list-style: none;
 }
-
 
 .spacer{
 	clear:both; 
@@ -330,7 +325,6 @@ ul{
 #right ul li{
 	display:block;
 	height:20px;
-	line-height:0;
 }
 
 #right ul li a{
