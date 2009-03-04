@@ -112,9 +112,13 @@ ul{
 	margin:0 auto;
 }
 /*------------------------------------------------left--------------------*/
-#left1{
+#menu{
 	width:200px;
 	float:left;
+}
+
+#left1{
+	
 }
 
 #left1 h2{
@@ -164,6 +168,60 @@ ul{
 	color: #305676;
 	text-decoration: underline;
 }
+
+
+#left2{
+	
+}
+
+#left2 h2{
+	font:bold 16px Arial, Helvetica, sans-serif;
+	text-align: center;
+	color: #FFFFFF;
+	
+	background: url(../images/menu2.jpg) 0 0 repeat-x;
+	margin:0 0 0 0;
+	padding:3 3 3 3px;
+	-moz-border-radius:10 10 0 0px; 
+	-webkit-border-radius:10 10 0 0px; 
+	-ms-border-radius:10 10 0 0px; 
+	border-radius: 10 10 0 0px; 
+	-khtml-border-radius: 10 10 0 0px;
+	display:block;
+}
+
+#left2 ul{
+	background-color:#D9EFB9;
+	font:14px Arial, Helvetica, sans-serif;
+	text-align: left;
+	color: #618232;
+	border: 1px solid #709639;
+	padding:5 5 5 5px;
+	display:block;
+	-moz-border-radius:0 0 10 10px; 
+	-webkit-border-radius:0 0 10 10px; 
+	-ms-border-radius:0 0 10 10px; 
+	border-radius: 0 0 10 10px; 
+	-khtml-border-radius: 0 0 10 10px;
+}
+
+#left2 ul li{
+	margin: 4px 0px 0px 10px;
+}
+
+#left2 ul li a{
+	color: #618232;
+}
+
+#left2 ul li a:visited{
+	color: #618232;
+}
+
+#left2 ul li a:hover{
+	color: #A0D651;
+	text-decoration: underline;
+}
+
 
 /*------------------------------------------------left--------------------*/
 
