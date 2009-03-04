@@ -50,6 +50,15 @@
 				<li><a href="#">» Element 3</a></li>
 			</ul>
 		</div>
+		<br/>
+		<div id="left3" class="left3">
+			<h2>.: Username :.</h2>
+			<ul>
+				<li><a href="#">» Element 1</a></li>
+				<li><a href="#">» Element 2</a></li>
+				<li><a href="#">» Element 3</a></li>
+			</ul>
+		</div>
 		</div>
 		<!-- End Here maybe a little menu-->
 
