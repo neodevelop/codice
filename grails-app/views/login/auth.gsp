@@ -1,6 +1,6 @@
 <head>
 	<meta name="layout" content="main" />
-	<title>Show User</title>
+	<title>. : Login : .</title>
 </head>
 
 <body>
