@@ -112,6 +112,7 @@
 		<!--services end -->
 		<!--member start -->
 		
+		<g:ifNotGranted role="ROLE_USER">
 		<div id="member">
 			<h2>Login de Usuario</h2>
 			<form action="/codice/j_spring_security_check" method="post" name="member_log_in" id="member_log_in">
@@ -130,6 +131,22 @@
 			</form>
 			<br class="spacer" />
 		</div>
+		</g:ifNotGranted>
+		
+		<g:ifAnyGranted role="ROLE_USER">
+		<div id="member">
+			<h2>. : Welcome : .</h2>
+			<form action="#">
+				<label class="login"><g:loggedInUserInfo field="username"/></label>
+				<label class="login"><g:loggedInUserInfo field="email"/></label>
+				<label class="login"><g:loggedInUserInfo field="lastLogin"/></label>
+				<a href="#">Logout</a>
+				<br class="spacer" />
+			</form>
+			<br class="spacer" />
+		</div>
+		</g:ifAnyGranted>
+		
 		<br class="spacer" />
 		<!--member end -->
 	</div>
