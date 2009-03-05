@@ -2,10 +2,10 @@
 <head>
 	<title><g:layoutTitle default=". : Codice CMS : ." /></title>
 	<link rel="stylesheet" href="${createLinkTo(dir:'css',file:'main.css')}" />
-	<link rel="stylesheet" href="${createLinkTo(dir:'css',file:'style.css')}" />
+	<link rel="stylesheet" href="${createLinkTo(dir:'css',file:'contentStyle.css')}" />
 	<link rel="shortcut icon" href="${createLinkTo(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
-    <g:layoutHead />
-    <g:javascript library="application" />
+	<g:layoutHead />
+	<g:javascript library="application" />
 </head>
 <body>
 	<!--header start -->
@@ -18,51 +18,63 @@
 			<li><a href="#">Testimonials</a></li>
 			<li class="last"><a href="#">Contact Us</a></li>
 		</ul>
-		<a href="home">
-			<img src="${createLinkTo(dir:'images',file:'logo.jpg')}"  class="logo" border="0" />
-		</a>
-		<h1>Bienvenido a la comunidad de desarrolladores G/G</h1>
-		<p>herramientas para el desarrollo <span class="txt1">agil</span> de software basado en Java con <span class="txt1">Groovy</span> y <span class="txt1">Grails</span></p>
-		<p class="topText">Nos gusta el desarrollo de software, y por eso compartimos el conocimiento contigo a traves de :<span class="smallTxt">podcast, articulos, screencast, foros</span></p>
-		<a href="#" class="readMore"></a>
+
+		<g:link controller='cms' action='index'>
+			<img src="${createLinkTo(dir:'images',file:'logo_mini.gif')}"  class="logo" border="0" />
+		</g:link>
+
+		<h1>grails.org.mx</h1>
+
 	</div>
 	<!--header end -->
 	<!--body start -->
 	<div id="body">
-		<!--left panel start -->
-		<div id="left">
-			<!--left1 start -->
-			<div id="left1">
-				<p class="pic1"></p>
-				<p class="boxTxt1">
-					<span>Usuarios activos</span>
-					<b>Duis iaculis lobortis leo</b>,venenatis dignissim. Nam massa lorem, suscipit nonummy,</p>
-				<br class="spacer" />
-			</div>
-			<!--left1 end -->
-			<!--left2 start -->
-			<div id="left2">
-				<p class="pic2"></p>
-				<p class="boxTxt2">
-					<span>Usuarios en línea</span>
-					<b>Duis iaculis lobortis leo</b>,venenatis dignissim. Nam massa lorem, suscipit nonummy,</p>
-				<br class="spacer" />
-			</div>
-			<!--left2 end -->
-			<!--left3 start -->
-			<div id="left3">
-				<p class="pic3"></p>
-				<p class="boxTxt3">
-					<span>Temas Activos</span>
-					<b>Phasellus dapibus odio eu</b>,ipsum ac turpis. Integer ac libero eu orci pharetra eges
-				</p>
-				<!--left3 end -->
-				<br class="spacer" />
-			</div>
-			<!--left end -->
-			<br class="spacer" />
+
+		<!-- Start Here maybe a little menu-->
+		<!-- This menu depends on the User Role and Authorities-->
+		<div id="menu" class="menu">
+		<div id="left1" class="left1">
+			<h2>.: Username :.</h2>
+			<ul>
+				<li><a href="#">» My Blog</a></li>
+				<li><a href="#">» Send news</a></li>
+				<li><a href="#">» Post one entry</a></li>
+				<li><a href="#">» Forums</a></li>
+				<li><a href="#">» Administer</a></li>
+				<li><a href="#">» Close Session</a></li>
+			</ul>
 		</div>
-		<!--left panel end -->
+		<br/>
+		<div id="left2" class="left2">
+			<h2>.: Feed :.</h2>
+			<ul>
+				<li><a href="#">» News 1</a></li>
+				<li><a href="#">» News 2</a></li>
+				<li><a href="#">» News 3</a></li>
+			</ul>
+		</div>
+		<br/>
+		<div id="left3" class="left3">
+			<h2>.: Search :.</h2>
+			<ul>
+				<li><a href="#">» Tag cloud</a></li>
+				<li><a href="#">» Advanced Search</a></li>
+				<li><a href="#">» Search</a></li>
+			</ul>
+		</div>
+		<br/>
+		<div id="left4" class="left4">
+			<h2>.: Resources :.</h2>
+			<ul>
+				<li><a href="#">» Download</a></li>
+				<li><a href="#">» Install</a></li>
+				<li><a href="#">» Documentation</a></li>
+				<li><a href="#">» Podcast</a></li>
+			</ul>
+		</div>
+		</div>
+		<!-- End Here maybe a little menu-->
+
 		<!--right panel start -->
 		<div id="right">
 			<p class="rightTop"></p>
