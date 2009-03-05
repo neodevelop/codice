@@ -33,6 +33,7 @@
 		<!-- Start Here maybe a little menu-->
 		<!-- This menu depends on the User Role and Authorities-->
 		<div id="menu" class="menu">
+		<g:ifAnyGranted role="ROLE_ADMIN,ROLE_MANAGER,ROLE_USER">
 		<div id="left1" class="left1">
 			<h2>.: Username :.</h2>
 			<ul>
@@ -45,12 +46,12 @@
 			</ul>
 		</div>
 		<br/>
+		</g:ifAnyGranted>
 		<div id="left2" class="left2">
-			<h2>.: Feed :.</h2>
+			<h2>.: Start :.</h2>
 			<ul>
-				<li><a href="#">» News 1</a></li>
-				<li><a href="#">» News 2</a></li>
-				<li><a href="#">» News 3</a></li>
+				<li><a href="#">» Login</a></li>
+				<li><a href="#">» Register</a></li>
 			</ul>
 		</div>
 		<br/>
@@ -110,21 +111,27 @@
 		</div>
 		<!--services end -->
 		<!--member start -->
-		<!--member end -->
+		
 		<div id="member">
 			<h2>Login de Usuario</h2>
-			<form action="#" method="post" name="member_log_in" id="member_log_in">
+			<form action="/codice/j_spring_security_check" method="post" name="member_log_in" id="member_log_in">
 				<label>Usuario:</label>
-				<input type="text" name="name" class="txtBox" />
+				<input type="text" name="j_username" class="txtBox" />
 				<label>Password:</label>
-				<input type="password" name="name2" class="txtBox" />
-				<a href="#">Ya te registraste?</a>
+				<input type="password" name="j_password" class="txtBox" />
+				<!--
+				<label>Remember me:</label>
+				<input type='checkbox' name='_spring_security_remember_me' id='remember_me'
+				<g:if test='${hasCookie}'>checked='checked'</g:if> />
+				-->
+				<a href="/codice/register/index">Ya te registraste?</a>
 				<input type="submit" name="go" value="" class="go" />
 				<br class="spacer" />
 			</form>
 			<br class="spacer" />
 		</div>
 		<br class="spacer" />
+		<!--member end -->
 	</div>
 	<!--bodyBottom end -->
 	<!--footer start -->
