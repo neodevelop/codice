@@ -1,5 +1,5 @@
 <head>
-	<meta name="layout" content="content" />
+	<meta name="layout" content="main" />
 	<title>User Registration</title>
 </head>
 
