@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite errors="0" failures="0" hostname="MBPJJRZ" id="0" name="MyUrlMappingTests" package="" tests="1" time="0.196" timestamp="2009-03-04T23:53:17">
+      <properties />
+
+      <testcase classname="MyUrlMappingTests" name="testHome" time="0.14" />
+
+      <system-out><![CDATA[--Output from testHome--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testHome--
+]]></system-err>
+
+  </testsuite>
+</testsuites>
