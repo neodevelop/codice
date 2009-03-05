@@ -8,5 +8,5 @@
 	<g:if test='${flash.message}'>
 		<p class="badLogin">${flash.message}</p>
 	</g:if>
-	<p class="loginMessage">Please re-try in the bottom of the page...:D</p>
+	<p class="loginMessage">Please try to login in the bottom of the page...:D</p>
 </body>
