@@ -560,6 +560,12 @@ ul{
 	float:left; 
 	display:block;
 }
+#member form label.login{
+	font:bold 12px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	float:left; 
+	display:block;
+	color:#FF9900;
+}
 #member form input.txtBox{
 	width:185px;
 	height:19px;
