@@ -346,6 +346,22 @@ ul{
 	padding:0 0 0 38px;
 	display:block;
 }
+#right p.badLogin{
+	font:bold 26px/18px Arial, Helvetica, sans-serif;
+	color:#cc0000;
+	background-color:inherit;
+	margin:0 0 16px 0;
+	padding:0 0 0 38px;
+	display:block;
+}
+#right p.loginMessage{
+	font:bold 22px/14px Arial, Helvetica, sans-serif;
+	color:#FF6600;
+	background-color:inherit;
+	margin:0 0 16px 0;
+	padding:0 0 0 38px;
+	display:block;
+}
 #right p.rightTxt1{
 	font:normal 13px/18px Arial, Helvetica, sans-serif;
 	color:#62625C;
