@@ -10,6 +10,8 @@ class Content implements Serializable{
 	Date created = new Date()
 	Date lastUpdated =  new Date()
 	Boolean allowComments
+	Boolean publish
+	Boolean showInMainPage
 	
 	static hasMany = [comments:Comment,tags:Tag]
 	
