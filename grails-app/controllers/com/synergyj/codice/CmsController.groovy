@@ -1,11 +1,14 @@
-
-
 package com.synergyj.codice
+
+import com.synergyj.codice.content.Content
 
 class CmsController {
     
     def index = { 
-		
+		params.max = 3
+		params.sort = 'created'
+		params.order = 'desc'
+		[lastContent:Content.list(params)]
 	}
 
     // the delete, save and update actions only accept POST requests
