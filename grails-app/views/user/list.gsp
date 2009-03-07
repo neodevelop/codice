@@ -1,5 +1,5 @@
 <head>
-	<meta name="layout" content="content" />
+	<meta name="layout" content="main" />
 	<title>User List</title>
 </head>
 
