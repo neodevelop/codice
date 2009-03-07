@@ -140,7 +140,7 @@
 				<label class="login"><g:loggedInUserInfo field="username"/></label>
 				<label class="login"><g:loggedInUserInfo field="email"/></label>
 				<label class="login"><g:loggedInUserInfo field="lastLogin"/></label>
-				<a href="#">Logout</a>
+				<g:link controller="logout">Logout</g:link>
 				<br class="spacer" />
 			</form>
 			<br class="spacer" />
