@@ -98,21 +98,44 @@
 		</div>
 		<!--services end -->
 		<!--member start -->
-		<!--member end -->
+		
+		<g:ifNotGranted role="ROLE_USER">
 		<div id="member">
 			<h2>Login de Usuario</h2>
-			<form action="#" method="post" name="member_log_in" id="member_log_in">
+			<form action="/codice/j_spring_security_check" method="post" name="member_log_in" id="member_log_in">
 				<label>Usuario:</label>
-				<input type="text" name="name" class="txtBox" />
+				<input type="text" name="j_username" class="txtBox" />
 				<label>Password:</label>
-				<input type="password" name="name2" class="txtBox" />
-				<a href="#">Ya te registraste?</a>
+				<input type="password" name="j_password" class="txtBox" />
+				<!--
+				<label>Remember me:</label>
+				<input type='checkbox' name='_spring_security_remember_me' id='remember_me'
+				<g:if test='${hasCookie}'>checked='checked'</g:if> />
+				-->
+				<a href="/codice/register/index">Ya te registraste?</a>
 				<input type="submit" name="go" value="" class="go" />
 				<br class="spacer" />
 			</form>
 			<br class="spacer" />
 		</div>
+		</g:ifNotGranted>
+		
+		<g:ifAnyGranted role="ROLE_USER">
+		<div id="member">
+			<h2>. : Welcome : .</h2>
+			<form action="#">
+				<span class="login"><g:loggedInUserInfo field="username"/></span>
+				<span class="login"><g:loggedInUserInfo field="email"/></span>
+				<span class="login"><g:loggedInUserInfo field="lastLogin"/></span>
+				<g:link controller="logout">Logout</g:link>
+				<br class="spacer" />
+			</form>
+			<br class="spacer" />
+		</div>
+		</g:ifAnyGranted>
+		
 		<br class="spacer" />
+		<!--member end -->
 	</div>
 	<!--bodyBottom end -->
 	<!--footer start -->
