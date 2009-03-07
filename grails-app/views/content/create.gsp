@@ -73,6 +73,24 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                    <label for="publish">Publish:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'publish','errors')}">
+                                    <g:checkBox name="publish" value="${contentInstance?.publish}" ></g:checkBox>
+                                </td>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="showInMainPage">Show In Main Page:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'showInMainPage','errors')}">
+                                    <g:checkBox name="showInMainPage" value="${contentInstance?.showInMainPage}" ></g:checkBox>
+                                </td>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                     <label for="user">User:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'user','errors')}">

@@ -78,6 +78,20 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name">Publish:</td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean:contentInstance, field:'publish')}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Show In Main Page:</td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean:contentInstance, field:'showInMainPage')}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name">Tags:</td>
                             
                             <td  valign="top" style="text-align:left;" class="value">
