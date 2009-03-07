@@ -3,6 +3,8 @@ import com.synergyj.auth.Role
 import com.synergyj.auth.RequestMap
 import org.grails.plugins.springsecurity.service.AuthenticateService
 import com.synergyj.codice.Cms
+import com.synergyj.codice.content.Content
+import com.synergyj.codice.content.Tag
 
 class BootStrap {
 
@@ -32,9 +34,26 @@ class BootStrap {
 				.save(flush:true)
 			new Cms(name:'grails.org.mx',domain:'http://grails.org.mx',slogan:'Grails en tu idioma',admin:admin).save()
 		}
+
 		if(Content.count() == 0){
-			User user = 
+			println "Generating first content..."
+			User user = User.findByUsername('user')
+			if(user){
+				def content = new Content(user:user,title:'Welcome to Codice!!!',allowComments:true,publish:true,showInMainPage:true)
+				content.body = """
+					Codice is a Content Management System, is made in grails and you can use it
+					to generate your own contents, in a future this CMS will support Blogs, Timeline,
+					Forums and more...
+				"""
+				content
+					.addToTags(new Tag(name:'sample'))
+					.addToTags(new Tag(name:'first'))
+				content.save(flush:true)
+			}else{
+				println "There's not user to create content.."
+			}
 		}
+
 	}
 	def destroy = {
 	}
