@@ -5,7 +5,7 @@ import com.synergyj.codice.content.Content
 class CmsController {
     
     def index = { 
-		params.max = 3
+		params.max = 5
 		params.sort = 'created'
 		params.order = 'desc'
 		[lastContent:Content.list(params)]
