@@ -51,7 +51,7 @@
 			<h2>.: Start :.</h2>
 			<ul>
 				<li><a href="#">» Login</a></li>
-				<li><a href="#">» Register</a></li>
+				<li><g:link controller="register">» Register</g:link></li>
 			</ul>
 		</div>
 		<br/>
