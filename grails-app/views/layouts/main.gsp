@@ -137,9 +137,11 @@
 		<div id="member">
 			<h2>. : Welcome : .</h2>
 			<form action="#">
-				<label class="login"><g:loggedInUserInfo field="username"/></label>
-				<label class="login"><g:loggedInUserInfo field="email"/></label>
-				<label class="login"><g:loggedInUserInfo field="lastLogin"/></label>
+				<div class="login">
+					<g:loggedInUserInfo field="username"/><br/>
+					<g:loggedInUserInfo field="email"/><br/>
+					<g:loggedInUserInfo field="lastLogin"/><br/>
+				</div>
 				<g:link controller="logout">Logout</g:link>
 				<br class="spacer" />
 			</form>
