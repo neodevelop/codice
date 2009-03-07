@@ -5,6 +5,7 @@ class UrlMappings {
 				// apply constraints here
 			}
 		}
+		"/"(controller:'cms',action:'index')
 		"/home"(controller:'cms',action:'index')
 		"/register"(controller:'register',action:'index')
 		"500"(view:'/error')
