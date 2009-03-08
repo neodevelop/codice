@@ -58,6 +58,19 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                    <label for="contents">Contents:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:cmsInstance,field:'contents','errors')}">
+                                    <g:select name="contents"
+from="${com.synergyj.codice.content.Content.list()}"
+size="5" multiple="yes" optionKey="id"
+value="${cmsInstance?.contents}" />
+
+                                </td>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                     <label for="slogan">Slogan:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:cmsInstance,field:'slogan','errors')}">

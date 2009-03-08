@@ -8,12 +8,11 @@
 		<div class='message'>${flash.message}</div>
 	</g:if>
 	<g:each in="${lastContent}" status="i" var="content">
-		
-	
-	<h2>${content.title}</h2>
-	<p class="rightTxt1">
-		${content.body}
-	</p>
+		<h2>${content.title}</h2>
+		<p class="rightTxt1">
+			${content.body}
+		</p>
+		</br>
 	</g:each>
 	
 	<ul>
