@@ -58,6 +58,15 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                    <label for="cms">Cms:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'cms','errors')}">
+                                    <g:select optionKey="id" from="${com.synergyj.codice.Cms.list()}" name="cms.id" value="${contentInstance?.cms?.id}" ></g:select>
+                                </td>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                     <label for="comments">Comments:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'comments','errors')}">
@@ -69,6 +78,15 @@
 </ul>
 <g:link controller="comment" params="['content.id':contentInstance?.id]" action="create">Add Comment</g:link>
 
+                                </td>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="contentType">Content Type:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'contentType','errors')}">
+                                    <input type="text" id="contentType" name="contentType" value="${fieldValue(bean:contentInstance,field:'contentType')}"/>
                                 </td>
                             </tr> 
                         
@@ -113,13 +131,10 @@
                                     <label for="tags">Tags:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'tags','errors')}">
-                                    
-<ul>
-<g:each var="t" in="${contentInstance?.tags?}">
-    <li><g:link controller="tag" action="show" id="${t.id}">${t?.encodeAsHTML()}</g:link></li>
-</g:each>
-</ul>
-<g:link controller="tag" params="['content.id':contentInstance?.id]" action="create">Add Tag</g:link>
+                                    <g:select name="tags"
+from="${com.synergyj.codice.content.Tag.list()}"
+size="5" multiple="yes" optionKey="id"
+value="${contentInstance?.tags}" />
 
                                 </td>
                             </tr> 

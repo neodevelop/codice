@@ -29,9 +29,9 @@
                         
                    	        <g:sortableColumn property="allowComments" title="Allow Comments" />
                         
-                   	        <g:sortableColumn property="created" title="Created" />
-                        
-                   	        <g:sortableColumn property="lastUpdated" title="Last Updated" />
+                   	        <th>Cms</th>
+                   	    
+                   	        <g:sortableColumn property="contentType" title="Content Type" />
                         
                         </tr>
                     </thead>
@@ -47,9 +47,9 @@
                         
                             <td>${fieldValue(bean:contentInstance, field:'allowComments')}</td>
                         
-                            <td>${fieldValue(bean:contentInstance, field:'created')}</td>
+                            <td>${fieldValue(bean:contentInstance, field:'cms')}</td>
                         
-                            <td>${fieldValue(bean:contentInstance, field:'lastUpdated')}</td>
+                            <td>${fieldValue(bean:contentInstance, field:'contentType')}</td>
                         
                         </tr>
                     </g:each>

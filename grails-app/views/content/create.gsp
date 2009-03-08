@@ -55,6 +55,24 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                    <label for="cms">Cms:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'cms','errors')}">
+                                    <g:select optionKey="id" from="${com.synergyj.codice.Cms.list()}" name="cms.id" value="${contentInstance?.cms?.id}" ></g:select>
+                                </td>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="contentType">Content Type:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'contentType','errors')}">
+                                    <input type="text" id="contentType" name="contentType" value="${fieldValue(bean:contentInstance,field:'contentType')}"/>
+                                </td>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                     <label for="created">Created:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'created','errors')}">

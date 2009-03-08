@@ -25,8 +25,6 @@
                         
                    	        <g:sortableColumn property="name" title="Name" />
                         
-                   	        <th>Content</th>
-                   	    
                         </tr>
                     </thead>
                     <tbody>
@@ -36,8 +34,6 @@
                             <td><g:link action="show" id="${tagInstance.id}">${fieldValue(bean:tagInstance, field:'id')}</g:link></td>
                         
                             <td>${fieldValue(bean:tagInstance, field:'name')}</td>
-                        
-                            <td>${fieldValue(bean:tagInstance, field:'content')}</td>
                         
                         </tr>
                     </g:each>

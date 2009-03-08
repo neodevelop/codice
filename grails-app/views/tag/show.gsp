@@ -30,16 +30,22 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Name:</td>
+                            <td valign="top" class="name">Contents:</td>
                             
-                            <td valign="top" class="value">${fieldValue(bean:tagInstance, field:'name')}</td>
+                            <td  valign="top" style="text-align:left;" class="value">
+                                <ul>
+                                <g:each var="c" in="${tagInstance.contents}">
+                                    <li><g:link controller="content" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></li>
+                                </g:each>
+                                </ul>
+                            </td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Content:</td>
+                            <td valign="top" class="name">Name:</td>
                             
-                            <td valign="top" class="value"><g:link controller="content" action="show" id="${tagInstance?.content?.id}">${tagInstance?.content?.encodeAsHTML()}</g:link></td>
+                            <td valign="top" class="value">${fieldValue(bean:tagInstance, field:'name')}</td>
                             
                         </tr>
                     

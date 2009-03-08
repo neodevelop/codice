@@ -51,6 +51,13 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name">Cms:</td>
+                            
+                            <td valign="top" class="value"><g:link controller="cms" action="show" id="${contentInstance?.cms?.id}">${contentInstance?.cms?.encodeAsHTML()}</g:link></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name">Comments:</td>
                             
                             <td  valign="top" style="text-align:left;" class="value">
@@ -60,6 +67,13 @@
                                 </g:each>
                                 </ul>
                             </td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name">Content Type:</td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean:contentInstance, field:'contentType')}</td>
                             
                         </tr>
                     

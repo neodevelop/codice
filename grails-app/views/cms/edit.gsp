@@ -61,10 +61,13 @@
                                     <label for="contents">Contents:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:cmsInstance,field:'contents','errors')}">
-                                    <g:select name="contents"
-from="${com.synergyj.codice.content.Content.list()}"
-size="5" multiple="yes" optionKey="id"
-value="${cmsInstance?.contents}" />
+                                    
+<ul>
+<g:each var="c" in="${cmsInstance?.contents?}">
+    <li><g:link controller="content" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></li>
+</g:each>
+</ul>
+<g:link controller="content" params="['cms.id':cmsInstance?.id]" action="create">Add Content</g:link>
 
                                 </td>
                             </tr> 

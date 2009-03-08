@@ -35,15 +35,6 @@
                                 </td>
                             </tr> 
                         
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="content">Content:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:tagInstance,field:'content','errors')}">
-                                    <g:select optionKey="id" from="${com.synergyj.codice.content.Content.list()}" name="content.id" value="${tagInstance?.content?.id}" noSelection="['null':'']"></g:select>
-                                </td>
-                            </tr> 
-                        
                         </tbody>
                     </table>
                 </div>

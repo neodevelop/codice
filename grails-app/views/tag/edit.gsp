@@ -31,19 +31,19 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="name">Name:</label>
+                                    <label for="contents">Contents:</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:tagInstance,field:'name','errors')}">
-                                    <input type="text" id="name" name="name" value="${fieldValue(bean:tagInstance,field:'name')}"/>
+                                <td valign="top" class="value ${hasErrors(bean:tagInstance,field:'contents','errors')}">
+                                    
                                 </td>
                             </tr> 
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="content">Content:</label>
+                                    <label for="name">Name:</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:tagInstance,field:'content','errors')}">
-                                    <g:select optionKey="id" from="${com.synergyj.codice.content.Content.list()}" name="content.id" value="${tagInstance?.content?.id}" noSelection="['null':'']"></g:select>
+                                <td valign="top" class="value ${hasErrors(bean:tagInstance,field:'name','errors')}">
+                                    <input type="text" id="name" name="name" value="${fieldValue(bean:tagInstance,field:'name')}"/>
                                 </td>
                             </tr> 
                         
