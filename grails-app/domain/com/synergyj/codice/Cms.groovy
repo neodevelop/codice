@@ -16,12 +16,15 @@
 package com.synergyj.codice
 
 import com.synergyj.auth.User
+import com.synergyj.codice.content.*
 
 class Cms {
 	String name
 	String domain
 	String slogan
 	User admin
+	
+	static hasMany = [contents:Content]
 	
 	static constraints ={
 		name blank:false,unique:true,size:5..50
