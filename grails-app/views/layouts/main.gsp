@@ -19,9 +19,9 @@
 			<li class="last"><a href="#">Contact Us</a></li>
 		</ul>
 
-		<g:link controller='cms' action='index'>
+		<a href="${createLinkTo(dir:'')}">
 			<img src="${createLinkTo(dir:'images',file:'logo_mini.gif')}"  class="logo" border="0" />
-		</g:link>
+		</a>
 
 		<h1>grails.org.mx</h1>
 
