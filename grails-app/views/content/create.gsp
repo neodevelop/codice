@@ -1,5 +1,5 @@
 
-<%@ page import="com.synergyj.codice.content.Content" %>
+<%@ page import="com.synergyj.codice.content.ContentCommand" %>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -48,43 +48,7 @@
                                 <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'allowComments','errors')}">
                                     <g:checkBox name="allowComments" value="${contentInstance?.allowComments}" ></g:checkBox>
                                 </td>
-                            </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="cms">Cms:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'cms','errors')}">
-                                    <g:select optionKey="id" from="${com.synergyj.codice.Cms.list()}" name="cms.id" value="${contentInstance?.cms?.id}" ></g:select>
-                                </td>
-                            </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="contentType">Content Type:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'contentType','errors')}">
-                                    <input type="text" id="contentType" name="contentType" value="${fieldValue(bean:contentInstance,field:'contentType')}"/>
-                                </td>
-                            </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="created">Created:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'created','errors')}">
-                                    <g:datePicker name="created" value="${contentInstance?.created}" ></g:datePicker>
-                                </td>
-                            </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="lastUpdated">Last Updated:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'lastUpdated','errors')}">
-                                    <g:datePicker name="lastUpdated" value="${contentInstance?.lastUpdated}" ></g:datePicker>
-                                </td>
-                            </tr> 
+                            </tr>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
@@ -106,12 +70,22 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="user">User:</label>
+                                    <label for="user">Author:</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'user','errors')}">
-                                    <g:select optionKey="id" from="${com.synergyj.auth.User.list()}" name="user.id" value="${contentInstance?.user?.id}" ></g:select>
+                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'email','errors')}">
+									<g:loggedInUserInfo field="username"/> - <g:loggedInUserInfo field="email"/>
+									<input type="hidden" name="email" id="email" value="<g:loggedInUserInfo field='email'/>">
                                 </td>
-                            </tr> 
+                            </tr>
+
+							<tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="user">Tags:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'tags','errors')}">
+									<g:textField name="tags" value="${contentInstance?.tags}" size="50"></g:textField>
+                                </td>
+                            </tr>
                         
                         </tbody>
                     </table>
