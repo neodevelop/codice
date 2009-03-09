@@ -82,10 +82,9 @@ class ContentController {
         }
     }
 
-    def create = {
-        def contentInstance = new Content()
-        contentInstance.properties = params
-        return ['contentInstance':contentInstance]
+    def create = { ContentCommand cmd ->
+        cmd.properties = params
+        return ['contentInstance':cmd]
     }
 
     def save = {
