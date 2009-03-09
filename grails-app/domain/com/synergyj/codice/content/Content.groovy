@@ -23,6 +23,5 @@ class Content implements Serializable{
 	static constraints = {
 		title nullable:false,size:5..128
 		body nullable:false,maxSize:10000
-		contentType inList:['Content','Blog','News']
 	}
 }
