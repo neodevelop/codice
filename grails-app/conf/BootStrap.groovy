@@ -23,6 +23,7 @@ class BootStrap {
 			new Role(authority:'IS_AUTHENTICATED_ANONYMOUSLY',description:'Anonymous user').save()
 			new RequestMap(url:'/**',configAttribute:'IS_AUTHENTICATED_ANONYMOUSLY').save()
 			new RequestMap(url:'/content/create',configAttribute:'ROLE_USER').save()
+			new RequestMap(url:'/createContent',configAttribute:'ROLE_USER').save()
 
 			admin
 				.addToAuthorities(userRole)
@@ -41,7 +42,7 @@ class BootStrap {
 				def cms = new Cms(name:'grails.org.mx',domain:'http://grails.org.mx',slogan:'Grails en tu idioma',admin:user)
 				cms.save(flush:true)
 				println "Creating first post"
-				def content = new Content(user:user,title:'Now, You can post content...',allowComments:true,publish:true,showInMainPage:true,content)
+				def content = new Content(user:user,title:'Now, You can post content...',allowComments:true,publish:true,showInMainPage:true,contentType:'content')
 				content.body = """
 					The CMS is up and running, now you can post new contents and that will be 
 					showed here in the main page, you can put tags to your new content and edit them
@@ -54,15 +55,14 @@ class BootStrap {
 				content.save(flush:true)
 				
 				println "Creating second post"
-				def content2 = new Content(user:user,title:'Welcome to Codice!!!',allowComments:true,publish:true,showInMainPage:true)
+				def content2 = new Content(user:user,title:'Welcome to Codice!!!',allowComments:true,publish:true,showInMainPage:true,contentType:'content')
 				content2.body = """
 					Codice is a Content Management System, is made in grails and you can use it
 					to generate your own contents, in a future this CMS will support Blogs, Timeline,
 					Forums and more...
 				"""
-				//content
-				//	.addToTags(Tag.findByName('sample'))
-				//	.addToTags(Tag.findByName('first'))
+				//content2
+				//	.addToTags(new Tag(name:'new'))
 				
 				cms.addToContents(content2)
 				content2.save(flush:true)
