@@ -1,8 +1,10 @@
-
-
 package com.synergyj.codice.content
 
+import org.grails.plugins.springsecurity.service.AuthenticateService
+
 class ContentController {
+	
+	def authenticateService
     
     def index = { redirect(action:list,params:params) }
 
@@ -82,12 +84,22 @@ class ContentController {
         }
     }
 
-    def create = { ContentCommand cmd ->
-        cmd.properties = params
-        return ['contentInstance':cmd]
+    def create = { 
+		def cmd = new ContentCommand()
+		[contentInstance:cmd]
     }
 
-    def save = {
+    def save = { ContentCommand cmd ->
+		println cmd.properties
+		if(!cmd.hasErrors()){
+			println "Cmd is correct now the bind..."
+			render(view:'create',model:[contentInstance:cmd])
+		}
+		else{
+			println "validation incorrect..."
+			render(view:'create',model:[contentInstance:cmd])
+		}
+		/***
         def contentInstance = new Content(params)
         if(!contentInstance.hasErrors() && contentInstance.save()) {
             flash.message = "Content ${contentInstance.id} created"
@@ -96,5 +108,6 @@ class ContentController {
         else {
             render(view:'create',model:[contentInstance:contentInstance])
         }
+		***/
     }
 }
