@@ -32,15 +32,16 @@ class BootStrap {
 			registeredUser
 				.addToAuthorities(userRole)
 				.save(flush:true)
-			new Cms(name:'grails.org.mx',domain:'http://grails.org.mx',slogan:'Grails en tu idioma',admin:admin).save()
 		}
 
 		if(Content.count() == 0){
 			println "Generating first content..."
-			User user = User.findByUsername('user')
+			User user = User.findByUsername('admin')
 			if(user){
+				def cms = new Cms(name:'grails.org.mx',domain:'http://grails.org.mx',slogan:'Grails en tu idioma',admin:user)
+				cms.save(flush:true)
 				println "Creating first post"
-				def content = new Content(user:user,title:'Now, You can post content...',allowComments:true,publish:true,showInMainPage:true)
+				def content = new Content(user:user,title:'Now, You can post content...',allowComments:true,publish:true,showInMainPage:true,content)
 				content.body = """
 					The CMS is up and running, now you can post new contents and that will be 
 					showed here in the main page, you can put tags to your new content and edit them
@@ -49,6 +50,7 @@ class BootStrap {
 				content
 					.addToTags(new Tag(name:'sample'))
 					.addToTags(new Tag(name:'first'))
+				cms.addToContents(content)
 				content.save(flush:true)
 				
 				println "Creating second post"
@@ -58,10 +60,11 @@ class BootStrap {
 					to generate your own contents, in a future this CMS will support Blogs, Timeline,
 					Forums and more...
 				"""
-				content
-					.addToTags(Tag.findByName('sample'))
-					.addToTags(Tag.findByName('first'))
-					
+				//content
+				//	.addToTags(Tag.findByName('sample'))
+				//	.addToTags(Tag.findByName('first'))
+				
+				cms.addToContents(content2)
 				content2.save(flush:true)
 				
 				println "Posts created..."
