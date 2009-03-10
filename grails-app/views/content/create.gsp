@@ -34,15 +34,6 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="body">Body:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'body','errors')}">
-                                    <textarea rows="5" cols="40" name="body">${fieldValue(bean:contentInstance, field:'body')}</textarea>
-                                </td>
-                            </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
                                     <label for="allowComments">Allow Comments:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'allowComments','errors')}">
@@ -89,6 +80,18 @@
                         
                         </tbody>
                     </table>
+					<table>
+					<tr class="prop">
+                        <td valign="top" class="name">
+                            <label for="body">Body:</label>
+                        </td>
+					</tr>
+					<tr>
+                        <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'body','errors')}">
+							<g:textArea name="body" value="${contentInstance?.body}" rows="5" cols="5"/>
+                        </td>
+                    </tr>
+					</table>
                 </div>
                 <div class="buttons">
                     <span class="button"><input class="save" type="submit" value="Create" /></span>
