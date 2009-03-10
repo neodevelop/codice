@@ -3,9 +3,9 @@ package com.synergyj.codice.content
 import com.synergyj.auth.User
 import com.synergyj.codice.content.*
 import com.synergyj.codice.Cms
+import org.grails.taggable.*
 
-
-class Content implements Serializable{
+class Content implements Serializable,Taggable{
 	
 	User user
 	String title
@@ -17,7 +17,7 @@ class Content implements Serializable{
 	Boolean showInMainPage
 	String contentType
 	
-	static hasMany = [comments:Comment,tags:Tag]
+	static hasMany = [comments:Comment]
 	static belongsTo = [cms:Cms]
 	
 	static constraints = {
