@@ -13,11 +13,15 @@ class ContentCommand{
 	Boolean allowComments
 	Boolean publish
 	Boolean showInMainPage
-	String tags
+	String tagList
 	
 	static constraints = {
 		email nullable:false,blank:false,email:true
 		title nullable:false,size:5..128,blank:false
 		body nullable:false,maxSize:10000,blank:false
+	}
+	
+	def getAllTags(){
+		tagList.tokenize(" ")
 	}
 }
