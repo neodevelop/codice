@@ -1,4 +1,3 @@
-
 <%@ page import="com.synergyj.codice.content.ContentCommand" %>
 <html>
     <head>
@@ -7,7 +6,7 @@
         <title>Create Content</title>         
     </head>
     <body>
-        
+        <resource:richTextEditor />
         <div class="body">
             <h1>Create Content</h1>
             <g:if test="${flash.message}">
@@ -88,7 +87,7 @@
 					</tr>
 					<tr>
                         <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'body','errors')}">
-							<g:textArea name="body" value="${contentInstance?.body}" rows="5" cols="5"/>
+							<richui:richTextEditor name="body" value="${contentInstance?.body}" width="525" />
                         </td>
                     </tr>
 					</table>
