@@ -5,7 +5,7 @@ import com.synergyj.codice.content.Content
 import com.synergyj.codice.content.Tag
 import com.synergyj.codice.Cms
 
-class ContentController {
+class ContentController{
     
     def index = { redirect(action:list,params:params) }
 
@@ -114,20 +114,21 @@ class ContentController {
 			render(view:'create',model:[contentInstance:cmd])
 		}
     }
-}
 
-private def fixTags(Content contentInstance,def tagList){
-	tagList.each{ tagName ->
-		Tag tag = Tag.findByName(tagName)
-		if(!tag){
-			tag = new Tag(name:tagName)
-			tag.content = content
-			tag.save()
-			println "Tag $tagName created!!!"
-			tag.errors.allErrors.each {
-                println it
-            }
+	private def fixTags(Content contentInstance,def tagList){
+		tagList.each{ tagName ->
+			Tag tag = Tag.findByName(tagName)
+			if(!tag){
+				tag = new Tag(name:tagName)
+				tag.content = content
+				tag.save()
+				println "Tag $tagName created!!!"
+				tag.errors.allErrors.each {
+	                println it
+	            }
+			}
+			content.addToTags(tag)
 		}
-		content.addToTags(tag)
 	}
 }
+
