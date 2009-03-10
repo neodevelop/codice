@@ -103,6 +103,7 @@ class ContentController{
 			Cms cms = Cms.get(1)
 			contentInstance.cms = cms
 			if(!contentInstance.hasErrors() && contentInstance.save()){
+				fixTags(contentInstance,cmd.getAllTags())
 				flash.message = "The content ${contentInstance.id} was sucesfully created"
 				redirect(action:show,id:contentInstance.id)
 			}else{
@@ -120,14 +121,13 @@ class ContentController{
 			Tag tag = Tag.findByName(tagName)
 			if(!tag){
 				tag = new Tag(name:tagName)
-				tag.content = content
-				tag.save()
+				tag.addToContents(contentInstance).save()
 				println "Tag $tagName created!!!"
 				tag.errors.allErrors.each {
 	                println it
 	            }
 			}
-			content.addToTags(tag)
+			contentInstance.addToTags(tag)
 		}
 	}
 }
