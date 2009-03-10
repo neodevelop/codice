@@ -115,20 +115,5 @@ class ContentController{
 			render(view:'create',model:[contentInstance:cmd])
 		}
     }
-
-	private def fixTags(Content contentInstance,def tagList){
-		tagList.each{ tagName ->
-			Tag tag = Tag.findByName(tagName)
-			if(!tag){
-				tag = new Tag(name:tagName)
-				tag.addToContents(contentInstance).save()
-				println "Tag $tagName created!!!"
-				tag.errors.allErrors.each {
-	                println it
-	            }
-			}
-			contentInstance.addToTags(tag)
-		}
-	}
 }
 
