@@ -125,5 +125,12 @@ class ContentController {
 }
 
 private def fixTags(Content content,def tagList){
-	
+	tagList.each{ tagName ->
+		Tag tag = Tag.findByName(tagName)
+		if(tag){
+			content.addToTags(tag)
+		}else{
+			content.addToTags(new Tag(tagName))
+		}
+	}
 }
