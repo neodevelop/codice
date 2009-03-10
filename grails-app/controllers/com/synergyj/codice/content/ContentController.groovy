@@ -1,10 +1,11 @@
 package com.synergyj.codice.content
 
-import org.grails.plugins.springsecurity.service.AuthenticateService
+import com.synergyj.auth.User
+import com.synergyj.codice.content.Content
+import com.synergyj.codice.content.Tag
+import com.synergyj.codice.Cms
 
 class ContentController {
-	
-	def authenticateService
     
     def index = { redirect(action:list,params:params) }
 
@@ -90,9 +91,20 @@ class ContentController {
     }
 
     def save = { ContentCommand cmd ->
-		println cmd.properties
 		if(!cmd.hasErrors()){
 			println "Cmd is correct now the bind..."
+			def contentInstance = new Content()
+			bindData(contentInstance,cmd.properties)
+			contentInstance.created = new Date()
+			contentInstance.lastUpdated = new Date()
+			contentInstance.user = User.findByEmail(cmd.email)
+			contentInstance.contentType = 'Page entry'
+			//Save the entry in the cms, at the moment this is hard code
+			Cms cms = Cms.get(1)
+			cms.addToContents(contentInstance) //her goes the save
+			//Now get put the tags correctly
+			fixTags(contentInstance,cmd.getAllTags())
+			println "After bindData and set other props: ${contentInstance.dump()}"
 			render(view:'create',model:[contentInstance:cmd])
 		}
 		else{
@@ -110,4 +122,8 @@ class ContentController {
         }
 		***/
     }
+}
+
+private def fixTags(Content content,def tagList){
+	
 }
