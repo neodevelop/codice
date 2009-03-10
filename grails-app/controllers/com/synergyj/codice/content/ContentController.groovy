@@ -101,36 +101,33 @@ class ContentController {
 			contentInstance.contentType = 'Page entry'
 			//Save the entry in the cms, at the moment this is hard code
 			Cms cms = Cms.get(1)
-			cms.addToContents(contentInstance) //her goes the save
-			//Now get put the tags correctly
-			fixTags(contentInstance,cmd.getAllTags())
-			println "After bindData and set other props: ${contentInstance.dump()}"
-			render(view:'create',model:[contentInstance:cmd])
+			contentInstance.cms = cms
+			if(!contentInstance.hasErrors() && contentInstance.save()){
+				flash.message = "The content ${contentInstance.id} was sucesfully created"
+				redirect(action:show,id:contentInstance.id)
+			}else{
+				render(view:'create',model:[contentInstance:cmd])
+			}
 		}
 		else{
 			println "validation incorrect..."
 			render(view:'create',model:[contentInstance:cmd])
 		}
-		/***
-        def contentInstance = new Content(params)
-        if(!contentInstance.hasErrors() && contentInstance.save()) {
-            flash.message = "Content ${contentInstance.id} created"
-            redirect(action:show,id:contentInstance.id)
-        }
-        else {
-            render(view:'create',model:[contentInstance:contentInstance])
-        }
-		***/
     }
 }
 
-private def fixTags(Content content,def tagList){
+private def fixTags(Content contentInstance,def tagList){
 	tagList.each{ tagName ->
 		Tag tag = Tag.findByName(tagName)
-		if(tag){
-			content.addToTags(tag)
-		}else{
-			content.addToTags(new Tag(tagName))
+		if(!tag){
+			tag = new Tag(name:tagName)
+			tag.content = content
+			tag.save()
+			println "Tag $tagName created!!!"
+			tag.errors.allErrors.each {
+                println it
+            }
 		}
+		content.addToTags(tag)
 	}
 }
