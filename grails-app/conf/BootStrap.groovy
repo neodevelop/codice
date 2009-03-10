@@ -4,7 +4,6 @@ import com.synergyj.auth.RequestMap
 import org.grails.plugins.springsecurity.service.AuthenticateService
 import com.synergyj.codice.Cms
 import com.synergyj.codice.content.Content
-import com.synergyj.codice.content.Tag
 
 class BootStrap {
 
@@ -48,9 +47,6 @@ class BootStrap {
 					showed here in the main page, you can put tags to your new content and edit them
 					when you want, remember that we have content only...Thks for use Codice :D
 				"""
-				content
-					.addToTags(new Tag(name:'sample'))
-					.addToTags(new Tag(name:'first'))
 				cms.addToContents(content)
 				content.save(flush:true)
 				
@@ -61,8 +57,6 @@ class BootStrap {
 					to generate your own contents, in a future this CMS will support Blogs, Timeline,
 					Forums and more...
 				"""
-				//content2
-				//	.addToTags(new Tag(name:'new'))
 				
 				cms.addToContents(content2)
 				content2.save(flush:true)
