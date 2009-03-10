@@ -2,7 +2,6 @@ package com.synergyj.codice.content
 
 import com.synergyj.auth.User
 import com.synergyj.codice.content.Content
-import com.synergyj.codice.content.Tag
 import com.synergyj.codice.Cms
 
 class ContentController{
