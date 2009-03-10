@@ -73,8 +73,8 @@
                                 <td valign="top" class="name">
                                     <label for="user">Tags:</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'tags','errors')}">
-									<g:textField name="tags" value="${contentInstance?.tags}" size="50"></g:textField>
+                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'tagList','errors')}">
+									<g:textField name="tagList" value="${contentInstance?.tagList}" size="50"></g:textField>
                                 </td>
                             </tr>
                         
