@@ -15,6 +15,10 @@ class UrlMappings {
 		Content mapping
 		***/
 		"/createContent"(controller:'content',action:'create')
+		"/showContent/$id"(controller:'content',action:'show')
+		/***
+		Error mapping
+		***/
 		"500"(view:'/error')
 	}
 }
