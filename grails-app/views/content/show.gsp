@@ -39,7 +39,7 @@
                         <tr class="prop">
                             <td valign="top" class="name">Body:</td>
                             
-                            <td valign="top" class="value">${contentInstance.body}</td>
+                            <td valign="top" class="value">${contentInstance.textBody}</td>
                             
                         </tr>
                     

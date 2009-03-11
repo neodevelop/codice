@@ -42,8 +42,8 @@
                                 <td valign="top" class="name">
                                     <label for="body">Body:</label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'body','errors')}">
-                                    <textarea rows="5" cols="40" name="body">${fieldValue(bean:contentInstance, field:'body')}</textarea>
+                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'textBody','errors')}">
+                                    <textarea rows="5" cols="40" name="body">${fieldValue(bean:contentInstance, field:'textBody')}</textarea>
                                 </td>
                             </tr> 
                         

@@ -25,7 +25,7 @@
                         
                    	        <g:sortableColumn property="title" title="Title" />
                         
-                   	        <g:sortableColumn property="body" title="Body" />
+                   	        <g:sortableColumn property="textBody" title="Text Body" />
                         
                    	        <g:sortableColumn property="allowComments" title="Allow Comments" />
                         
@@ -43,7 +43,7 @@
                         
                             <td>${fieldValue(bean:contentInstance, field:'title')}</td>
                         
-                            <td>${fieldValue(bean:contentInstance, field:'body')}</td>
+                            <td>${fieldValue(bean:contentInstance, field:'textBody')}</td>
                         
                             <td>${fieldValue(bean:contentInstance, field:'allowComments')}</td>
                         

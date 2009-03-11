@@ -86,8 +86,8 @@
                         </td>
 					</tr>
 					<tr>
-                        <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'body','errors')}">
-							<richui:richTextEditor name="body" value="${contentInstance?.body}" width="700" height="500" />
+                        <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'textBody','errors')}">
+							<richui:richTextEditor name="body" value="${contentInstance?.textBody}" width="700" height="500" />
                         </td>
                     </tr>
 					</table>
