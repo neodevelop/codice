@@ -9,7 +9,7 @@ class ContentCommand{
 	
 	String email
 	String title
-	String body
+	String textBody
 	Boolean allowComments
 	Boolean publish
 	Boolean showInMainPage
@@ -18,6 +18,6 @@ class ContentCommand{
 	static constraints = {
 		email nullable:false,blank:false,email:true
 		title nullable:false,size:5..128,blank:false
-		body nullable:false,maxSize:10000,blank:false
+		textBody nullable:false,maxSize:10000,blank:false
 	}
 }
