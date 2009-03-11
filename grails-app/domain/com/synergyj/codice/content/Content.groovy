@@ -5,7 +5,7 @@ import com.synergyj.codice.content.*
 import com.synergyj.codice.Cms
 import org.grails.taggable.*
 
-class Content implements Serializable,Taggable{
+class Content implements Taggable{
 	
 	User user
 	String title
