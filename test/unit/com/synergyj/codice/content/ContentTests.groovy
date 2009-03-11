@@ -28,7 +28,7 @@ class ContentTests extends GrailsUnitTestCase {
 	void testBodyContent() {
 		def c = new Content(title:'Hi! this is the title...')
 		assertFalse c.validate()
-		assertEquals c.errors.body,'nullable'
+		assertEquals c.errors.textBody,'nullable'
 	}
 	
 }

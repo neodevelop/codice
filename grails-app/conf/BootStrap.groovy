@@ -42,7 +42,7 @@ class BootStrap {
 				cms.save(flush:true)
 				println "Creating first post"
 				def content = new Content(user:user,title:'Now, You can post content...',allowComments:true,publish:true,showInMainPage:true,contentType:'content')
-				content.body = """
+				content.textBody = """
 					The CMS is up and running, now you can post new contents and that will be 
 					showed here in the main page, you can put tags to your new content and edit them
 					when you want, remember that we have content only...Thks for use Codice :D
@@ -58,7 +58,7 @@ class BootStrap {
 				
 				println "Creating second post"
 				def content2 = new Content(user:user,title:'Welcome to Codice!!!',allowComments:true,publish:true,showInMainPage:true,contentType:'content')
-				content2.body = """
+				content2.textBody = """
 					Codice is a Content Management System, is made in grails and you can use it
 					to generate your own contents, in a future this CMS will support Blogs, Timeline,
 					Forums and more...
