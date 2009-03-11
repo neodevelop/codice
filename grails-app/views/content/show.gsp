@@ -109,11 +109,7 @@
                             <td valign="top" class="name">Tags:</td>
                             
                             <td  valign="top" style="text-align:left;" class="value">
-                                <ul>
-                                <g:each var="t" in="${contentInstance.tags}">
-                                    <li><g:link controller="tag" action="show" id="${t.id}">${t?.encodeAsHTML()}</g:link></li>
-                                </g:each>
-                                </ul>
+                                ${contentInstance?.tags}
                             </td>
                             
                         </tr>
