@@ -9,7 +9,7 @@ class Content implements Taggable{
 	
 	User user
 	String title
-	String body
+	String textBody
 	Date created = new Date()
 	Date lastUpdated =  new Date()
 	Boolean allowComments = true
@@ -22,6 +22,6 @@ class Content implements Taggable{
 	
 	static constraints = {
 		title nullable:false,size:5..128
-		body nullable:false,maxSize:10000
+		textBody nullable:false,maxSize:10000
 	}
 }
