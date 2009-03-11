@@ -10,6 +10,17 @@ div, h2, p, form, label, input, textarea, img, span{
 	margin:0; padding:0;
 }
 
+h4 {
+    color: #FF6633;
+    font-size: 9px;
+}
+
+h5 {
+    color: #999999;
+	font-style: italic;
+    font-size: 8px;
+}
+
 ul{
 	list-style: none;
 }
