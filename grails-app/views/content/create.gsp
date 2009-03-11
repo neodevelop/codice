@@ -6,7 +6,7 @@
         <title>Create Content</title>         
     </head>
     <body>
-        <resource:richTextEditor type="full" />
+        <resource:richTextEditor type="advanced" />
         <div class="body">
             <h1>Create Content</h1>
             <g:if test="${flash.message}">
