@@ -20,8 +20,4 @@ class ContentCommand{
 		title nullable:false,size:5..128,blank:false
 		body nullable:false,maxSize:10000,blank:false
 	}
-	
-	def getAllTags(){
-		tagList.tokenize(" ")
-	}
 }

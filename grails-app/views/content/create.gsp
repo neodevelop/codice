@@ -6,7 +6,7 @@
         <title>Create Content</title>         
     </head>
     <body>
-        <resource:richTextEditor />
+        <resource:richTextEditor type="full" />
         <div class="body">
             <h1>Create Content</h1>
             <g:if test="${flash.message}">
@@ -87,7 +87,7 @@
 					</tr>
 					<tr>
                         <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'body','errors')}">
-							<richui:richTextEditor name="body" value="${contentInstance?.body}" width="525" />
+							<richui:richTextEditor name="body" value="${contentInstance?.body}" width="700" height="500" />
                         </td>
                     </tr>
 					</table>

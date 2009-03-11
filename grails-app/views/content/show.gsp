@@ -39,7 +39,7 @@
                         <tr class="prop">
                             <td valign="top" class="name">Body:</td>
                             
-                            <td valign="top" class="value">${fieldValue(bean:contentInstance, field:'body')}</td>
+                            <td valign="top" class="value">${contentInstance.body}</td>
                             
                         </tr>
                     

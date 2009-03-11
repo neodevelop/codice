@@ -102,7 +102,7 @@ class ContentController{
 			Cms cms = Cms.get(1)
 			contentInstance.cms = cms
 			if(!contentInstance.hasErrors() && contentInstance.save()){
-				fixTags(contentInstance,cmd.getAllTags())
+				contentInstance.parseTags(cmd.tagList)
 				flash.message = "The content ${contentInstance.id} was sucesfully created"
 				redirect(action:show,id:contentInstance.id)
 			}else{
