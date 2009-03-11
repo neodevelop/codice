@@ -12,9 +12,9 @@ class Content implements Serializable,Taggable{
 	String body
 	Date created = new Date()
 	Date lastUpdated =  new Date()
-	Boolean allowComments
-	Boolean publish
-	Boolean showInMainPage
+	Boolean allowComments = true
+	Boolean publish = true
+	Boolean showInMainPage = true
 	String contentType
 	
 	static hasMany = [comments:Comment]
