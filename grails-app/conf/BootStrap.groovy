@@ -49,6 +49,12 @@ class BootStrap {
 				"""
 				cms.addToContents(content)
 				content.save(flush:true)
+				content
+					.addTag("new")
+					.addTag("sample")
+				content.save(flush:true)
+				println content.tags
+				
 				
 				println "Creating second post"
 				def content2 = new Content(user:user,title:'Welcome to Codice!!!',allowComments:true,publish:true,showInMainPage:true,contentType:'content')
@@ -60,6 +66,12 @@ class BootStrap {
 				
 				cms.addToContents(content2)
 				content2.save(flush:true)
+				
+				content2
+					.addTag("first")
+					.addTag("sample")
+				content2.save(flush:true)
+				println content2.tags
 				
 				println "Posts created..."
 			}else{
