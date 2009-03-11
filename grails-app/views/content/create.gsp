@@ -1,4 +1,5 @@
 <%@ page import="com.synergyj.codice.content.ContentCommand" %>
+<resource:richTextEditor type="full" />
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -6,7 +7,6 @@
         <title>Create Content</title>         
     </head>
     <body>
-        <resource:richTextEditor type="full" />
         <div class="body">
             <h1>Create Content</h1>
             <g:if test="${flash.message}">
@@ -19,79 +19,71 @@
             </g:hasErrors>
             <g:form action="save" method="post" >
                 <div class="dialog">
-                    <table>
-                        <tbody>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
+
+                            <div class="prop">
+                                <div class="name">
                                     <label for="title">Title:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'title','errors')}">
-                                    <input type="text" maxlength="128" id="title" name="title" value="${fieldValue(bean:contentInstance,field:'title')}"/>
-                                </td>
-                            </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
+                                </div>
+                                <div class="value ${hasErrors(bean:contentInstance,field:'title','errors')}">
+                                    <input type="text" size="90" id="title" name="title" value="${fieldValue(bean:contentInstance,field:'title')}"/>
+                                </div>
+                            </div> 
+
+							<div class="prop">
+                                <div class="name">
+                                    <label for="title">Body:</label>
+                                </div>
+                                <div class="value ${hasErrors(bean:contentInstance,field:'title','errors')}">
+                                    <richui:richTextEditor name="textBody" value="${contentInstance?.textBody}" width="700" height="400" />
+                                </div>
+                            </div>
+
+							<div class="prop">
+                                <div class="name">
+                                    <label for="user">Tags:</label>
+                                </div>
+                                <div class="value ${hasErrors(bean:contentInstance,field:'tagList','errors')}">
+									<g:textField name="tagList" value="${contentInstance?.tagList}" size="90"></g:textField>
+                                </div>
+                            </div>
+							
+                            <div class="prop">
+                                <div class="name">
                                     <label for="allowComments">Allow Comments:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'allowComments','errors')}">
+                                </div>
+                                <div class="value ${hasErrors(bean:contentInstance,field:'allowComments','errors')}">
                                     <g:checkBox name="allowComments" value="${contentInstance?.allowComments}" ></g:checkBox>
-                                </td>
-                            </tr>
+                                </div>
+                            </div>
                         
-                            <tr class="prop">
-                                <td valign="top" class="name">
+                            <div class="prop">
+                                <div class="name">
                                     <label for="publish">Publish:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'publish','errors')}">
+                                </div>
+                                <div class="value ${hasErrors(bean:contentInstance,field:'publish','errors')}">
                                     <g:checkBox name="publish" value="${contentInstance?.publish}" ></g:checkBox>
-                                </td>
-                            </tr> 
+                                </div>
+                            </div> 
                         
-                            <tr class="prop">
-                                <td valign="top" class="name">
+                            <div class="prop">
+                                <div class="name">
                                     <label for="showInMainPage">Show In Main Page:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'showInMainPage','errors')}">
+                                </div>
+                                <div class="value ${hasErrors(bean:contentInstance,field:'showInMainPage','errors')}">
                                     <g:checkBox name="showInMainPage" value="${contentInstance?.showInMainPage}" ></g:checkBox>
-                                </td>
-                            </tr> 
+                                </div>
+                            </div> 
                         
-                            <tr class="prop">
-                                <td valign="top" class="name">
+                            <div class="prop">
+                                <div class="name">
                                     <label for="user">Author:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'email','errors')}">
+                                </div>
+                                <div class="value ${hasErrors(bean:contentInstance,field:'email','errors')}">
 									<g:loggedInUserInfo field="username"/> - <g:loggedInUserInfo field="email"/>
 									<input type="hidden" name="email" id="email" value="<g:loggedInUserInfo field='email'/>">
-                                </td>
-                            </tr>
+                                </div>
+                            </div>
 
-							<tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="user">Tags:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'tagList','errors')}">
-									<g:textField name="tagList" value="${contentInstance?.tagList}" size="50"></g:textField>
-                                </td>
-                            </tr>
-                        
-                        </tbody>
-                    </table>
-					<table>
-					<tr class="prop">
-                        <td valign="top" class="name">
-                            <label for="body">Body:</label>
-                        </td>
-					</tr>
-					<tr>
-                        <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'textBody','errors')}">
-							<richui:richTextEditor name="textBody" value="${contentInstance?.textBody}" width="700" height="400" >
-							</richui:richTextEditor>
-                        </td>
-                    </tr>
-					</table>
                 </div>
                 <div class="buttons">
                     <span class="button"><input class="save" type="submit" value="Create" /></span>
