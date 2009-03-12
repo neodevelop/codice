@@ -103,7 +103,7 @@ class ContentController{
 			contentInstance.cms = cms
 			if(!contentInstance.hasErrors() && contentInstance.save()){
 				contentInstance.parseTags(cmd.tagList)
-				flash.message = "The content ${contentInstance.id} was sucesfully created"
+				flash.message = "Your content with the title '${contentInstance.title}' was sucesfully created"
 				redirect(action:show,id:contentInstance.id)
 			}else{
 				render(view:'create',model:[contentInstance:cmd])
