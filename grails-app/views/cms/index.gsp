@@ -10,7 +10,7 @@
 	<g:each in="${lastContent}" status="i" var="content">
 		<h2>${content?.title}</h2>
 		<h5>Created ${fieldValue(bean:content, field:'created')} by ${content?.user?.username}</h5>
-		<h4>Tags: ${content?.tags}</h4>
+		<h4><div class="tag">Tags: ${content?.tags}</div></h4>
 		<div class="textBody">
 			${content?.textBody}
 		</div>
