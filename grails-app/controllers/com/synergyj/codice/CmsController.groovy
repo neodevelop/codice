@@ -1,10 +1,15 @@
-
-
 package com.synergyj.codice
+
+import com.synergyj.codice.content.*
 
 class CmsController {
     
-    def index = { redirect(action:list,params:params) }
+    def index = { 
+		params.max = Math.min( params.max ? params.max.toInteger() : 3,  100)
+		params.order = 'desc'
+		params.sort = 'created'
+        [ lastContent: Content.list( params ) ]
+	}
 
     // the delete, save and update actions only accept POST requests
     static allowedMethods = [delete:'POST', save:'POST', update:'POST']
