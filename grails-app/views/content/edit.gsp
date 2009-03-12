@@ -128,19 +128,6 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="tags">Tags:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'tags','errors')}">
-                                    <g:select name="tags"
-from="${com.synergyj.codice.content.Tag.list()}"
-size="5" multiple="yes" optionKey="id"
-value="${contentInstance?.tags}" />
-
-                                </td>
-                            </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
                                     <label for="user">User:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'user','errors')}">
