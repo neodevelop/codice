@@ -24,7 +24,7 @@
 				<div class="date2">Last update ${fieldValue(bean:contentInstance, field:'lastUpdated')}</div>
 			</div>
 		</div>
-		
+		<!--
 		<div class="buttons">
 			<g:form>
 				<input type="hidden" name="id" value="${contentInstance?.id}" />
@@ -32,6 +32,7 @@
 				<span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" value="Delete" /></span>
 			</g:form>
 		</div>
+		-->
 	</div>
 </body>
 </html>
