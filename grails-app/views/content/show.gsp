@@ -12,39 +12,13 @@
             	<div class="message">${flash.message}</div>
             </g:if>
             <h1>${fieldValue(bean:contentInstance, field:'title')}</h1>
-			<h5>Created ${fieldValue(bean:contentInstance, field:'created')} by ${contentInstance?.user?.username}</h5>
-			<h4>Tags: ${contentInstance?.tags}</h4>
-			
-			<div class="textbody">
+			<h5><div class="date1">Created ${fieldValue(bean:contentInstance, field:'created')} by ${contentInstance?.user?.username}</div></h5>
+			<h4><div class="tag">Tags: ${contentInstance?.tags}</div></h4>
+			<div class="textBody">
 				${contentInstance?.textBody}
 			</div>
-
-			<h5>Last update: ${fieldValue(bean:contentInstance, field:'lastUpdated')}</h5>
+			<h5><div class="date2">Last update ${fieldValue(bean:contentInstance, field:'lastUpdated')}</div></h5>
             
-            <div class="dialog">
-                <table>
-                    <tbody>
-
-                    
-                        
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">Comments:</td>
-                            
-                            <td  valign="top" style="text-align:left;" class="value">
-                                <ul>
-                                <g:each var="c" in="${contentInstance.comments}">
-                                    <li><g:link controller="comment" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></li>
-                                </g:each>
-                                </ul>
-                            </td>
-                            
-                        </tr>
-                    
-                    
-                    </tbody>
-                </table>
-            </div>
             <div class="buttons">
                 <g:form>
                     <input type="hidden" name="id" value="${contentInstance?.id}" />
