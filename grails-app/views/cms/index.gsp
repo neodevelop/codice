@@ -15,7 +15,7 @@
 			${content?.textBody}
 		</div>
 		<h6><div class="comments1">${content?.comments?.size()} Comments</div></h6>
-		</br>
+		<br/>
 	</g:each>
 	<!--
 	<ul>
