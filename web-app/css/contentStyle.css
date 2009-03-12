@@ -6,7 +6,7 @@ body{
 	background-color:#EFEFDF;
 	color:#000;
 }
-div, h2, p, form, label, input, textarea, img, span{
+h2, p, form, label, input, textarea, img, span{
 	margin:0; padding:0;
 }
 
@@ -443,6 +443,10 @@ ul{
 #right ul li a:hover{
 	color:#974D04;
 	text-decoration:none;
+}
+
+.textBody{
+	padding: 5px 0px 10px 10px;
 }
 
 /*------------------------------------------------right--------------------*/
