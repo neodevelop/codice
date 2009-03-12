@@ -267,3 +267,9 @@ th.desc a {
     background: transparent url(../images/skin/database_save.png) 5px 50% no-repeat;
     padding-left: 28px;
 }
+
+/* ICONS */
+.tag{
+	background: transparent url(../images/skin/tag1.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
