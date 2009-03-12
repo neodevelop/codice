@@ -20,8 +20,16 @@ h5 {
     color: #999999;
 	font-style: italic;
     font-size: 9px;
-	padding:0 0 3px 20px;
+	padding:0 10 0 20px;
+	margin:5px 0 5px 0;
 }
+
+h6 {
+    color: #6699FF;
+    font-size: 10px;
+	padding:0 0 0 20px;
+}
+
 
 ul{
 	list-style: none;
