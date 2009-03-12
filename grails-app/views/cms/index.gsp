@@ -13,7 +13,9 @@
 			<div class="date3">Created ${fieldValue(bean:content, field:'created')} by ${content?.user?.username}</div>
 		</div>
 		<div class="tags">
-			<div class="tag">Tags: ${content?.tags}</div>
+			<g:each in="${content?.tags}" var="tag">
+				<span class="tag">${tag}</span>
+			</g:each>
 		</div>
 		<div class="textBody">
 			${content?.textBody}
