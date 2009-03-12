@@ -272,4 +272,27 @@ th.desc a {
 .tag{
 	background: transparent url(../images/skin/tag1.png) 5px 50% no-repeat;
     padding-left: 28px;
+	padding-top: 2px;
+}
+
+.date1{
+	background: transparent url(../images/skin/date1.png) 5px 50% no-repeat;
+    padding-left: 28px;
+	padding-top: 4px;
+}
+
+.date2{
+	background: transparent url(../images/skin/date2.png) 5px 50% no-repeat;
+    padding-left: 28px;
+	padding-top: 4px;
+}
+.comments1{
+	background: transparent url(../images/skin/comment1.png) 5px 50% no-repeat;
+    padding-left: 28px;
+	padding-top: 2px;
+}
+.user1{
+	background: transparent url(../images/skin/user1.png) 5px 50% no-repeat;
+    padding-left: 28px;
+	padding-top: 2px;
 }
