@@ -8,13 +8,13 @@
 		<div class='message'>${flash.message}</div>
 	</g:if>
 	<g:each in="${lastContent}" status="i" var="content">
-		<h2>${content?.title}</h2>
-		<h5>Created ${fieldValue(bean:content, field:'created')} by ${content?.user?.username}</h5>
+		<h2><g:link action="show" controller="content" id="${content.id}">${content?.title}</g:link></h2>
+		<h5><div class="date1">Created ${fieldValue(bean:content, field:'created')} by ${content?.user?.username}</div></h5>
 		<h4><div class="tag">Tags: ${content?.tags}</div></h4>
 		<div class="textBody">
 			${content?.textBody}
 		</div>
-		<h5>Last update: ${fieldValue(bean:content, field:'lastUpdated')}</h5>
+		<h6><div class="comments1">${content?.comments?.size()} Comments</div></h6>
 		</br>
 	</g:each>
 	<!--
