@@ -12,13 +12,16 @@ h2, p, form, label, input, textarea, img, span{
 
 h4 {
     color: #FF6633;
-    font-size: 9px;
+    font-size: 10px;
+	padding:3 0 0 0px;
 }
 
 h5 {
     color: #999999;
 	font-style: italic;
-    font-size: 8px;
+    font-size: 9px;
+	padding:0 0 0 0px;
+	margin:0px 0 0px 0;
 }
 
 ul{
@@ -99,7 +102,7 @@ ul{
 	height:42px;
 	position:absolute;
 	left:11px;
-	top:35px;
+	top:45px;
 	text-indent:-10000px;
 }
 #header img.icon{
