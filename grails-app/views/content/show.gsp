@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<meta name="layout" content="main" />
-	<title>Show Content</title>
+	<title>${fieldValue(bean:contentInstance, field:'title')}</title>
 </head>
 <body>
 	<div class="body">
