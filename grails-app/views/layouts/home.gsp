@@ -54,8 +54,7 @@
 				<p class="pic3"></p>
 				<p class="boxTxt3">
 					<span>Temas Activos</span>
-					<b>Phasellus dapibus odio eu</b>,ipsum ac turpis. Integer ac libero eu orci pharetra eges
-				</p>
+					<b>Phasellus dapibus odio eu</b>,ipsum ac turpis. Integer ac libero eu orci pharetra eges</p>
 				<!--left3 end -->
 				<br class="spacer" />
 			</div>
