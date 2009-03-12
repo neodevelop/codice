@@ -312,6 +312,29 @@ th.desc a {
     padding-left: 28px;
 	padding-top: 4px;
 }
+
+.dateStyle3 {
+    color: #999999;
+	font-style: italic;
+	font-weight: bold;
+    font-size: 9px;
+	padding:0 0 0 20px;
+	margin:0px 0 0px 0;
+}
+
+.date3{
+	background: transparent url(../images/skin/date3.png) 5px 50% no-repeat;
+    padding-left: 28px;
+	padding-top: 4px;
+}
+
+.comments {
+    color: #6699FF;
+    font-size: 10px;
+	font-weight:bold;
+	padding:0 0 0 20px;
+}
+
 .comments1{
 	background: transparent url(../images/skin/comment1.png) 5px 50% no-repeat;
     padding-left: 28px;
