@@ -6,8 +6,12 @@ body{
 	background-color:#EFEFDF;
 	color:#000;
 }
-h2, p, form, label, input, textarea, img, span{
+h2, form, label, input, textarea, img, span{
 	margin:0; padding:0;
+}
+
+p {
+	padding:0 20 0 0;
 }
 
 h4 {
@@ -255,8 +259,8 @@ ul{
 }
 #left3 p.boxTxt3{
 	float:right;
-	padding:0 0 0 15px;
-	border-left:#F9F9F1 solid 2px;
+	padding:0 0 0 0px;
+	/*border-left:#F9F9F1 solid 2px;*/
 	font:normal 11px/16px "Trebuchet MS", Arial, Helvetica, sans-serif;
 	width:199px;
 }
