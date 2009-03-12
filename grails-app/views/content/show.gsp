@@ -16,7 +16,9 @@
 			<div class="dateStyle1">
 				<div class="date1">Created ${fieldValue(bean:contentInstance, field:'created')} by ${contentInstance?.user?.username}</div>
 			</div>
-			<h4><div class="tag">Tags: ${contentInstance?.tags}</div></h4>
+			<div class="tags">
+				<div class="tag">Tags: ${contentInstance?.tags}</div>
+			</div>
 			<div class="textBody">
 				${contentInstance?.textBody}
 			</div>
