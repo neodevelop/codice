@@ -43,9 +43,9 @@ class BootStrap {
 				println "Creating first post"
 				def content = new Content(user:user,title:'Now, You can post content...',allowComments:true,publish:true,showInMainPage:true,contentType:'content')
 				content.textBody = """
-					The CMS is up and running, now you can post new contents and that will be 
+					<p>The <b>CMS</b> is up and running, now you can post new contents and that will be 
 					showed here in the main page, you can put tags to your new content and edit them
-					when you want, remember that we have content only...Thks for use Codice :D
+					when you want, remember that we have content only...Thks for use Codice :D</p>
 				"""
 				cms.addToContents(content)
 				content.save(flush:true)
@@ -59,9 +59,9 @@ class BootStrap {
 				println "Creating second post"
 				def content2 = new Content(user:user,title:'Welcome to Codice!!!',allowComments:true,publish:true,showInMainPage:true,contentType:'content')
 				content2.textBody = """
-					Codice is a Content Management System, is made in grails and you can use it
-					to generate your own contents, in a future this CMS will support Blogs, Timeline,
-					Forums and more...
+					<p>Codice is a Content Management System, is made in grails and you can use it
+					to generate your own contents, in a future this CMS will support <b>Blogs, Timeline,
+					Forums and more...</b></p>
 				"""
 				
 				cms.addToContents(content2)
