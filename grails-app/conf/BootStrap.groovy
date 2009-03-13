@@ -47,6 +47,13 @@ class BootStrap {
 					<p>The <b>CMS</b> is up and running, now you can post new contents and that will be 
 					showed here in the main page, you can put tags to your new content and edit them
 					when you want, remember that we have content only...Thks for use Codice :D</p>
+					<p>Aenean vel tortor et ipsum pharetra tempus. Aliquam fermentum mi sit amet risus. 
+					Aenean neque odio, dictum eu, varius in, ultrices eget, orci. Mauris porttitor mauris a felis. 
+					Nam pulvinar tristique turpis. Morbi feugiat mi id mauris cursus feugiat. Sed non elit. Vivamus 
+					mollis urna vel metus. Quisque feugiat. Donec facilisis dapibus massa. Nam dictum velit nec metus 
+					luctus rutrum. Nullam varius pharetra massa. Pellentesque pellentesque, lacus sed varius vulputate, 
+					odio sapien suscipit libero, fermentum tempus dui purus sit amet sapien. Duis luctus risus egestas nibh.
+					 Morbi vel risus. Vestibulum dui. Praesent vitae turpis nec sapien aliquam ultricies. </p>
 				"""
 				cms.addToContents(content)
 				content.save(flush:true)
