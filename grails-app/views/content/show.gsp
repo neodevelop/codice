@@ -28,6 +28,10 @@
 				<div class="date2">Last update ${fieldValue(bean:contentInstance, field:'lastUpdated')}</div>
 			</div>
 		</div>
+		<br/>
+		<div class="comments">
+			<div class="comments1">Add a new comment</div>
+		</div>
 		<!--
 		<div class="buttons">
 			<g:form>
