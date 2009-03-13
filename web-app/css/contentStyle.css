@@ -465,7 +465,16 @@ ul{
 	background-position: 0 20px;
 	padding:30 5 5 35px;
 }
-
+.commentType2{
+	background:url(../images/commentGreen.jpg) no-repeat;
+	background-position: 0 20px;
+	padding:30 5 5 35px;
+}
+.commentType2{
+	background:url(../images/commentYellow.jpg) no-repeat;
+	background-position: 0 20px;
+	padding:30 5 5 35px;
+}
 .dateComment{
 	background: transparent url(../images/skin/date4.png) 5px 50% no-repeat;
     padding-left: 28px;
