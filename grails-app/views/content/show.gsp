@@ -1,4 +1,5 @@
 <%@ page import="com.synergyj.codice.content.Content" %>
+<%@ page import="com.synergyj.codice.content.Comment" %>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -32,6 +33,10 @@
 		<div class="comments">
 			<div class="comments1">Add a new comment</div>
 		</div>
+		<g:each var="comment" in="${contentInstance?.comments}">
+			Commented in ${comment.creationDate} by ${comment.author}<br/>
+			${comment.body}
+		</g:each>
 		<!--
 		<div class="buttons">
 			<g:form>
