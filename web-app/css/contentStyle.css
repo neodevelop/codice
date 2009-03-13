@@ -456,6 +456,26 @@ ul{
 	background:url(../images/header_content.jpg) 0 0 no-repeat;
 }
 
+.commentsShowed{
+	padding:10 0 10 20px;
+}
+
+.commentType1{
+	background:url(../images/commentBlue.jpg) no-repeat;
+	background-position: 0 20px;
+	padding:30 10 5 35px;
+}
+
+.dateComment{
+	background: transparent url(../images/skin/date4.png) 5px 50% no-repeat;
+    padding-left: 28px;
+	padding-top: 4px;
+	padding-bottom:5px;
+	color: #333333;
+	font-style: italic;
+	font-weight: bold;
+    font-size: 10px;
+}
 /*------------------------------------------------right--------------------*/
 
 /*------------------------------------------------body--------------------*/
