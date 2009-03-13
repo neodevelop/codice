@@ -4,6 +4,7 @@ import com.synergyj.auth.RequestMap
 import org.grails.plugins.springsecurity.service.AuthenticateService
 import com.synergyj.codice.Cms
 import com.synergyj.codice.content.Content
+import com.synergyj.codice.content.Comment
 
 class BootStrap {
 
@@ -40,7 +41,7 @@ class BootStrap {
 			if(user){
 				def cms = new Cms(name:'grails.org.mx',domain:'http://grails.org.mx',slogan:'Grails en tu idioma',admin:user)
 				cms.save(flush:true)
-				println "Creating first post"
+				//println "Creating first post"
 				def content = new Content(user:user,title:'Now, You can post content...',allowComments:true,publish:true,showInMainPage:true,contentType:'content')
 				content.textBody = """
 					<p>The <b>CMS</b> is up and running, now you can post new contents and that will be 
@@ -52,11 +53,20 @@ class BootStrap {
 				content
 					.addTag("new")
 					.addTag("sample")
-				content.save(flush:true)
-				println content.tags
 				
+				def comment = new Comment(author:'anonymous',body:'<p>Cool application the <b>CMS</b> is starting</p>',mail:'josejuan09830@yahoo.com',notifyResponses:true,content:content)
+				comment.save(flush:true)
+				def comment2 = new Comment(author:'mystic',mail:'josejuan09830@yahoo.com',notifyResponses:true,content:content)
+				comment2.body = """
+				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 
+				the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of 
+				type and scrambled it to make a type specimen book. It has survived not only five centuries, but also 
+				the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s 
+				with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop 
+				publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+				"""
+				comment2.save(flush:true)
 				
-				println "Creating second post"
 				def content2 = new Content(user:user,title:'Welcome to Codice!!!',allowComments:true,publish:true,showInMainPage:true,contentType:'content')
 				content2.textBody = """
 					<p>Codice is a Content Management System, is made in grails and you can use it
@@ -71,9 +81,9 @@ class BootStrap {
 					.addTag("first")
 					.addTag("sample")
 				content2.save(flush:true)
-				println content2.tags
+				//println content2.tags
 				
-				println "Posts created..."
+				//println "Posts created..."
 			}else{
 				println "There's not user to create content.."
 			}
