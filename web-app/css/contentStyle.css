@@ -460,12 +460,12 @@ ul{
 	padding:10 0 10 20px;
 }
 
-.commentType1{
+.commentType0{
 	background:url(../images/commentBlue.jpg) no-repeat;
 	background-position: 0 20px;
 	padding:30 5 5 35px;
 }
-.commentType2{
+.commentType1{
 	background:url(../images/commentGreen.jpg) no-repeat;
 	background-position: 0 20px;
 	padding:30 5 5 35px;
