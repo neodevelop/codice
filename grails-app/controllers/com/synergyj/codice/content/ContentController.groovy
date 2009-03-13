@@ -91,7 +91,7 @@ class ContentController{
 
     def save = { ContentCommand cmd ->
 		if(!cmd.hasErrors()){
-			println "Cmd is correct now the bind..."
+			//println "Cmd is correct now the bind..."
 			def contentInstance = new Content()
 			bindData(contentInstance,cmd.properties)
 			contentInstance.created = new Date()
