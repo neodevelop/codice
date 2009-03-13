@@ -30,13 +30,14 @@
 			</div>
 		</div>
 		<br/>
-		<div class="comments">
+		<div class="commentsActions">
 			<div class="comments1">Add a new comment</div>
 		</div>
 		<g:each var="comment" in="${contentInstance?.comments}">
 			Commented in ${comment.creationDate} by ${comment.author}<br/>
 			${comment.body}
 		</g:each>
+		
 		<!--
 		<div class="buttons">
 			<g:form>
