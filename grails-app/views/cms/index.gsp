@@ -21,7 +21,7 @@
 			${content?.textBody}
 		</div>
 		<div class="comments">
-			<div class="comments1">${content?.comments?.size()} Comments</div>
+			<div class="commentsActions">${content?.comments?.size()} Comments</div>
 		</div>
 		<br/>
 	</g:each>
