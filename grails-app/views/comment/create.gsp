@@ -1,4 +1,5 @@
 
+<%@ page import="com.synergyj.codice.content.CommentCommand" %>
 <%@ page import="com.synergyj.codice.content.Comment" %>
 <html>
     <head>
