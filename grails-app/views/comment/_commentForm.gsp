@@ -32,7 +32,7 @@
                         <label for="content">Content:</label>
                     </td>
                     <td valign="top" class="value ${hasErrors(bean:comment,field:'content','errors')}">
-						<g:textField name="contentId" value="${comment?.content?.id}" />
+						<g:textField name="contentId" value="${comment?.contentId}" />
                     </td>
                 </tr> 
             
