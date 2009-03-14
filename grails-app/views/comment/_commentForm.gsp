@@ -46,15 +46,6 @@
             
                 <tr class="prop">
                     <td valign="top" class="name">
-                        <label for="creationDate">Creation Date:</label>
-                    </td>
-                    <td valign="top" class="value ${hasErrors(bean:commentInstance,field:'creationDate','errors')}">
-                        <g:datePicker name="creationDate" value="${commentInstance?.creationDate}" ></g:datePicker>
-                    </td>
-                </tr> 
-            
-                <tr class="prop">
-                    <td valign="top" class="name">
                         <label for="notifyResponses">Notify Responses:</label>
                     </td>
                     <td valign="top" class="value ${hasErrors(bean:commentInstance,field:'notifyResponses','errors')}">
