@@ -59,7 +59,6 @@
     </div>
     <div class="buttons">
         <span class="button">
-			<g:submitToRemote action="save" class="save" value="Send comment" update="commentErrors" />
 			<input class="save" type="submit" value="Create" />
 		</span>
     </div>
