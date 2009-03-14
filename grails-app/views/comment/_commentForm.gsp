@@ -26,16 +26,9 @@
                         <input type="text" id="mail" name="mail" value="${comment?.mail}"/>
                     </td>
                 </tr> 
-            
-                <tr class="prop">
-                    <td valign="top" class="name">
-                        <label for="content">Content:</label>
-                    </td>
-                    <td valign="top" class="value ${hasErrors(bean:comment,field:'content','errors')}">
-						<g:textField name="contentId" value="${comment?.contentId}" />
-                    </td>
-                </tr> 
-            
+            	
+				<input type="hidden" name="contentId" id="contentId" value="${comment?.contentId}" />
+				
                 <tr class="prop">
                     <td valign="top" class="name">
                         <label for="notifyResponses">Notify Responses:</label>
