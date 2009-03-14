@@ -1,7 +1,7 @@
 <resource:richTextEditor/>
-<g:hasErrors bean="${commentInstance}">
+<g:hasErrors bean="${comment}">
 <div class="errors">
-    <g:renderErrors bean="${commentInstance}" as="list" />
+    <g:renderErrors bean="${comment}" as="list" />
 </div>
 </g:hasErrors>
 <g:form action="save" method="post" >
@@ -13,8 +13,8 @@
                     <td valign="top" class="name">
                         <label for="author">Author:</label>
                     </td>
-                    <td valign="top" class="value ${hasErrors(bean:commentInstance,field:'author','errors')}">
-                        <input type="text" maxlength="128" id="author" name="author" value="${fieldValue(bean:commentInstance,field:'author')}"/>
+                    <td valign="top" class="value ${hasErrors(bean:comment,field:'author','errors')}">
+                        <input type="text" maxlength="128" id="author" name="author" value="${fieldValue(bean:comment,field:'author')}"/>
                     </td>
                 </tr> 
             
@@ -22,8 +22,8 @@
                     <td valign="top" class="name">
                         <label for="mail">Mail:</label>
                     </td>
-                    <td valign="top" class="value ${hasErrors(bean:commentInstance,field:'mail','errors')}">
-                        <input type="text" id="mail" name="mail" value="${fieldValue(bean:commentInstance,field:'mail')}"/>
+                    <td valign="top" class="value ${hasErrors(bean:comment,field:'mail','errors')}">
+                        <input type="text" id="mail" name="mail" value="${fieldValue(bean:comment,field:'mail')}"/>
                     </td>
                 </tr> 
             
@@ -31,8 +31,8 @@
                     <td valign="top" class="name">
                         <label for="content">Content:</label>
                     </td>
-                    <td valign="top" class="value ${hasErrors(bean:commentInstance,field:'content','errors')}">
-                        <g:select optionKey="id" from="${com.synergyj.codice.content.Content.list()}" name="content.id" value="${commentInstance?.content?.id}" ></g:select>
+                    <td valign="top" class="value ${hasErrors(bean:comment,field:'content','errors')}">
+                        <g:select optionKey="id" from="${com.synergyj.codice.content.Content.list()}" name="content.id" value="${comment?.content?.id}" ></g:select>
                     </td>
                 </tr> 
             
@@ -40,8 +40,8 @@
                     <td valign="top" class="name">
                         <label for="notifyResponses">Notify Responses:</label>
                     </td>
-                    <td valign="top" class="value ${hasErrors(bean:commentInstance,field:'notifyResponses','errors')}">
-                        <g:checkBox name="notifyResponses" value="${commentInstance?.notifyResponses}" ></g:checkBox>
+                    <td valign="top" class="value ${hasErrors(bean:comment,field:'notifyResponses','errors')}">
+                        <g:checkBox name="notifyResponses" value="${comment?.notifyResponses}" ></g:checkBox>
                     </td>
                 </tr>
 
@@ -49,8 +49,8 @@
                     <td valign="top" class="name">
                         <label for="body">Body:</label>
                     </td>
-                    <td valign="top" class="value ${hasErrors(bean:commentInstance,field:'body','errors')}">
-						<richui:richTextEditor name="body" value="${commentInstance?.body}" width="300" height="200" />
+                    <td valign="top" class="value ${hasErrors(bean:comment,field:'body','errors')}">
+						<richui:richTextEditor name="body" value="${comment?.body}" width="300" height="200" />
                     </td>
                 </tr>
             
