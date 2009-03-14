@@ -32,7 +32,7 @@
                         <label for="content">Content:</label>
                     </td>
                     <td valign="top" class="value ${hasErrors(bean:comment,field:'content','errors')}">
-                        <g:select optionKey="id" from="${com.synergyj.codice.content.Content.list()}" name="content.id" value="${comment?.content?.id}" ></g:select>
+						<g:textField name="contentId" value="${comment?.content?.id}" />
                     </td>
                 </tr> 
             
