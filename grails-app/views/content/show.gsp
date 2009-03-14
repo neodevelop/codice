@@ -36,6 +36,7 @@
 		
 		<g:render template="/comment/commentList" model="[comments:contentInstance?.comments]" />
 
+		<g:render template="/comment/commentForm" model="[comment:commentInstance]" />
 		<!--
 		<div class="buttons">
 			<g:form>
