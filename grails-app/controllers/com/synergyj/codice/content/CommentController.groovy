@@ -93,14 +93,13 @@ class CommentController {
 			def commentInstance = new Comment()
 			bindData(commentInstance, cmd.properties)
 			commentInstance.content = Content.get(cmd.contentId)
-			if(!commentInstance.hasErrors() && commentInstance.save()) {
-	            flash.message = "Comment ${commentInstance.id} created"
-	            redirect(controller:'content',action:'show',id:cmd.contentId)
-	        } else {
-				[commentInstance:cmd]
-			}
+			commentInstance.save()
+			flash.message = "Comment ${commentInstance.id} created"
+            redirect(controller:'content',action:'show',id:cmd.contentId)
 		}else{
-			redirect(controller:'content',action:'show',id:cmd.contentId,params:[commentInstance:cmd])
+			flash.message = "Errors has ocurred in the comment..."
+			def contentInstance = Content.get( cmd.contentId )
+			render view:"/content/show",model:[ contentInstance : contentInstance, commentInstance:cmd ]
 		}
     }
 }
