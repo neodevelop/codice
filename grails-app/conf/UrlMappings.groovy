@@ -19,6 +19,10 @@ class UrlMappings {
 		"/editContent/$id"(controller:'content',action:'edit')
 		"/saveContent"(controller:'content',action:'save')
 		/***
+		Commment mapping
+		***/
+		"/commentSave"(controller:'comment',action:'save')
+		/***
 		Error mapping
 		***/
 		"500"(view:'/error')
