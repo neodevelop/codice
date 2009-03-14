@@ -1,10 +1,10 @@
 <resource:richTextEditor/>
 <g:hasErrors bean="${comment}">
-<div class="errors">
+<div id="commentErrors" class="errors">
     <g:renderErrors bean="${comment}" as="list" />
 </div>
 </g:hasErrors>
-<g:form action="save" method="post" >
+<g:form controller="comment" action="save" method="post" >
     <div class="dialog">
         <table>
             <tbody>
@@ -14,7 +14,7 @@
                         <label for="author">Author:</label>
                     </td>
                     <td valign="top" class="value ${hasErrors(bean:comment,field:'author','errors')}">
-                        <input type="text" maxlength="128" id="author" name="author" value="${fieldValue(bean:comment,field:'author')}"/>
+                        <input type="text" maxlength="128" id="author" name="author" value="${comment?.author}"/>
                     </td>
                 </tr> 
             
@@ -23,7 +23,7 @@
                         <label for="mail">Mail:</label>
                     </td>
                     <td valign="top" class="value ${hasErrors(bean:comment,field:'mail','errors')}">
-                        <input type="text" id="mail" name="mail" value="${fieldValue(bean:comment,field:'mail')}"/>
+                        <input type="text" id="mail" name="mail" value="${comment?.mail}"/>
                     </td>
                 </tr> 
             
@@ -58,6 +58,9 @@
         </table>
     </div>
     <div class="buttons">
-        <span class="button"><input class="save" type="submit" value="Create" /></span>
+        <span class="button">
+			<g:submitToRemote action="save" class="save" value="Send comment" update="commentErrors" />
+			<input class="save" type="submit" value="Create" />
+		</span>
     </div>
 </g:form>
