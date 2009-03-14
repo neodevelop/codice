@@ -18,14 +18,13 @@ class ContentController{
         [ contentInstanceList: Content.list( params ), contentInstanceTotal: Content.count() ]
     }
 
-    def show = {
+    def show = { 
         def contentInstance = Content.get( params.id )
-
         if(!contentInstance) {
             flash.message = "Content not found with id ${params.id}"
-            redirect(action:list)
+            redirect(controller:'home')
         }
-        else { 
+        else {
 			def commentInstance = new CommentCommand(contentId:contentInstance.id)
 			return [ contentInstance : contentInstance, commentInstance:commentInstance ] 
 		}
