@@ -6,6 +6,8 @@ import com.synergyj.codice.Cms
 
 class ContentController{
     
+	def authenticateService
+
     def index = { redirect(action:list,params:params) }
 
     // the delete, save and update actions only accept POST requests
@@ -53,7 +55,12 @@ class ContentController{
             redirect(action:list)
         }
         else {
-            return [ contentInstance : contentInstance ]
+			def contentCommand = new ContentCommand()
+			bindData(contentCommand,contentInstance.properties)
+			contentCommand.tagList = contentInstance.tags.join(',')
+			contentCommand.email = contentInstance.user.email
+			contentCommand.author = contentInstance.user.userRealName
+            return [ contentInstance : contentCommand ]
         }
     }
 
@@ -86,6 +93,8 @@ class ContentController{
 
     def create = { 
 		def cmd = new ContentCommand()
+		cmd.author = authenticateService.userDomain().userRealName
+		cmd.email = authenticateService.userDomain().email
 		[contentInstance:cmd]
     }
 
