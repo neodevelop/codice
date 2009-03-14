@@ -16,6 +16,7 @@ class UrlMappings {
 		***/
 		"/createContent"(controller:'content',action:'create')
 		"/showContent/$id"(controller:'content',action:'show')
+		"/editContent/$id"(controller:'content',action:'edit')
 		/***
 		Error mapping
 		***/
