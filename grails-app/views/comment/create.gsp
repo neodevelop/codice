@@ -19,7 +19,7 @@
             <div class="message">${flash.message}</div>
             </g:if>
             
-			<g:render template="/comment/commentForm" />
+			<g:render template="/comment/commentForm" model="[comment:commentInstance]" />
 
         </div>
     </body>
