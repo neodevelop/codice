@@ -33,19 +33,9 @@
 		<div class="commentsActions">
 			<div class="comments1">Add a new comment</div>
 		</div>
-		<div class="commentsShowed">
-			<table>
-				<g:each var="comment" in="${contentInstance?.comments}" status="i">
-				<tr width="40">
-					<td width="40"><img src="http://www.ohloh.net/images/anon/anon80.gif" width="40" height="40"></td>
-					<td class="commentType${i%3}">
-						<div class="dateComment">Commented in ${comment.creationDate} by ${comment.author}</div>
-						${comment.body}
-					</td>
-				</tr>
-				</g:each>
-			</table>
-		</div>
+		
+		<g:render template="/comment/commentList" model="[comments:contentInstance?.comments]" />
+
 		<!--
 		<div class="buttons">
 			<g:form>
