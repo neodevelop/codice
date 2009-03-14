@@ -1,3 +1,4 @@
+<resource:richTextEditor/>
 <g:hasErrors bean="${commentInstance}">
 <div class="errors">
     <g:renderErrors bean="${commentInstance}" as="list" />
@@ -14,15 +15,6 @@
                     </td>
                     <td valign="top" class="value ${hasErrors(bean:commentInstance,field:'author','errors')}">
                         <input type="text" maxlength="128" id="author" name="author" value="${fieldValue(bean:commentInstance,field:'author')}"/>
-                    </td>
-                </tr> 
-            
-                <tr class="prop">
-                    <td valign="top" class="name">
-                        <label for="body">Body:</label>
-                    </td>
-                    <td valign="top" class="value ${hasErrors(bean:commentInstance,field:'body','errors')}">
-                        <textarea rows="5" cols="40" name="body">${fieldValue(bean:commentInstance, field:'body')}</textarea>
                     </td>
                 </tr> 
             
@@ -51,7 +43,16 @@
                     <td valign="top" class="value ${hasErrors(bean:commentInstance,field:'notifyResponses','errors')}">
                         <g:checkBox name="notifyResponses" value="${commentInstance?.notifyResponses}" ></g:checkBox>
                     </td>
-                </tr> 
+                </tr>
+
+				<tr class="prop">
+                    <td valign="top" class="name">
+                        <label for="body">Body:</label>
+                    </td>
+                    <td valign="top" class="value ${hasErrors(bean:commentInstance,field:'body','errors')}">
+						<richui:richTextEditor name="body" value="${commentInstance?.body}" width="300" height="200" />
+                    </td>
+                </tr>
             
             </tbody>
         </table>
