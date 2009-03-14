@@ -60,8 +60,8 @@
 			<label for="user">Author:</label>
 		</div>
 		<div class="value ${hasErrors(bean:contentInstance,field:'email','errors')}">
-			<g:loggedInUserInfo field="username"/> - <g:loggedInUserInfo field="email"/>
-			<input type="hidden" name="email" id="email" value="<g:loggedInUserInfo field='email'/>">
+			${contentInstance?.author}
+			<input type="hidden" name="email" id="email" value="${contentInstance?.email}">
 		</div>
 	</div>
 </div>
