@@ -1,6 +1,6 @@
-
-
 package com.synergyj.codice.content
+
+import com.synergyj.codice.content.Content
 
 class CommentController {
     
@@ -88,14 +88,19 @@ class CommentController {
         return ['commentInstance':commentInstance]
     }
 
-    def save = {
-        def commentInstance = new Comment(params)
-        if(!commentInstance.hasErrors() && commentInstance.save()) {
-            flash.message = "Comment ${commentInstance.id} created"
-            redirect(action:show,id:commentInstance.id)
-        }
-        else {
-            render(view:'create',model:[commentInstance:commentInstance])
-        }
+    def save = { CommentCommand cmd ->
+		if(!cmd.hasErrors()){
+			def commentInstance = new Comment()
+			bindData(commentInstance, cmd.properties)
+			commentInstance.content = Content.get(cmd.contentId)
+			if(!commentInstance.hasErrors() && commentInstance.save()) {
+	            flash.message = "Comment ${commentInstance.id} created"
+	            redirect(controller:'content',action:'show',id:cmd.contentId)
+	        } else {
+				[commentInstance:cmd]
+			}
+		}else{
+			redirect(controller:'content',action:'show',id:cmd.contentId,params:[commentInstance:cmd])
+		}
     }
 }
