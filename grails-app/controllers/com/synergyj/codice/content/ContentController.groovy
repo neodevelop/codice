@@ -25,7 +25,10 @@ class ContentController{
             flash.message = "Content not found with id ${params.id}"
             redirect(action:list)
         }
-        else { return [ contentInstance : contentInstance, commentInstance:new CommentCommand() ] }
+        else { 
+			def commentInstance = new CommentCommand(contentId:contentInstance.id)
+			return [ contentInstance : contentInstance, commentInstance:commentInstance ] 
+		}
     }
 
     def delete = {
