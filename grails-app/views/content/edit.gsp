@@ -7,11 +7,6 @@
         <title>Edit Content</title>
     </head>
     <body>
-        <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-            <span class="menuButton"><g:link class="list" action="list">Content List</g:link></span>
-            <span class="menuButton"><g:link class="create" action="create">New Content</g:link></span>
-        </div>
         <div class="body">
             <h1>Edit Content</h1>
             <g:if test="${flash.message}">
@@ -22,127 +17,9 @@
                 <g:renderErrors bean="${contentInstance}" as="list" />
             </div>
             </g:hasErrors>
-            <g:form method="post" >
-                <input type="hidden" name="id" value="${contentInstance?.id}" />
-                <input type="hidden" name="version" value="${contentInstance?.version}" />
-                <div class="dialog">
-                    <table>
-                        <tbody>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="title">Title:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'title','errors')}">
-                                    <input type="text" maxlength="128" id="title" name="title" value="${fieldValue(bean:contentInstance,field:'title')}"/>
-                                </td>
-                            </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="body">Body:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'textBody','errors')}">
-                                    <textarea rows="5" cols="40" name="body">${fieldValue(bean:contentInstance, field:'textBody')}</textarea>
-                                </td>
-                            </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="allowComments">Allow Comments:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'allowComments','errors')}">
-                                    <g:checkBox name="allowComments" value="${contentInstance?.allowComments}" ></g:checkBox>
-                                </td>
-                            </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="cms">Cms:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'cms','errors')}">
-                                    <g:select optionKey="id" from="${com.synergyj.codice.Cms.list()}" name="cms.id" value="${contentInstance?.cms?.id}" ></g:select>
-                                </td>
-                            </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="comments">Comments:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'comments','errors')}">
-                                    
-<ul>
-<g:each var="c" in="${contentInstance?.comments?}">
-    <li><g:link controller="comment" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></li>
-</g:each>
-</ul>
-<g:link controller="comment" params="['content.id':contentInstance?.id]" action="create">Add Comment</g:link>
 
-                                </td>
-                            </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="contentType">Content Type:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'contentType','errors')}">
-                                    <input type="text" id="contentType" name="contentType" value="${fieldValue(bean:contentInstance,field:'contentType')}"/>
-                                </td>
-                            </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="created">Created:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'created','errors')}">
-                                    <g:datePicker name="created" value="${contentInstance?.created}" ></g:datePicker>
-                                </td>
-                            </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="lastUpdated">Last Updated:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'lastUpdated','errors')}">
-                                    <g:datePicker name="lastUpdated" value="${contentInstance?.lastUpdated}" ></g:datePicker>
-                                </td>
-                            </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="publish">Publish:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'publish','errors')}">
-                                    <g:checkBox name="publish" value="${contentInstance?.publish}" ></g:checkBox>
-                                </td>
-                            </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="showInMainPage">Show In Main Page:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'showInMainPage','errors')}">
-                                    <g:checkBox name="showInMainPage" value="${contentInstance?.showInMainPage}" ></g:checkBox>
-                                </td>
-                            </tr> 
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="user">User:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:contentInstance,field:'user','errors')}">
-                                    <g:select optionKey="id" from="${com.synergyj.auth.User.list()}" name="user.id" value="${contentInstance?.user?.id}" ></g:select>
-                                </td>
-                            </tr> 
-                        
-                        </tbody>
-                    </table>
-                </div>
-                <div class="buttons">
-                    <span class="button"><g:actionSubmit class="save" value="Update" /></span>
-                    <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" value="Delete" /></span>
-                </div>
-            </g:form>
+            <g:render template="/content/contentForm" />
+
         </div>
     </body>
 </html>
