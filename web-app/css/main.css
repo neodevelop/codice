@@ -269,6 +269,10 @@ th.desc a {
     background: transparent url(../images/skin/database_save.png) 5px 50% no-repeat;
     padding-left: 28px;
 }
+.buttons input.addComment {
+    background: transparent url(../images/skin/comment2.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
 
 /* ICONS */
 .tags{
@@ -338,11 +342,6 @@ th.desc a {
 
 .comments1{
 	background: transparent url(../images/skin/comment1.png) 5px 50% no-repeat;
-    padding-left: 28px;
-	padding-top: 2px;
-}
-.comments2{
-	background: transparent url(../images/skin/comment2.png) 5px 50% no-repeat;
     padding-left: 28px;
 	padding-top: 2px;
 }
