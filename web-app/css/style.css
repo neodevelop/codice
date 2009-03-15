@@ -152,7 +152,7 @@ ul{
 }
 #header a.readMore{
 	display:block;
-	background:url(../images/read_more.gif) 0 0 no-repeat;
+	/*background:url(../images/read_more.gif) 0 0 no-repeat;*/
 	width:50px;
 	height:38px;
 	position:absolute;
@@ -160,7 +160,7 @@ ul{
 	top:203px;
 }
 #header a.readMore:hover{
-	background:url(../images/read_more_hover.gif) 0 0 no-repeat;
+	/*background:url(../images/read_more_hover.gif) 0 0 no-repeat;*/
 }
 /*------------------------------------------------header--------------------*/
 
