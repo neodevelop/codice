@@ -485,6 +485,29 @@ ul{
 	font-weight: bold;
     font-size: 10px;
 }
+.commentForm{
+	width:350px;
+	border:solid 2px #B9B99D;
+	background:#EFEFDF;
+	
+	background: url(../images/comment_fill.jpg) 0 0 repeat-x;
+	margin:0 0 0 20px;
+	padding:10 10 10 10px;
+	-moz-border-radius:0 20 20 20px; 
+	-webkit-border-radius:0 20 20 20px; 
+	-ms-border-radius:0 20 20 20px; 
+	border-radius: 0 20 20 20px; 
+	-khtml-border-radius: 0 20 20 20px;
+	display:block;
+}
+
+.commentForm h1{
+	font-size:14px;
+	font-weight:bold;
+	margin-bottom:8px;
+	color:#8C8D79;
+	text-align: center;
+}
 /*------------------------------------------------right--------------------*/
 
 /*------------------------------------------------body--------------------*/
