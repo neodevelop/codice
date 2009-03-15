@@ -341,6 +341,11 @@ th.desc a {
     padding-left: 28px;
 	padding-top: 2px;
 }
+.comments2{
+	background: transparent url(../images/skin/comment2.png) 5px 50% no-repeat;
+    padding-left: 28px;
+	padding-top: 2px;
+}
 .user1{
 	background: transparent url(../images/skin/user1.png) 5px 50% no-repeat;
     padding-left: 28px;
