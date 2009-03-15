@@ -12,19 +12,20 @@
 	<!--menu authorities-->
 	<div id="header">
 		<ul>
-			<li><a href="#" class="hover">Home</a></li>
-			<li><a href="#">About Us</a></li>
-			<li><a href="#">News</a></li>
-			<li><a href="#">Testimonials</a></li>
-			<li class="last"><a href="#">Contact Us</a></li>
+			<li><a href="${createLinkTo(dir:'')}" class="hover">Home</a></li>
+			<li><a href="#">¿como participar?</a></li>
+			<li><a href="#">¿quienes somos?</a></li>
+			<li class="last"><a href="http://groups.google.com.mx/group/grailsencastellano">Grupo en Google</a></li>
 		</ul>
 
 		<a href="${createLinkTo(dir:'')}">
 			<img src="${createLinkTo(dir:'images',file:'logo_mini.gif')}"  class="logo" border="0" />
 		</a>
 
-		<h1>grails.org.mx</h1>
-
+		<a href="${createLinkTo(dir:'')}">
+			<h1>grails.org.mx</h1>
+		</a>
+		
 	</div>
 	<!--header end -->
 	<!--body start -->
@@ -156,15 +157,10 @@
 	<!--footer start -->
 	<div id="footer">
 		<ul>
-			<li><a href="#">Home</a>|</li>
-			<li><a href="#">About Us</a>|</li>
-			<li><a href="#">Services</a>|</li>
-			<li><a href="#">Support</a>|</li>
-			<li><a href="#">Communication</a>|</li>
-			<li><a href="#">Why Choose Us</a>|</li>
-			<li><a href="#">News</a>|</li>
-			<li><a href="#">Testimonials</a>|</li>
-			<li><a href="#">Contact Us</a></li>
+			<li><a href="${createLinkTo(dir:'')}" class="hover">Home</a>|</li>
+			<li><a href="#">¿como participar?</a>|</li>
+			<li><a href="#">¿quienes somos?</a>|</li>
+			<li><a href="http://groups.google.com.mx/group/grailsencastellano">Grupo en Google</a></li>
 		</ul>
 		<p class="copyright">&copy;Jet 30. All rights reserved.</p>
 		<a href="#" class="subscribe">Subscribe</a>
