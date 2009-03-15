@@ -424,13 +424,12 @@ ul{
 
 #right ul{
 	padding:0;
-	margin:0;
 	display:block;
 }
 
 #right ul li{
 	display:block;
-	height:20px;
+	/*height:20px;*/
 }
 
 #right ul li a{
