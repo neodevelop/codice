@@ -15,7 +15,7 @@
 			<div class="name">
 				<b>Author:</b>
 			</div>
-			<div class="value ${hasErrors(bean:contentInstance,field:'title','errors')}">
+			<div class="value ${hasErrors(bean:comment,field:'author','errors')}">
 				<input type="text" maxlength="128" id="author" name="author" value="${comment?.author}" size="40"/>
 			</div>
 		</div>
@@ -24,7 +24,7 @@
 			<div class="name">
 				<b>Mail:</b>
 			</div>
-			<div class="value ${hasErrors(bean:contentInstance,field:'title','errors')}">
+			<div class="value ${hasErrors(bean:comment,field:'mail','errors')}">
 				<input type="text" id="mail" name="mail" value="${comment?.mail}" size="40"/>
 			</div>
 		</div>
@@ -35,7 +35,7 @@
 			<div class="name">
 				<b>Body:</b>
 			</div>
-			<div class="value ${hasErrors(bean:contentInstance,field:'title','errors')}">
+			<div class="value ${hasErrors(bean:comment,field:'body','errors')}">
 				<richui:richTextEditor name="body" value="${comment?.body}" width="300" height="200" />
 			</div>
 		</div>
@@ -44,7 +44,7 @@
 			<div class="name">
 				<b>Notify Responses:</b>
 			</div>
-			<div class="value ${hasErrors(bean:contentInstance,field:'title','errors')}">
+			<div class="value ${hasErrors(bean:comment,field:'notifyResponses','errors')}">
 				<g:checkBox name="notifyResponses" value="${comment?.notifyResponses}" ></g:checkBox>
 			</div>
 		</div>
