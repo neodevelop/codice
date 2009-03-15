@@ -16,7 +16,13 @@
 				<b>Author:</b>
 			</div>
 			<div class="value ${hasErrors(bean:comment,field:'author','errors')}">
-				<input type="text" maxlength="128" id="author" name="author" value="${comment?.author}" size="40"/>
+				<g:isLoggedIn>
+					<g:loggedInUserInfo field="userRealName"/>
+					<input type="hidden" name="author" id="author" value="<g:loggedInUserInfo field='userRealName'/>" />
+				</g:isLoggedIn>
+				<g:isNotLoggedIn>
+					<input type="text" maxlength="128" id="author" name="author" value="${comment?.author}" size="40"/>
+				</g:isNotLoggedIn>
 			</div>
 		</div>
 
@@ -25,7 +31,13 @@
 				<b>Mail:</b>
 			</div>
 			<div class="value ${hasErrors(bean:comment,field:'mail','errors')}">
-				<input type="text" id="mail" name="mail" value="${comment?.mail}" size="40"/>
+				<g:isLoggedIn>
+					<g:loggedInUserInfo field="email"/>
+					<input type="hidden" name="mail" id="mail" value="<g:loggedInUserInfo field='email'/>" />
+				</g:isLoggedIn>
+				<g:isNotLoggedIn>
+					<input type="text" id="mail" name="mail" value="${comment?.mail}" size="40"/>
+				</g:isNotLoggedIn>
 			</div>
 		</div>
 
