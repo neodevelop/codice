@@ -52,7 +52,7 @@
 	</div>
 	
 	<div class="buttons">
-		<span class="button"><input type="submit" value="Create" class="save"/></span>
+		<span class="button"><input type="submit" value="Send comment" class="save"/></span>
 	</div>
 
 </g:form>
