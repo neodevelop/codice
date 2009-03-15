@@ -33,10 +33,10 @@
 
 		<div class="prop">
 			<div class="name">
-				<b>Body:</b>
+				<b>Your comment:</b>
 			</div>
-			<div class="value ${hasErrors(bean:comment,field:'body','errors')}">
-				<richui:richTextEditor name="body" value="${comment?.body}" width="300" height="200" />
+			<div class="value ${hasErrors(bean:comment,field:'textComment','errors')}">
+				<richui:richTextEditor name="textComment" value="${comment?.textComment}" width="300" height="200" />
 			</div>
 		</div>
 		
