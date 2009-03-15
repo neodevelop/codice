@@ -64,7 +64,7 @@ class BootStrap {
 				def comment = new Comment(author:'anonymous',body:'<p>Cool application the <b>CMS</b> is starting</p>',mail:'josejuan09830@yahoo.com',notifyResponses:true,content:content)
 				comment.save(flush:true)
 				def comment2 = new Comment(author:'mystic',mail:'josejuan09830@yahoo.com',notifyResponses:true,content:content)
-				comment2.body = """
+				comment2.textComment = """
 				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 
 				the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of 
 				type and scrambled it to make a type specimen book. It has survived not only five centuries, but also 
