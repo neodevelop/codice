@@ -10,7 +10,7 @@
 	<g:each in="${lastContent}" status="i" var="content">
 		<h2><g:link action="show" controller="content" id="${content.id}">${content?.title}</g:link></h2>
 		<div class="dateStyle3">
-			<div class="date3">Created ${fieldValue(bean:content, field:'created')} by ${content?.user?.username}</div>
+			<div class="date3">Created <g:dateFormat format="dd-MM-yyyy hh:mm a" date="${content?.created}" /> by ${content?.user?.username}</div>
 		</div>
 		<div class="tags">
 			<g:each in="${content?.tags}" var="tag">
