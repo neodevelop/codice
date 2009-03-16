@@ -11,9 +11,9 @@ class ContentCommand{
 	String email
 	String title
 	String textBody
-	Boolean allowComments
-	Boolean publish
-	Boolean showInMainPage
+	Boolean allowComments = true
+	Boolean publish = true
+	Boolean showInMainPage = true
 	String tagList
 	
 	static constraints = {
