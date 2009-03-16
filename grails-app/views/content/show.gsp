@@ -15,7 +15,7 @@
 		<h1>${fieldValue(bean:contentInstance, field:'title')}</h1>
 		<div class="content">
 			<div class="dateStyle1">
-				<div class="date1">Created ${fieldValue(bean:contentInstance, field:'created')} by ${contentInstance?.user?.username}</div>
+				<div class="date1">Created <g:dateFormat format="dd-MM-yyyy hh:mm a" date="${contentInstance?.created}" /> by ${contentInstance?.user?.username}</div>
 			</div>
 			<div class="tags">
 				<g:each in="${contentInstance?.tags}" var="tag">
@@ -26,7 +26,7 @@
 				${contentInstance?.textBody}
 			</div>
 			<div class="dateStyle2">
-				<div class="date2">Last update ${fieldValue(bean:contentInstance, field:'lastUpdated')}</div>
+				<div class="date2">Last update <g:dateFormat format="dd-MM-yyyy hh:mm a" date="${contentInstance?.lastUpdated}" /></div>
 			</div>
 		</div>
 		<br/>
