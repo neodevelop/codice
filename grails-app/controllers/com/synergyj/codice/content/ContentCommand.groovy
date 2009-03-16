@@ -7,6 +7,7 @@ import com.synergyj.codice.Cms
 
 class ContentCommand{
 	
+	Long id
 	String author
 	String email
 	String title
