@@ -12,9 +12,9 @@ class Content implements Taggable{
 	String textBody
 	Date created = new Date()
 	Date lastUpdated =  new Date()
-	Boolean allowComments = true
-	Boolean publish = true
-	Boolean showInMainPage = true
+	Boolean allowComments
+	Boolean publish
+	Boolean showInMainPage
 	String contentType
 	
 	static hasMany = [comments:Comment]
