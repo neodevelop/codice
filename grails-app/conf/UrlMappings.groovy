@@ -15,7 +15,7 @@ class UrlMappings {
 		/***
 		Content mapping
 		***/
-		"/createContent"(controller:'content',action:'create')
+		"/createContent/$contentType?"(controller:'content',action:'create')
 		"/showContent/$id"(controller:'content',action:'show')
 		"/editContent/$id"(controller:'content',action:'edit')
 		"/deleteContent/$id"(controller:'content',action:'delete')
