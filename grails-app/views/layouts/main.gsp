@@ -174,8 +174,9 @@
 					<center>·!¦[·<g:loggedInUserInfo field="username"/>·]¦!·</center>
 					<div class="mail"><g:loggedInUserInfo field="email"/></div>
 					<div class="date1">
-						<b>Last login:</b>
-						${loggedInUserInfo(field:'lastLogin').class}
+						<b>Last login:</b><br/>
+						<g:set var="lastLogin" value="${loggedInUserInfo(field:'lastLogin')}" />
+						<g:dateFormat format="dd-MM-yyyy hh:mm a" date="${new java.text.SimpleDateFormat('yyyy-MM-dd H:m:s.S').parse(lastLogin)}" />
 					</div>
 				</div>
 				<g:link controller="logout">Logout</g:link>
