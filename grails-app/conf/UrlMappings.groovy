@@ -11,6 +11,7 @@ class UrlMappings {
 		"/"(controller:'cms',action:'index')
 		"/home"(controller:'cms',action:'index')
 		"/register"(controller:'register',action:'index')
+		"/logout"(controller:'logout',action:'index')
 		/***
 		Content mapping
 		***/
