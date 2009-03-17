@@ -58,7 +58,7 @@
 			</ul>
 		</div>
 		</g:isNotLoggedIn>
-		<br/>
+		<!-- This will not showed until 0.2 or 0.3 version :P
 		<div id="left3" class="left3">
 			<h2>.: Search :.</h2>
 			<ul>
@@ -67,14 +67,15 @@
 				<li><a href="#">» Search</a></li>
 			</ul>
 		</div>
+		-->
 		<br/>
 		<div id="left4" class="left4">
 			<h2>.: Resources :.</h2>
 			<ul>
-				<li><a href="#">» Download</a></li>
-				<li><a href="#">» Install</a></li>
-				<li><a href="#">» Documentation</a></li>
-				<li><a href="#">» Podcast</a></li>
+				<li><a href="http://grails.org/Download">» Download</a></li>
+				<li><a href="http://grails.org/Installation">» Install</a></li>
+				<li><a href="http://grails.org/Documentation">» Documentation</a></li>
+				<li><a href="http://podcast.springhispano.org/grails.xml">» Podcast</a></li>
 			</ul>
 		</div>
 		</div>
