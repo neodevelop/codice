@@ -1,6 +1,7 @@
 <resource:richTextEditor type="full" />
 <g:form action="save" method="post" >
 <input type="hidden" name="id" value="${contentInstance?.id}" />
+<input type="hidden" name="contentType" value="${contentInstance?.contentType}" />
 <div class="dialog">
 	<div class="prop">
 		<div class="name">
