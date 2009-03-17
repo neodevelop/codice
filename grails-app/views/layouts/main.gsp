@@ -48,13 +48,15 @@
 		</div>
 		<br/>
 		</g:ifAnyGranted>
+		<g:isNotLoggedIn>
 		<div id="left2" class="left2">
 			<h2>.: Start :.</h2>
 			<ul>
-				<li><a href="#">» Login</a></li>
+				<li><a href="#member">» Login</a></li>
 				<li><g:link controller="register">» Register</g:link></li>
 			</ul>
 		</div>
+		</g:isNotLoggedIn>
 		<br/>
 		<div id="left3" class="left3">
 			<h2>.: Search :.</h2>
@@ -114,7 +116,7 @@
 		<!--member start -->
 		
 		<g:ifNotGranted role="ROLE_USER">
-		<div id="member">
+		<div id="member" name="member">
 			<h2>Login de Usuario</h2>
 			<form action="/codice/j_spring_security_check" method="post" name="member_log_in" id="member_log_in">
 				<label>Usuario:</label>
