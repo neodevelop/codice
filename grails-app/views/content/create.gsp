@@ -7,7 +7,7 @@
 </head>
 <body>
 	<div class="body">
-		<h1>Create Content</h1>
+		<h1>Create Content - ${contentInstance?.contentType}</h1>
 		<g:if test="${flash.message}">
 		<div class="message">${flash.message}</div>
 	</g:if>
