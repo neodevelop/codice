@@ -350,3 +350,36 @@ th.desc a {
     padding-left: 28px;
 	padding-top: 2px;
 }
+
+.mail{
+	background: transparent url(../images/skin/mail.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+.news{
+	background: transparent url(../images/skin/news.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+.entry{
+	background: transparent url(../images/skin/entry.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+.contents{
+	background: transparent url(../images/skin/database_table.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+.logout{
+	background: transparent url(../images/skin/logout.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+.administer{
+	background: transparent url(../images/skin/administer.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+.loginMenu{
+	background: transparent url(../images/skin/login.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+.register{
+	background: transparent url(../images/skin/register.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
