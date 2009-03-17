@@ -172,7 +172,9 @@
 			<form action="#">
 				<div class="login">
 					<center>·!¦[·<g:loggedInUserInfo field="username"/>·]¦!·</center>
-					<div class="mail"><g:loggedInUserInfo field="email"/></div>
+					<g:if test="${loggedInUserInfo(field:'emailShow')}">
+						<div class="mail"><g:loggedInUserInfo field="email"/></div>
+					</g:if>
 					<div class="date1">
 						<b>Last login:</b><br/>
 						<g:set var="lastLogin" value="${loggedInUserInfo(field:'lastLogin')}" />
