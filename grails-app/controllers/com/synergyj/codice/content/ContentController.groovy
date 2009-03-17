@@ -68,6 +68,11 @@ class ContentController{
 
 	def create = { 
 		def cmd = new ContentCommand()
+		if(params.contentType){
+			cmd.contentType = params.contentType
+		}else{
+			cmd.contentType = "Cms entry"
+		}
 		cmd.author = authenticateService.userDomain().userRealName
 		cmd.email = authenticateService.userDomain().email
 		[contentInstance:cmd]
