@@ -38,8 +38,8 @@
 		<div id="left1" class="left1">
 			<h2>.: <g:loggedInUserInfo field="username"/> :.</h2>
 			<ul>
-				<li><a href="#">» Send news</a></li>
-				<li><a href="#">» Post one entry</a></li>
+				<li><a href="${createLink(controller:'content',action:'create',params:[contentType:'News'])}">» Send news</a></li>
+				<li><a href="${createLink(controller:'content',action:'create',params:[contentType:'Entry'])}">» Post one entry</a></li>
 				<li><a href="#">» View my content</a></li>
 				<g:ifAllGranted role="ROLE_ADMIN">
 				<li><a href="#">» Administer</a></li>
