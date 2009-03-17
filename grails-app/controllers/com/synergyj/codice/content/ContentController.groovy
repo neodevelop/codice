@@ -75,6 +75,7 @@ class ContentController{
 
 	def save = { ContentCommand cmd ->
 		def contentInstance = Content.get(cmd.id)
+		contentInstance.tags = []
 		if(contentInstance){
 			//the content exist we must update
 			bindData(contentInstance,cmd.properties)
