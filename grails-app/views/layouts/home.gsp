@@ -25,7 +25,9 @@
 		<h1>Bienvenido a la comunidad de desarrolladores G/G</h1>
 		<p>herramientas para el desarrollo <span class="txt1">agil</span> de software basado en Java con <span class="txt1">Groovy</span> y <span class="txt1">Grails</span></p>
 		<p class="topText">Nos gusta el desarrollo de software, y por eso compartimos el conocimiento contigo a traves de :<span class="smallTxt">podcast, articulos, screencast, foros</span></p>
-		<a href="/me" class="readMore"><avatar:gravatar email="${loggedInUserInfo(field:'email')}" size="40"/></a>
+		<g:isLoggedIn>
+			<a href="/me" class="readMore"><avatar:gravatar email="${loggedInUserInfo(field:'email')}" size="40"/></a>
+		</g:isLoggedIn>
 	</div>
 	<!--header end -->
 	<!--body start -->
