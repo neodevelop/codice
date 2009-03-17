@@ -38,13 +38,33 @@
 		<div id="left1" class="left1">
 			<h2>.: <g:loggedInUserInfo field="username"/> :.</h2>
 			<ul>
-				<li><a href="${createLink(controller:'content',action:'create',params:[contentType:'News'])}">» Send news</a></li>
-				<li><a href="${createLink(controller:'content',action:'create',params:[contentType:'Entry'])}">» Post one entry</a></li>
-				<li><a href="#">» View my content</a></li>
+				<li>
+					<div class="news">
+						<a href="${createLink(controller:'content',action:'create',params:[contentType:'News'])}">» Send news</a>
+					</div>
+				</li>
+				<li>
+					<div class="entry">
+						<a href="${createLink(controller:'content',action:'create',params:[contentType:'Entry'])}">» Post one entry</a>
+					</div>
+				</li>
+				<li>
+					<div class="contents">
+						<a href="#">» View my content</a>
+					</div>
+				</li>
 				<g:ifAllGranted role="ROLE_ADMIN">
-				<li><a href="#">» Administer</a></li>
+				<li>
+					<div class="administer">
+						<a href="#">» Administer</a>
+					</div>
+				</li>
 				</g:ifAllGranted>
-				<li><g:link controller="logout">» Logout</g:link></li>
+				<li>
+					<div class="logout">
+						<g:link controller="logout">» Logout</g:link>
+					</div>
+				</li>
 			</ul>
 		</div>
 		<br/>
@@ -53,8 +73,16 @@
 		<div id="left2" class="left2">
 			<h2>.: Start :.</h2>
 			<ul>
-				<li><a href="#member">» Login</a></li>
-				<li><g:link controller="register">» Register</g:link></li>
+				<li>
+					<div class="loginMenu">
+						<a href="#member">» Login</a>
+					</div>
+				</li>
+				<li>
+					<div class="register">
+						<g:link controller="register">» Register</g:link>
+					</div>
+				</li>
 			</ul>
 		</div>
 		</g:isNotLoggedIn>
@@ -143,9 +171,9 @@
 			<h2>. : Welcome : .</h2>
 			<form action="#">
 				<div class="login">
-					<g:loggedInUserInfo field="username"/><br/>
-					<g:loggedInUserInfo field="email"/><br/>
-					<g:loggedInUserInfo field="lastLogin"/><br/>
+					<center>·!¦[·<g:loggedInUserInfo field="username"/>·]¦!·</center>
+					<center><g:loggedInUserInfo field="userRealName"/></center>
+					<div class="mail"><g:loggedInUserInfo field="email"/></div>
 				</div>
 				<g:link controller="logout">Logout</g:link>
 				<br class="spacer" />
