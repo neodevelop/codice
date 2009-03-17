@@ -5,7 +5,7 @@
 </div>
 </g:hasErrors>
 
-<div class="commentForm">
+<div class="commentForm" name="commentForm" id="commentForm">
 <g:form controller="comment" action="save" method="post" >
 
 	<div class="dialog">
