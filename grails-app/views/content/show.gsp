@@ -31,7 +31,7 @@
 		</div>
 		<br/>
 		<div class="commentsActions">
-			<div class="comments1">Add a new comment</div>
+			<a href="#commentForm"><div class="comments1">Add a new comment</div></a>
 		</div>
 		
 		<g:render template="/comment/commentList" model="[comments:contentInstance?.comments]" />
