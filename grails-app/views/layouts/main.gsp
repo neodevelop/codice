@@ -36,14 +36,15 @@
 		<div id="menu" class="menu">
 		<g:ifAnyGranted role="ROLE_ADMIN,ROLE_MANAGER,ROLE_USER">
 		<div id="left1" class="left1">
-			<h2>.: Username :.</h2>
+			<h2>.: <g:loggedInUserInfo field="username"/> :.</h2>
 			<ul>
-				<li><a href="#">» My Blog</a></li>
 				<li><a href="#">» Send news</a></li>
 				<li><a href="#">» Post one entry</a></li>
-				<li><a href="#">» Forums</a></li>
+				<li><a href="#">» View my content</a></li>
+				<g:ifAllGranted role="ROLE_ADMIN">
 				<li><a href="#">» Administer</a></li>
-				<li><a href="#">» Close Session</a></li>
+				</g:ifAllGranted>
+				<li><g:link controller="logout">» Logout</g:link></li>
 			</ul>
 		</div>
 		<br/>
