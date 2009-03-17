@@ -56,3 +56,8 @@ log4j = {
 }
 
 //log4j.logger.org.springframework.security='off,stdout'
+
+avatarPlugin {
+	defaultGravatarUrl="""http://yourdomain.com/images/default-gravatar-80.png"""
+	gravatarRating="G"
+}
