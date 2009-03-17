@@ -16,6 +16,7 @@ class ContentCommand{
 	Boolean publish = true
 	Boolean showInMainPage = true
 	String tagList
+	String contentType
 	
 	static constraints = {
 		email nullable:false,blank:false,email:true
