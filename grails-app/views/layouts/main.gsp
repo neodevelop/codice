@@ -177,8 +177,7 @@
 					</g:if>
 					<div class="date1">
 						<b>Last login:</b><br/>
-						<g:set var="lastLogin" value="${loggedInUserInfo(field:'lastLogin')}" />
-						<g:dateFormat format="dd-MM-yyyy hh:mm a" date="${new java.text.SimpleDateFormat('yyyy-MM-dd H:m:s.S').parse(lastLogin)}" />
+						<g:dateFormat format="dd-MM-yyyy hh:mm a" date="${loggedInUserInfo(field:'lastLogin')}" />
 					</div>
 				</div>
 				<g:link controller="logout">Logout</g:link>
