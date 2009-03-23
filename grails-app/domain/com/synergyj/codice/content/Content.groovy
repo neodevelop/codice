@@ -16,6 +16,7 @@ class Content implements Taggable{
 	Boolean publish
 	Boolean showInMainPage
 	String contentType
+	Integer priority
 	
 	static hasMany = [comments:Comment]
 	static belongsTo = [cms:Cms]
@@ -23,5 +24,6 @@ class Content implements Taggable{
 	static constraints = {
 		title nullable:false,size:5..128
 		textBody nullable:false,maxSize:10000
+		priority min:0,max:10
 	}
 }
