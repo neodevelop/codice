@@ -11,8 +11,17 @@
 		<g:if test="${flash.message}">
 			<div class="message">${flash.message}</div>
 		</g:if>
+		
+		<div class="actionBox">
+			<g:isLoggedIn>
+				<g:if test="${(contentInstance.user.email == loggedInUserInfo(field:'email'))}">
+					<span class="edit"><g:link controller="content" action="edit" id="${contentInstance.id}">Edit this content</g:link></span>
+				</g:if>
+			</g:isLoggedIn>
+		</div>
 
 		<h1>${fieldValue(bean:contentInstance, field:'title')}</h1>
+		
 		<div class="content">
 			<div class="dateStyle1">
 				<div class="date1">Created <g:dateFormat format="dd-MM-yyyy hh:mm a" date="${contentInstance?.created}" /> by ${contentInstance?.user?.username}</div>
