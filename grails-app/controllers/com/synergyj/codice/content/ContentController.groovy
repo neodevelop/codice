@@ -79,19 +79,20 @@ class ContentController{
 	}
 
 	def save = { ContentCommand cmd ->
-		def contentInstance = Content.get(cmd.id)		
+		def contentInstance = Content.get(cmd.id)
 		if(contentInstance){
 			contentInstance.tags = []
-			//the content exist we must update
+			println "the content exist we must update"
 			bindData(contentInstance,cmd.properties)
 			contentInstance.lastUpdated = new Date()
 			if(!contentInstance.hasErrors() && contentInstance.save()){
-				//we must check content.optimistic.locking.failure
+				println "we must check content.optimistic.locking.failure"
 				contentInstance.parseTags(cmd.tagList)
 				flash.message = "Your content with the title '${contentInstance.title}' was sucesfully updated"
 				redirect(action:show,id:contentInstance.id)
 			}
 			else{
+				contentInstance.validate()
 				render(view:'edit',model:[contentInstance:cmd])
 			}
 			//the content exist we must update
