@@ -507,6 +507,15 @@ ul{
 	color:#8C8D79;
 	text-align: center;
 }
+
+.actionBox{
+	margin:0 0 0 0px;
+	padding:0 0 0 0px;
+	width:95%;
+	border-style: none;
+	border-width: 0px;
+	text-align: right;
+}
 /*------------------------------------------------right--------------------*/
 
 /*------------------------------------------------body--------------------*/
