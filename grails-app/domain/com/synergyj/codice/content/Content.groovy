@@ -24,6 +24,6 @@ class Content implements Taggable{
 	static constraints = {
 		title nullable:false,size:5..128
 		textBody nullable:false,maxSize:10000
-		priority min:-5,max:5
+		priority range:-5..5
 	}
 }
