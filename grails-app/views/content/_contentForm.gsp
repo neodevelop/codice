@@ -36,9 +36,13 @@
 			<label for="priority">Priority:</label>
 		</div>
 		<div class="value ${hasErrors(bean:contentInstance,field:'priority','errors')}">
-			<g:select name="contentInstance.priority" from="${-5..5}" value="${contentInstance?.priority}"/>
+			<g:select name="priority" from="${-5..5}" value="${contentInstance?.priority}"/>
 		</div>
 	</div>
+	</g:ifAnyGranted>
+	
+	<g:ifAnyGranted role="ROLE_USER">
+		<input type="hidden" name="contentInstance.priority" value="${contentInstance?.priority}" />
 	</g:ifAnyGranted>
 
 	<div class="prop">
