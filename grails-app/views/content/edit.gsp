@@ -8,6 +8,9 @@
     </head>
     <body>
         <div class="body">
+			<div class="actionBox">
+				<span class="show"><g:link controller="content" action="show" id="${contentInstance.id}">Show this content</g:link></span>
+			</div>
             <h1>Edit Content</h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
