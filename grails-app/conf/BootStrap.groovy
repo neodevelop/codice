@@ -22,9 +22,9 @@ class BootStrap {
 			adminRole.save()
 			new Role(authority:'IS_AUTHENTICATED_ANONYMOUSLY',description:'Anonymous user').save()
 			new RequestMap(url:'/**',configAttribute:'IS_AUTHENTICATED_ANONYMOUSLY').save()
-			new RequestMap(url:'/createContent',configAttribute:'ROLE_USER').save()
-			new RequestMap(url:'/editContent',configAttribute:'ROLE_USER').save()
-			new RequestMap(url:'/deleteContent',configAttribute:'ROLE_ADMIN').save()
+			new RequestMap(url:'/createContent/**',configAttribute:'ROLE_USER').save()
+			new RequestMap(url:'/editContent/**',configAttribute:'ROLE_USER').save()
+			new RequestMap(url:'/deleteContent/**',configAttribute:'ROLE_ADMIN').save()
 
 			admin
 				.addToAuthorities(userRole)
