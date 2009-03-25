@@ -32,6 +32,15 @@
 
 	<div class="prop">
 		<div class="name">
+			<label for="priority">Priority:</label>
+		</div>
+		<div class="value ${hasErrors(bean:contentInstance,field:'priority','errors')}">
+			<g:select name="contentInstance.priority" from="${-5..5}" value="${contentInstance?.priority}"/>
+		</div>
+	</div>
+
+	<div class="prop">
+		<div class="name">
 			<label for="allowComments">Allow Comments:</label>
 		</div>
 		<div class="value ${hasErrors(bean:contentInstance,field:'allowComments','errors')}">
