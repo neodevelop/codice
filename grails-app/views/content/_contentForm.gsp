@@ -30,6 +30,7 @@
 		</div>
 	</div>
 
+	<g:ifAnyGranted role="ROLE_ADMIN,ROLE_MANAGER">
 	<div class="prop">
 		<div class="name">
 			<label for="priority">Priority:</label>
@@ -38,6 +39,7 @@
 			<g:select name="contentInstance.priority" from="${-5..5}" value="${contentInstance?.priority}"/>
 		</div>
 	</div>
+	</g:ifAnyGranted>
 
 	<div class="prop">
 		<div class="name">
