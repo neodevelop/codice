@@ -94,7 +94,7 @@ class CommentController {
 			bindData(commentInstance, cmd.properties)
 			commentInstance.content = Content.get(cmd.contentId)
 			commentInstance.save()
-			flash.message = "Comment ${commentInstance.id} created"
+			flash.message = "Your comment has been submited..."
             redirect(controller:'content',action:'show',id:cmd.contentId)
 		}else{
 			flash.message = "Errors has ocurred in the comment..."
