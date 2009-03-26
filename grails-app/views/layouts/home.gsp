@@ -105,8 +105,8 @@
 		<!--services end -->
 		<!--member start -->
 		
-		<g:ifNotGranted role="ROLE_USER">
-		<div id="member">
+		<g:isNotLoggedIn>
+		<div id="member" name="member">
 			<h2>Login de Usuario</h2>
 			<form action="/codice/j_spring_security_check" method="post" name="member_log_in" id="member_log_in">
 				<label>Usuario:</label>
@@ -124,23 +124,28 @@
 			</form>
 			<br class="spacer" />
 		</div>
-		</g:ifNotGranted>
+		</g:isNotLoggedIn>
 		
-		<g:ifAnyGranted role="ROLE_USER">
+		<g:isLoggedIn>
 		<div id="member">
 			<h2>. : Welcome : .</h2>
 			<form action="#">
 				<div class="login">
-					<g:loggedInUserInfo field="username"/><br/>
-					<g:loggedInUserInfo field="email"/><br/>
-					<g:loggedInUserInfo field="lastLogin"/><br/>
+					<center>·!¦[·<g:loggedInUserInfo field="username"/>·]¦!·</center>
+					<g:if test="${loggedInUserInfo(field:'emailShow')}">
+						<div class="mail"><g:loggedInUserInfo field="email"/></div>
+					</g:if>
+					<div class="date1">
+						<b>Last login:</b><br/>
+						<g:dateFormat format="dd-MM-yyyy hh:mm a" date="${loggedInUserInfo(field:'lastLogin')}" />
+					</div>
 				</div>
 				<g:link controller="logout">Logout</g:link>
 				<br class="spacer" />
 			</form>
 			<br class="spacer" />
 		</div>
-		</g:ifAnyGranted>
+		</g:isLoggedIn>
 		
 		<br class="spacer" />
 		<!--member end -->
