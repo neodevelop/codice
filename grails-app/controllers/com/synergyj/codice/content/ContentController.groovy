@@ -21,8 +21,8 @@ class ContentController{
 	def show = { 
 		def contentInstance = Content.get( params.id )
 		if(!contentInstance) {
-			flash.message = "Content not found with id ${params.id}"
-			redirect(controller:'home')
+			flash.message = "Content not found !!!"
+			redirect(controller:'cms')
 		}
 		else {
 			def commentInstance = new CommentCommand(contentId:contentInstance.id)
