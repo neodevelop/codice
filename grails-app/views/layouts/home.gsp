@@ -62,7 +62,7 @@
 				<br class="spacer" />
 			</div>
 			<!--left end -->
-			<br class="spacer" />
+			<br class="spacer" />						
 		</div>
 		<!--left panel end -->
 		<!--right panel start -->

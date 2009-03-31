@@ -50,7 +50,7 @@
 				</li>
 				<li>
 					<div class="contents">
-						<a href="#">» View my content</a>
+						<a href="${createLink(controller:'content',action:'myContent')}">» View my content</a>
 					</div>
 				</li>
 				<g:ifAllGranted role="ROLE_ADMIN">
