@@ -29,6 +29,10 @@ class ContentController{
 			return [ contentInstance : contentInstance, commentInstance:commentInstance ] 
 		}
 	}
+	
+	def myContent = {
+		
+	}
 
 	def delete = {
 		def contentInstance = Content.get( params.id )
