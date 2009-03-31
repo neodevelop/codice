@@ -85,10 +85,10 @@ class ContentController{
 			println "the content exist we must update"
 			bindData(contentInstance,cmd.properties)
 			contentInstance.lastUpdated = new Date()
+			contentInstance.parseTags(cmd.tagList)
 			if(!contentInstance.hasErrors() && contentInstance.save()){
 				println "we must check content.optimistic.locking.failure"
-				contentInstance.parseTags(cmd.tagList)
-				flash.message = "Your content with the title '${contentInstance.title}' was sucesfully updated"
+				flash.message = "The content with the title '${contentInstance.title}' was sucesfully updated"
 				redirect(action:show,id:contentInstance.id)
 			}
 			else{
@@ -106,7 +106,6 @@ class ContentController{
 				contentInstance.created = new Date()
 				contentInstance.lastUpdated = new Date()
 				contentInstance.user = User.findByEmail(cmd.email)
-				contentInstance.contentType = 'Page entry'
 				//Save the entry in the cms, at the moment this is hard code
 				Cms cms = Cms.get(1)
 				contentInstance.cms = cms
