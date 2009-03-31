@@ -39,13 +39,14 @@
 			</div>
 		</div>
 		<br/>
+		
+		<g:if test="${contentInstance.allowComments}">
 		<div class="commentsActions">
 			<a href="#commentForm"><div class="comments1">Add a new comment</div></a>
 		</div>
-		
 		<g:render template="/comment/commentList" model="[comments:contentInstance?.comments]" />
-
 		<g:render template="/comment/commentForm" model="[comment:commentInstance]" />
+		</g:if>
 		<!--
 		<div class="buttons">
 			<g:form>
