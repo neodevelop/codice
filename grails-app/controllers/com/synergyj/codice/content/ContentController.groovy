@@ -31,7 +31,8 @@ class ContentController{
 	}
 	
 	def myContent = {
-		
+		def contentList =  Content.findAllByUser(authenticateService.userDomain())
+		[ contentInstanceList:contentList ]
 	}
 
 	def delete = {
