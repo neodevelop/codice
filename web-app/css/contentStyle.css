@@ -162,6 +162,7 @@ ul{
 }
 
 #left1 ul li{
+	display:block;
 	margin: 4px 0px 0px 10px;
 }
 
@@ -215,6 +216,7 @@ ul{
 }
 
 #left2 ul li{
+	display:block;
 	margin: 4px 0px 0px 10px;
 }
 
@@ -267,6 +269,7 @@ ul{
 }
 
 #left3 ul li{
+	display:block;
 	margin: 4px 0px 0px 10px;
 }
 
@@ -319,6 +322,7 @@ ul{
 }
 
 #left4 ul li{
+	display:block;
 	margin: 4px 0px 0px 10px;
 }
 
