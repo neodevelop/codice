@@ -16,7 +16,7 @@
 			<li><a href="${createLinkTo(dir:'')}" class="hover">Home</a></li>
 			<li><a href="#">¿como participar?</a></li>
 			<li><a href="#">¿quienes somos?</a></li>
-			<li><a href="#">¿A donde vamos?</a></li>
+			<!--<li><a href="#">¿A donde vamos?</a></li>-->
 			<li class="last"><a href="http://groups.google.com.mx/group/grailsencastellano">Grupo en Google</a></li>
 		</ul>
 		
