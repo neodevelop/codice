@@ -16,6 +16,7 @@
 			<li><a href="${createLinkTo(dir:'')}" class="hover">Home</a></li>
 			<li><a href="#">¿como participar?</a></li>
 			<li><a href="#">¿quienes somos?</a></li>
+			<li><a href="#">¿A donde vamos?</a></li>
 			<li class="last"><a href="http://groups.google.com.mx/group/grailsencastellano">Grupo en Google</a></li>
 		</ul>
 		
@@ -26,7 +27,9 @@
 		<p>herramientas para el desarrollo <span class="txt1">agil</span> de software basado en Java con <span class="txt1">Groovy</span> y <span class="txt1">Grails</span></p>
 		<p class="topText">Nos gusta el desarrollo de software, y por eso compartimos el conocimiento contigo a traves de :<span class="smallTxt">podcast, articulos, screencast, foros</span></p>
 		<g:isLoggedIn>
-			<a href="${createLink(controller:'register')}" class="readMore"><avatar:gravatar email="${loggedInUserInfo(field:'email')}" size="40"/></a>
+			<a href="${createLink(controller:'register')}" class="readMore">
+				<avatar:gravatar email="${loggedInUserInfo(field:'email')}" size="40"/>
+			</a>
 		</g:isLoggedIn>
 	</div>
 	<!--header end -->
