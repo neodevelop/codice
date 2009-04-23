@@ -44,7 +44,9 @@
                         
                             <td>${fieldValue(bean:contentInstance, field:'contentType')}</td>
 
-							<td>${fieldValue(bean:contentInstance, field:'created')}</td>
+							<td>
+								<g:dateFormat format="dd-MM-yyyy hh:mm a" date="${contentInstance.created}" />
+							</td>
                         
 							<td>
 								<g:if test="${contentInstance.publish}">
