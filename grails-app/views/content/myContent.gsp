@@ -33,13 +33,27 @@
 	
                             <td><g:link action="show" id="${contentInstance.id}">${fieldValue(bean:contentInstance, field:'title')}</g:link></td>
                         
-                            <td>${fieldValue(bean:contentInstance, field:'allowComments')}</td>
+                            <td>
+								<g:if test="${contentInstance.allowComments}">
+									<span class="allow">Yes</span>
+								</g:if>
+								<g:else>
+									<span class="disallow">No</span>
+								</g:else>
+							</td>
                         
                             <td>${fieldValue(bean:contentInstance, field:'contentType')}</td>
 
 							<td>${fieldValue(bean:contentInstance, field:'created')}</td>
                         
-							<td>${fieldValue(bean:contentInstance, field:'publish')}</td>
+							<td>
+								<g:if test="${contentInstance.publish}">
+									<span class="allow">Yes</span>
+								</g:if>
+								<g:else>
+									<span class="disallow">No</span>
+								</g:else>
+							</td>
                         </tr>
                     </g:each>
                     </tbody>
