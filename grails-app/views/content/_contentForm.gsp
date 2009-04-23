@@ -30,7 +30,7 @@
 		</div>
 	</div>
 
-	<g:ifAnyGranted role="ROLE_ADMIN,ROLE_MANAGER">
+	<g:ifAllGranted role="ROLE_ADMIN,ROLE_MANAGER">
 	<div class="prop">
 		<div class="name">
 			<label for="priority">Priority:</label>
@@ -39,11 +39,11 @@
 			<g:select name="priority" from="${-5..5}" value="${contentInstance?.priority ?: 0}"/>
 		</div>
 	</div>
-	</g:ifAnyGranted>
+	</g:ifAllGranted>
 	
-	<g:ifAnyGranted role="ROLE_USER">
+	<g:ifNotGranted role="ROLE_ADMIN,ROLE_MANAGER">
 		<input type="hidden" name="priority" value="${contentInstance?.priority ?: 0}" />
-	</g:ifAnyGranted>
+	</g:ifNotGranted>
 
 	<div class="prop">
 		<div class="name">
