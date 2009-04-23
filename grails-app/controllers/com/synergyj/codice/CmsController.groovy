@@ -6,12 +6,15 @@ class CmsController {
     
     def index = { 
 		//here goes a criteria search
-		def lastContent = Content.withCriteria {
+		def criteria = Content.createCriteria()
+		def lastContent = criteria.list {
 			eq('publish',true)
-			maxResults(5)
+			firstResult(params.offset?.toInteger() ?: 0)
+			maxResults(3)
 			order('priority','asc')
 			order('created','desc')
 		}
-        [ lastContent: lastContent ]
+		def totalContents = Content.countByPublish(true)
+        [ lastContent: lastContent,totalContents:totalContents ]
 	}
 }
