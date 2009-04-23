@@ -25,6 +25,10 @@
 							<g:sortableColumn property="created" title="Created" />
                         
 							<g:sortableColumn property="publish" title="Published" />
+							
+							<g:ifAnyGranted role="ROLE_ADMIN,ROLE_MANAGER">
+								<g:sortableColumn property="priority" title="Priority" />
+							</g:ifAnyGranted>
                         </tr>
                     </thead>
                     <tbody>
@@ -56,6 +60,10 @@
 									<span class="disallow">No</span>
 								</g:else>
 							</td>
+							
+							<g:ifAnyGranted role="ROLE_ADMIN,ROLE_MANAGER">
+								<td>${fieldValue(bean:contentInstance, field:'priority')}</td>
+							</g:ifAnyGranted>
                         </tr>
                     </g:each>
                     </tbody>
