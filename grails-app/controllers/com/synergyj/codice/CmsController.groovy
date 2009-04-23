@@ -6,8 +6,7 @@ class CmsController {
     
     def index = { 
 		//here goes a criteria search
-		def criteria = Content.createCriteria()
-		def lastContent = criteria.list {
+		def lastContent = Content.withCriteria {
 			eq('publish',true)
 			maxResults(5)
 			order('priority','asc')
