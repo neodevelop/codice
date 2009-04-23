@@ -25,6 +25,12 @@
 		</div>
 		<br/>
 	</g:each>
+	<br/>
+	<center>
+		<div class="paginateButtons">
+			<g:paginate total="${totalContents}" max="3" />
+		</div>
+	</center>
 	<!--
 	<ul>
       <g:each var="c" in="${grailsApplication.controllerClasses}">
