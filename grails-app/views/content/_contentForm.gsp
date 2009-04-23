@@ -61,16 +61,7 @@
 		<div class="value ${hasErrors(bean:contentInstance,field:'publish','errors')}">
 			<g:checkBox name="publish" value="${contentInstance?.publish}" ></g:checkBox>
 		</div>
-	</div> 
-
-	<div class="prop">
-		<div class="name">
-			<label for="showInMainPage">Show In Main Page:</label>
-		</div>
-		<div class="value ${hasErrors(bean:contentInstance,field:'showInMainPage','errors')}">
-			<g:checkBox name="showInMainPage" value="${contentInstance?.showInMainPage}" ></g:checkBox>
-		</div>
-	</div> 
+	</div>
 
 	<div class="prop">
 		<div class="name">
