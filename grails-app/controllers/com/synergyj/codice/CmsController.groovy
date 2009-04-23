@@ -11,7 +11,7 @@ class CmsController {
 			eq('publish',true)
 			maxResults(5)
 			order('priority','asc')
-			order('created','asc')
+			order('created','desc')
 		}
         [ lastContent: lastContent ]
 	}
