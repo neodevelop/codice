@@ -17,7 +17,22 @@
 			<li><a href="#">¿como participar?</a></li>
 			<li><a href="#">¿quienes somos?</a></li>
 			<!--<li><a href="#">¿A donde vamos?</a></li>-->
-			<li class="last"><a href="http://groups.google.com.mx/group/grailsencastellano">Grupo en Google</a></li>
+			<li><a href="http://groups.google.com.mx/group/grailsencastellano">Grupo en Google</a></li>
+			
+			<g:isLoggedIn>
+				<li>
+					<a href="${createLink(controller:'content',action:'create',params:[contentType:'News'])}">Send news</a>
+				</li>
+				<li>
+					<a href="${createLink(controller:'content',action:'create',params:[contentType:'Entry'])}">Post one entry</a>
+				</li>
+				<li>
+					<a href="${createLink(controller:'content',action:'myContent')}">My content</a>
+				</li>
+			</g:isLoggedIn>
+			
+			<li class="last"></li>
+			
 		</ul>
 		
 		<a href="#">
@@ -42,7 +57,7 @@
 				<p class="pic1"></p>
 				<p class="boxTxt1">
 					<span>Podcast</span>
-					<b>Duis iaculis lobortis leo</b>,venenatis dignissim. Nam massa lorem, suscipit nonummy,</p>
+					<b>Escucha </b>los podcast donde hablamos de Groovy y por supuesto Grails, suscribete al <a href="http://podcast.springhispano.org/grails.xml">feed aqui...</a></p>
 				<br class="spacer" />
 			</div>
 			<!--left1 end -->
@@ -51,7 +66,7 @@
 				<p class="pic2"></p>
 				<p class="boxTxt2">
 					<span>Screencast</span>
-					<b>Duis iaculis lobortis leo</b>,venenatis dignissim. Nam massa lorem, suscipit nonummy,</p>
+					<b>Observa </b> como crear una aplicación con grails, puedes comenzar con el primer screencast <a href="http://springhispano.org/?q=node/202">aquí...</a></p>
 				<br class="spacer" />
 			</div>
 			<!--left2 end -->
@@ -59,13 +74,13 @@
 			<div id="left3">
 				<p class="pic3"></p>
 				<p class="boxTxt3">
-					<span>Mas informacion</span>
-					<b>Phasellus dapibus odio eu</b>,ipsum ac turpis. Integer ac libero eu orci pharetra eges</p>
+					<span>Mas información</span>
+					<b>Descarga</b> e <b>instala</b> Grails y empieza a conocer como puedes desarrollar mejores aplicaciones...</p>
 				<!--left3 end -->
 				<br class="spacer" />
 			</div>
 			<!--left end -->
-			<br class="spacer" />						
+			
 		</div>
 		<!--left panel end -->
 		<!--right panel start -->
