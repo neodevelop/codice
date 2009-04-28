@@ -15,7 +15,22 @@
 			<li><a href="${createLinkTo(dir:'')}" class="hover">Home</a></li>
 			<li><a href="#">¿como participar?</a></li>
 			<li><a href="#">¿quienes somos?</a></li>
-			<li class="last"><a href="http://groups.google.com.mx/group/grailsencastellano">Grupo en Google</a></li>
+			<li><a href="http://groups.google.com.mx/group/grailsencastellano">Grupo en Google</a></li>
+			
+			<g:isLoggedIn>
+				<li>
+					<a href="${createLink(controller:'content',action:'create',params:[contentType:'News'])}">Send news</a>
+				</li>
+				<li>
+					<a href="${createLink(controller:'content',action:'create',params:[contentType:'Entry'])}">Post one entry</a>
+				</li>
+				<li>
+					<a href="${createLink(controller:'content',action:'myContent')}">My content</a>
+				</li>
+			</g:isLoggedIn>
+			
+			<li class="last"></li>
+			
 		</ul>
 
 		<a href="${createLinkTo(dir:'')}">
