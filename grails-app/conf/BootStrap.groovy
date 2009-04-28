@@ -43,7 +43,7 @@ class BootStrap {
 				def cms = new Cms(name:'grails.org.mx',domain:'http://grails.org.mx',slogan:'Grails en tu idioma',admin:user)
 				cms.save(flush:true)
 				//println "Creating first post"
-				def content = new Content(user:user,title:'Now, You can post content...',allowComments:true,publish:true,contentType:'content')
+				def content = new Content(user:user,title:'Now, You can post content...',allowComments:true,publish:true,contentType:'Entry')
 				content.textBody = """
 					<p>The <b>CMS</b> is up and running, now you can post new contents and that will be 
 					showed here in the main page, you can put tags to your new content and edit them
@@ -75,7 +75,7 @@ class BootStrap {
 				"""
 				comment2.save(flush:true)
 				
-				def content2 = new Content(user:user,title:'Welcome to Codice!!!',allowComments:true,publish:true,contentType:'content')
+				def content2 = new Content(user:user,title:'Welcome to Codice!!!',allowComments:true,publish:true,contentType:'Entry')
 				content2.textBody = """
 					<p>Codice is a Content Management System, is made in grails and you can use it
 					to generate your own contents, in a future this CMS will support <b>Blogs, Timeline,
