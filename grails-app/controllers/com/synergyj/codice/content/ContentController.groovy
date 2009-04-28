@@ -32,7 +32,7 @@ class ContentController{
 	}
 
 	def administer = {
-		[ contentInstanceList:Content.list() ]
+		[ contentInstanceList:Content.list(params) ]
 	}
 
 	def delete = {
