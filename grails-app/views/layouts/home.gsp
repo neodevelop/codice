@@ -27,7 +27,7 @@
 					<a href="${createLink(controller:'content',action:'create',params:[contentType:'Entry'])}">Post one entry</a>
 				</li>
 				<li>
-					<a href="${createLink(controller:'content',action:'myContent')}">My content</a>
+					<a href="${createLink(controller:'content',action:'my')}">My content</a>
 				</li>
 			</g:isLoggedIn>
 			

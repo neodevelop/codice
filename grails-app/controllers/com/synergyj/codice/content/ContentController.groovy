@@ -30,7 +30,7 @@ class ContentController{
 		}
 	}
 	
-	def myContent = {
+	def my = {
 		// even we can include the offset to make pagination and the max value to paginate
 		def contentList =  Content.findAllByUser(authenticateService.userDomain(), [sort:params?.sort,order:params?.order])
 		[ contentInstanceList:contentList ]
