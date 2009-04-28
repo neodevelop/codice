@@ -71,7 +71,7 @@
 				<g:ifAllGranted role="ROLE_ADMIN">
 				<li>
 					<div class="administer">
-						<a href="#">» Administer</a>
+						<a href="${createLink(controller:'content',action:'administer')}">» Administer</a>
 					</div>
 				</li>
 				</g:ifAllGranted>

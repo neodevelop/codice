@@ -31,6 +31,10 @@ class ContentController{
 		[ contentInstanceList:contentList ]
 	}
 
+	def administer = {
+		[ contentInstanceList:Content.list() ]
+	}
+
 	def delete = {
 		def contentInstance = Content.get( params.id )
 		if(contentInstance) {
