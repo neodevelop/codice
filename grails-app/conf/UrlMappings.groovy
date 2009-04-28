@@ -20,6 +20,7 @@ class UrlMappings {
 		"/editContent/$id"(controller:'content',action:'edit')
 		"/deleteContent/$id"(controller:'content',action:'delete')
 		"/saveContent"(controller:'content',action:'save')
+		"/administerContent"(controller:'content',action:'administer')
 		/***
 		Commment mapping
 		***/

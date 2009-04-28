@@ -25,6 +25,8 @@ class BootStrap {
 			new RequestMap(url:'/createContent/**',configAttribute:'ROLE_USER').save()
 			new RequestMap(url:'/editContent/**',configAttribute:'ROLE_USER').save()
 			new RequestMap(url:'/deleteContent/**',configAttribute:'ROLE_ADMIN').save()
+			new RequestMap(url:'/administerContent/**',configAttribute:'ROLE_ADMIN').save()
+			new RequestMap(url:'/administerContent/**',configAttribute:'ROLE_MANAGER').save()
 			new RequestMap(url:'/requestMap/**',configAttribute:'ROLE_ADMIN').save()
 			new RequestMap(url:'/user/**',configAttribute:'ROLE_ADMIN').save()
 			new RequestMap(url:'/role/**',configAttribute:'ROLE_ADMIN').save()
