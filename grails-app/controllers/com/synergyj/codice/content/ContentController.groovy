@@ -13,11 +13,6 @@ class ContentController{
 	// the delete, save and update actions only accept POST requests
 	static allowedMethods = [delete:'POST', save:'POST', update:'POST']
 
-	def list = {
-		params.max = Math.min( params.max ? params.max.toInteger() : 10,  100)
-		[ contentInstanceList: Content.list( params ), contentInstanceTotal: Content.count() ]
-	}
-
 	def show = { 
 		def contentInstance = Content.get( params.id )
 		if(!contentInstance) {
@@ -51,7 +46,7 @@ class ContentController{
 		}
 		else {
 			flash.message = "Content not found with id ${params.id}"
-			redirect(action:list)
+			redirect(controller:'cms')
 		}
 	}
 
