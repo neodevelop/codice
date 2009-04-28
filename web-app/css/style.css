@@ -186,9 +186,9 @@ ul{
 #left1 p.pic1{
 	display:block;
 	background:url(../images/lft_pic1.gif) 0 0 no-repeat;
-	width:88px;
-	height:78px;
-	margin:5px 0 0 0;
+	width:90px;
+	height:80px;
+	margin:0px 0 0 0;
 	float:left;
 }
 #left1 p.boxTxt1{
@@ -196,7 +196,7 @@ ul{
 	padding:0 0 0 15px;
 	border-left:#F9F9F1 solid 2px;
 	font:normal 11px/16px "Trebuchet MS", Arial, Helvetica, sans-serif;
-	width:199px;
+	width:189px;
 }
 #left1 p.boxTxt1 span{
 	font:normal 19px/17px Arial, Helvetica, sans-serif;
@@ -219,9 +219,9 @@ ul{
 #left2 p.pic2{
 	display:block;
 	background:url(../images/lft_pic2.gif) 0 0 no-repeat;
-	width:74px;
-	height:74px;
-	margin:8px 0 0 0;
+	width:90px;
+	height:80px;
+	margin:0px 0 0 0;
 	float:left;
 }
 #left2 p.boxTxt2{
@@ -229,7 +229,7 @@ ul{
 	padding:0 0 0 15px;
 	border-left:#F9F9F1 solid 2px;
 	font:normal 11px/16px "Trebuchet MS", Arial, Helvetica, sans-serif;
-	width:199px;
+	width:189px;
 }
 #left2 p.boxTxt2 span{
 	font:normal 19px/17px Arial, Helvetica, sans-serif;
@@ -252,9 +252,9 @@ ul{
 #left3 p.pic3{
 	display:block;
 	background:url(../images/lft_pic3.gif) 0 0 no-repeat;
-	width:94px;
-	height:71px;
-	margin:5px 0 0 0;
+	width:90px;
+	height:80px;
+	margin:0px 0 0 0;
 	float:left;
 }
 #left3 p.boxTxt3{
@@ -262,7 +262,7 @@ ul{
 	padding:0 0 0 0px;
 	/*border-left:#F9F9F1 solid 2px;*/
 	font:normal 11px/16px "Trebuchet MS", Arial, Helvetica, sans-serif;
-	width:199px;
+	width:189px;
 }
 #left3 p.boxTxt3 span{
 	font:normal 19px/17px Arial, Helvetica, sans-serif;
