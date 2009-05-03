@@ -12,14 +12,37 @@ class BootStrap {
 
 	def init = { servletContext ->
 		if(User.count() == 0){
-			User admin = new User(username:'admin',userRealName:'José Juan Reyes Zuñiga',email:'jjuan.reyes@synergyj.com',passwd:authenticateService.passwordEncoder('root'),enabled:true,emailShow:true)
-			User registeredUser = new User(username:'user',userRealName:'Domingo Suarez Torres',email:'domingo.suarez@synergyj.com',passwd:authenticateService.passwordEncoder('codice'),enabled:true,emailShow:true)
+		
+			User admin = new User( username:'admin',
+					userRealName:'José Juan Reyes Zuñiga',
+					email:'jjuan.reyes@synergyj.com',
+					passwd:authenticateService.passwordEncoder('root'),
+					enabled:true,
+					emailShow:true )
+			
+			User registeredUser = new User(username:'user',
+					userRealName:'Domingo Suarez Torres',
+					email:'domingo.suarez@synergyj.com',
+					passwd:authenticateService.passwordEncoder('codice'),
+					enabled:true,
+					emailShow:true )
+			
+			User registeredUser2 = new User(username:'marko',
+					userRealName:'Marco A. Mu�iz Ochoa',
+					email:'marco.muniz.ochoa@gmail.com',
+					passwd:authenticateService.passwordEncoder('chicharo'),
+					enabled:true,
+					emailShow:true )
+			
 			Role userRole = new Role(authority:'ROLE_USER',description:'User CMS')
 			userRole.save()
+			
 			Role managerRole = new Role(authority:'ROLE_MANAGER',description:'Manager CMS')
 			managerRole.save()
+			
 			Role adminRole = new Role(authority:'ROLE_ADMIN',description:'Admin CMS')
 			adminRole.save()
+			
 			new Role(authority:'IS_AUTHENTICATED_ANONYMOUSLY',description:'Anonymous user').save()
 			new RequestMap(url:'/**',configAttribute:'IS_AUTHENTICATED_ANONYMOUSLY').save()
 			new RequestMap(url:'/createContent/**',configAttribute:'ROLE_USER').save()
@@ -34,16 +57,29 @@ class BootStrap {
 			registeredUser
 				.addToAuthorities(userRole)
 				.save(flush:true)
+			registeredUser2.
+				addToAuthorities(userRole)
+				.save(flush:true)
 		}
 
 		if(Content.count() == 0){
 			println "Generating first content..."
+			
 			User user = User.findByUsername('admin')
+			
 			if(user){
-				def cms = new Cms(name:'grails.org.mx',domain:'http://grails.org.mx',slogan:'Grails en tu idioma',admin:user)
+				def cms = new Cms(name:'grails.org.mx',
+						domain:'http://grails.org.mx',
+						slogan:'Grails en tu idioma',admin:user)
 				cms.save(flush:true)
+				
 				//println "Creating first post"
-				def content = new Content(user:user,title:'Now, You can post content...',allowComments:true,publish:true,showInMainPage:true,contentType:'content')
+				def content = new Content(user:user,
+						title:'Now, You can post content...', 
+						allowComments:true,
+						publish:true,
+						showInMainPage:true,
+						contentType:'content')
 				content.textBody = """
 					<p>The <b>CMS</b> is up and running, now you can post new contents and that will be 
 					showed here in the main page, you can put tags to your new content and edit them
@@ -62,8 +98,13 @@ class BootStrap {
 					.addTag("new")
 					.addTag("sample")
 				
-				def comment = new Comment(author:'anonymous',body:'<p>Cool application the <b>CMS</b> is starting</p>',mail:'josejuan09830@yahoo.com',notifyResponses:true,content:content)
+				def comment = new Comment(author:'anonymous',
+						body:'<p>Cool application the <b>CMS</b> is starting</p>',
+						mail:'josejuan09830@yahoo.com',
+						notifyResponses:true,
+						content:content )
 				comment.save(flush:true)
+				
 				def comment2 = new Comment(author:'mystic',mail:'josejuan09830@yahoo.com',notifyResponses:true,content:content)
 				comment2.textComment = """
 				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 

@@ -20,6 +20,8 @@ class UrlMappings {
 		"/editContent/$id"(controller:'content',action:'edit')
 		"/deleteContent/$id"(controller:'content',action:'delete')
 		"/saveContent"(controller:'content',action:'save')
+		"/tagList/$id"(controller:'tag',action:'list')
+		"/tagList"(controller:'cms',action:'index')
 		/***
 		Commment mapping
 		***/
@@ -28,5 +30,6 @@ class UrlMappings {
 		Error mapping
 		***/
 		"500"(view:'/error')
+		"404"(view:'/error')
 	}
 }

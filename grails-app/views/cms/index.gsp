@@ -1,5 +1,5 @@
 <head>
-	<meta name="layout" content="home" />
+	<meta name="layout" content="home" />	
 	<title>. : Welcome to Codice - the Grails CMS : .</title>
 </head>
 
@@ -10,11 +10,14 @@
 	<g:each in="${lastContent}" status="i" var="content">
 		<h2><g:link action="show" controller="content" id="${content.id}">${content?.title}</g:link></h2>
 		<div class="dateStyle3">
-			<div class="date3">Created <g:dateFormat format="dd-MM-yyyy hh:mm a" date="${content?.created}" /> by ${content?.user?.username}</div>
+			<div class="date3">
+				Creado <g:dateFormat format="dd-MM-yyyy hh:mm a" date="${content?.created}" /> 
+				por ${content?.user?.username}
+			</div>
 		</div>
 		<div class="tags">
 			<g:each in="${content?.tags}" var="tag">
-				<span class="tag">${tag}</span>
+				<span class="tag"><g:link action="list" controller="tag" id="${tag}">${tag}</g:link></span>
 			</g:each>
 		</div>
 		<div class="textBody">
