@@ -7,7 +7,8 @@
 	<g:if test='${flash.message}'>
 		<div class='message'>${flash.message}</div>
 	</g:if>
-	<g:each in="${lastContent}" status="i" var="content">
+	
+	<g:each in="${contentInstanceList}" status="i" var="content">
 		<h2><g:link action="show" controller="content" id="${content.id}">${content?.title}</g:link></h2>
 		<div class="dateStyle3">
 			<div class="date3">
@@ -28,12 +29,6 @@
 		</div>
 		<br/>
 	</g:each>
-	<br/>
-	<center>
-		<div class="paginateButtons">
-			<g:paginate total="${totalContents}" max="3" />
-		</div>
-	</center>
 	<!--
 	<ul>
       <g:each var="c" in="${grailsApplication.controllerClasses}">

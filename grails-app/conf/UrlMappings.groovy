@@ -22,6 +22,10 @@ class UrlMappings {
 		"/saveContent"(controller:'content',action:'save')
 		"/myContent"(controller:'content',action:'my')
 		"/administerContent"(controller:'content',action:'administer')
+		//Added by markitox...
+		"/tagList/$id"(controller:'tag',action:'list')
+		"/tagList"(controller:'cms',action:'index')
+		//Added by markitox...
 		/***
 		Commment mapping
 		***/
@@ -30,5 +34,6 @@ class UrlMappings {
 		Error mapping
 		***/
 		"500"(view:'/error')
+		"404"(view:'/error')
 	}
 }

@@ -5,6 +5,11 @@ import com.synergyj.codice.content.*
 class CmsController {
     
     def index = { 
+		
+		//added by markitox
+		servletContext['listTags'] = Content.allTags
+		//added by markitox
+		
 		//here goes a criteria search
 		def criteria = Content.createCriteria()
 		def lastContent = criteria.list {

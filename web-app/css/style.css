@@ -55,7 +55,7 @@ ul{
 	margin:0 auto;
 }
 #header ul{
-	background:url(../images/nav_bar.gif) 0 0 no-repeat;
+	background:url(/codice/images/nav_bar.gif) 0 0 no-repeat;
 	width:847px;
 	height:29px;
 	position:absolute;
@@ -245,7 +245,7 @@ ul{
 	width:324px;
 	background:url(../images/lft_box_bg.gif) 0 0 no-repeat #EAEADA;
 	border:#DDDDCA solid 7px;
-	margin:0;
+	margin:0 0 4px 0;
 	padding:5px 10px 6px 9px;
 	color:#878767;
 }
@@ -274,13 +274,28 @@ ul{
 	height:17px;
 	display:block;
 }
+
+#leftTags{
+	
+	width: 324px;
+	background: #EAEADA;
+	border: #DDDDCA solid 7px;
+	margin: 0 0 4px 0;
+	padding: 5px;
+	color: #D76E08;
+
+	text-align: center;
+	font-weight: bold;
+	
+}
+
 /*------------------------------------------------left--------------------*/
 
 /*------------------------------------------------right--------------------*/
 #right{
 	width:608px;
 	float:right;
-	background:url(../images/right_panel_bg.gif) 0 0 repeat-y;
+	background:url(/codice/images/right_panel_bg.gif) 0 0 repeat-y;
 }
 #right p.rightTop{
 	display:block;
@@ -504,12 +519,19 @@ ul{
 	color:#974D04;
 	background-color:inherit;
 	text-transform:uppercase;
+	vertical-align: middle;
+}
+#news h3 span{
+	background-image: url('/codice/images/skin/date1.png');
+	background-position: left;
+	background-repeat: no-repeat;
+	padding-left: 20px;
 }
 #news p{
 	font:normal 12px/20px Arial, Helvetica, sans-serif;
 	color:#F7F7EA;
 	background-color:inherit;
-	padding:0 0 13px 0;
+	padding:0 0 5px 0;
 }
 #news p span{
 	font:bold 12px/20px Arial, Helvetica, sans-serif;
@@ -517,6 +539,9 @@ ul{
 	background-color:inherit;
 	text-decoration:underline;
 	display:block;
+}
+#news div.commentsActions{
+	padding-bottom: 5px;
 }
 #service{
 	width:338px;

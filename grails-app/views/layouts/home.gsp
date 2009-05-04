@@ -36,7 +36,7 @@
 		</ul>
 		
 		<a href="#">
-			<img src="${createLinkTo(dir:'images',file:'logo.jpg')}"  class="logo" border="0" />
+			<img src="${createLinkTo(dir:'images', file:'logo.jpg')}"  class="logo" border="0" />
 		</a>
 		<h1>Bienvenido a la comunidad de desarrolladores G/G</h1>
 		<p>herramientas para el desarrollo <span class="txt1">agil</span> de software basado en Java con <span class="txt1">Groovy</span> y <span class="txt1">Grails</span></p>
@@ -80,9 +80,24 @@
 				<br class="spacer" />
 			</div>
 			<!--left end -->
-			
+
+			<!--****************************************Added by markitox****************************************-->
+			<!-- br class="spacer" / -->
+			<!-- left Tags start -->
+			<div id="leftTags">
+				<!-- p class="boxTxt1" -->
+					<g:each in="${application['listTags']}" status="iTag" var="tag">
+						<g:link action="list" controller="tag" id="${tag}">${tag}</g:link> 
+					</g:each>
+				<!-- /p -->
+				<br class="spacer" />
+			</div>
+			<!-- left Tags end -->	
+			<!--****************************************Added by markitox****************************************-->
 		</div>
 		<!--left panel end -->
+		
+		
 		<!--right panel start -->
 		<div id="right">
 			<p class="rightTop"></p>
@@ -101,10 +116,32 @@
 		<!--news start -->
 		<div id="news">
 			<h2>Notas Recientes</h2>
-			<h3>Fecha de Publicación</h3>
-			<p><span>Titulo de la noticia</span>contenido de la noticia recortado</p>
-			<p><span>Titulo de la otra noticia</span>contenido de la noticia recortado</p>
+			
+				<!-- div class="tags">
+					<g:each in="${content?.tags}" var="tag">
+						<span class="tag"><g:link action="list" controller="tag" id="${tag}">${tag}</g:link></span>
+					</g:each>
+				</div -->
+			<g:each in="${lastContent}" status="i" var="content">
+				<h3 style="margin-bottom: 5px;"> 
+					<span>
+						<g:dateFormat format="dd-MM-yyyy hh:mm a" date="${content?.created}" />
+					</span> 
+				</h3>
+				<span><g:link action="show" controller="content" id="${content.id}">${content.title}</g:link> </span>
+				<g:if test="${content.textBody.length() > 130}" >
+					${content.textBody.substring(0,135)}...
+				</g:if>
+				<g:else>
+					${content.textBody}
+				</g:else>
+				<div class="comments">
+					<div class="commentsActions" style="text-align: right;">${content?.comments?.size()} Comments</div>
+				</div>
 			<br class="spacer" />
+			</g:each>
+			
+			
 		</div>
 		<!--news end -->
 		<!--services start -->

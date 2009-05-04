@@ -1,8 +1,9 @@
+/*
 import javax.mail.MessagingException
 
 import org.springframework.mail.MailException
 import org.springframework.mail.SimpleMailMessage
-
+*/
 /**
  * Simple service for sending emails.
  *
@@ -15,16 +16,17 @@ class EmailerService {
 
 	boolean transactional = false
 
+/*
 	def mailSender
 	def mailMessage // a "prototype" email instance
-
+*/
 	/**
 	 * Send a list of emails.
 	 *
 	 * @param mails a list of maps
 	 */
 	def sendEmails(mails) {
-
+/*
 		// Build the mail messages
 		def messages = []
 		for (mail in mails) {
@@ -46,5 +48,6 @@ class EmailerService {
 		catch (MessagingException e) {
 			log.error "Failed to send emails: $e.message", e
 		}
+*/
 	}
 }
