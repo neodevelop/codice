@@ -20,6 +20,7 @@ class UrlMappings {
 		"/editContent/$id"(controller:'content',action:'edit')
 		"/deleteContent/$id"(controller:'content',action:'delete')
 		"/saveContent"(controller:'content',action:'save')
+
 		"/tagList/$id"(controller:'tag',action:'list')
 		"/tagList"(controller:'cms',action:'index')
 		"/myContent"(controller:'content',action:'my')

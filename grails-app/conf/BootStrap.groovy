@@ -79,14 +79,12 @@ class BootStrap {
 				cms.save(flush:true)
 				
 				//println "Creating first post"
+				//Modified by markitox
 				def content = new Content(user:user,
 						title:'Now, You can post content...', 
 						allowComments:true,
 						publish:true,
-						showInMainPage:true,
 						contentType:'content')
-
-				def content = new Content(user:user,title:'Now, You can post content...',allowComments:true,publish:true,contentType:'Entry')
 				content.textBody = """
 					<p>The <b>CMS</b> is up and running, now you can post new contents and that will be 
 					showed here in the main page, you can put tags to your new content and edit them

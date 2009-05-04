@@ -80,6 +80,7 @@
 				<br class="spacer" />
 			</div>
 			<!--left end -->
+			<!--****************************************Added by markitox****************************************-->
 			<!-- br class="spacer" / -->
 			<!-- left Tags start -->
 			<div id="leftTags">
@@ -91,6 +92,7 @@
 				<br class="spacer" />
 			</div>
 			<!-- left Tags end -->	
+			<!--****************************************Added by markitox****************************************-->
 		</div>
 		<!--left panel end -->
 		

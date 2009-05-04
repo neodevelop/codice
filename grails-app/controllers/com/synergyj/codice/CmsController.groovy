@@ -5,12 +5,8 @@ import com.synergyj.codice.content.*
 class CmsController {
     
     def index = { 
-
-		params.max = Math.min( params.max ? params.max.toInteger() : 5,  100)
-		params.order = 'desc'
-		params.sort = 'created'
-		
-		servletContext['listTags'] = Content.allTags		
+		//added by markitox
+		servletContext['listTags'] = Content.allTags
 		
 		//here goes a criteria search
 		def criteria = Content.createCriteria()
