@@ -13,11 +13,6 @@ class ContentController{
 	// the delete, save and update actions only accept POST requests
 	static allowedMethods = [delete:'POST', save:'POST', update:'POST']
 
-	def list = {
-		params.max = Math.min( params.max ? params.max.toInteger() : 10,  100)
-		[ contentInstanceList: Content.list( params ), contentInstanceTotal: Content.count() ]
-	}
-
 	def show = { 
 		def contentInstance = Content.get( params.id )
 		if(!contentInstance) {
@@ -30,9 +25,14 @@ class ContentController{
 		}
 	}
 	
-	def myContent = {
-		def contentList =  Content.findAllByUser(authenticateService.userDomain())
+	def my = {
+		// even we can include the offset to make pagination and the max value to paginate
+		def contentList =  Content.findAllByUser(authenticateService.userDomain(), [sort:params?.sort,order:params?.order])
 		[ contentInstanceList:contentList ]
+	}
+
+	def administer = {
+		[ contentInstanceList:Content.list(params) ]
 	}
 
 	def delete = {
@@ -50,7 +50,7 @@ class ContentController{
 		}
 		else {
 			flash.message = "Content not found with id ${params.id}"
-			redirect(action:list)
+			redirect(controller:'cms')
 		}
 	}
 

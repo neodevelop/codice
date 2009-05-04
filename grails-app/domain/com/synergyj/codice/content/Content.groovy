@@ -14,7 +14,6 @@ class Content implements Taggable{
 	Date lastUpdated =  new Date()
 	Boolean allowComments
 	Boolean publish
-	Boolean showInMainPage
 	String contentType
 	Integer priority = 0
 	

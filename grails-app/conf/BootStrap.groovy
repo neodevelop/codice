@@ -48,6 +48,11 @@ class BootStrap {
 			new RequestMap(url:'/createContent/**',configAttribute:'ROLE_USER').save()
 			new RequestMap(url:'/editContent/**',configAttribute:'ROLE_USER').save()
 			new RequestMap(url:'/deleteContent/**',configAttribute:'ROLE_ADMIN').save()
+			new RequestMap(url:'/administerContent/**',configAttribute:'ROLE_ADMIN').save()
+			new RequestMap(url:'/administerContent/**',configAttribute:'ROLE_MANAGER').save()
+			new RequestMap(url:'/requestMap/**',configAttribute:'ROLE_ADMIN').save()
+			new RequestMap(url:'/user/**',configAttribute:'ROLE_ADMIN').save()
+			new RequestMap(url:'/role/**',configAttribute:'ROLE_ADMIN').save()
 
 			admin
 				.addToAuthorities(userRole)
@@ -80,6 +85,8 @@ class BootStrap {
 						publish:true,
 						showInMainPage:true,
 						contentType:'content')
+
+				def content = new Content(user:user,title:'Now, You can post content...',allowComments:true,publish:true,contentType:'Entry')
 				content.textBody = """
 					<p>The <b>CMS</b> is up and running, now you can post new contents and that will be 
 					showed here in the main page, you can put tags to your new content and edit them
@@ -108,7 +115,7 @@ class BootStrap {
 				def comment2 = new Comment(author:'mystic',mail:'josejuan09830@yahoo.com',notifyResponses:true,content:content)
 				comment2.textComment = """
 				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 
-				the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of 
+				the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of 	
 				type and scrambled it to make a type specimen book. It has survived not only five centuries, but also 
 				the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s 
 				with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop 
@@ -116,7 +123,7 @@ class BootStrap {
 				"""
 				comment2.save(flush:true)
 				
-				def content2 = new Content(user:user,title:'Welcome to Codice!!!',allowComments:true,publish:true,showInMainPage:true,contentType:'content')
+				def content2 = new Content(user:user,title:'Welcome to Codice!!!',allowComments:true,publish:true,contentType:'Entry')
 				content2.textBody = """
 					<p>Codice is a Content Management System, is made in grails and you can use it
 					to generate your own contents, in a future this CMS will support <b>Blogs, Timeline,

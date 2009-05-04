@@ -25,6 +25,10 @@
 							<g:sortableColumn property="created" title="Created" />
                         
 							<g:sortableColumn property="publish" title="Published" />
+							
+							<g:ifAnyGranted role="ROLE_ADMIN,ROLE_MANAGER">
+								<g:sortableColumn property="priority" title="Priority" />
+							</g:ifAnyGranted>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,13 +37,33 @@
 	
                             <td><g:link action="show" id="${contentInstance.id}">${fieldValue(bean:contentInstance, field:'title')}</g:link></td>
                         
-                            <td>${fieldValue(bean:contentInstance, field:'allowComments')}</td>
+                            <td>
+								<g:if test="${contentInstance.allowComments}">
+									<span class="allow">Yes</span>
+								</g:if>
+								<g:else>
+									<span class="disallow">No</span>
+								</g:else>
+							</td>
                         
                             <td>${fieldValue(bean:contentInstance, field:'contentType')}</td>
 
-							<td>${fieldValue(bean:contentInstance, field:'created')}</td>
+							<td>
+								<g:dateFormat format="dd-MM-yyyy hh:mm a" date="${contentInstance.created}" />
+							</td>
                         
-							<td>${fieldValue(bean:contentInstance, field:'publish')}</td>
+							<td>
+								<g:if test="${contentInstance.publish}">
+									<span class="allow">Yes</span>
+								</g:if>
+								<g:else>
+									<span class="disallow">No</span>
+								</g:else>
+							</td>
+							
+							<g:ifAnyGranted role="ROLE_ADMIN,ROLE_MANAGER">
+								<td>${fieldValue(bean:contentInstance, field:'priority')}</td>
+							</g:ifAnyGranted>
                         </tr>
                     </g:each>
                     </tbody>

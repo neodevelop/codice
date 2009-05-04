@@ -58,6 +58,6 @@ log4j = {
 //log4j.logger.org.springframework.security='off,stdout'
 
 avatarPlugin {
-	defaultGravatarUrl="""https://www.ohloh.net/images/anon/anon80.gif"""
+	defaultGravatarUrl="""http://localhost:8080/codice/images/anon80.gif"""
 	gravatarRating="G"
 }

@@ -393,3 +393,13 @@ th.desc a {
     padding-left: 28px;
 	padding-top: 1px;
 }
+.allow{
+	background: transparent url(../images/skin/allow.png) 5px 50% no-repeat;
+    padding-left: 28px;
+	padding-top: 1px;
+}
+.disallow{
+	background: transparent url(../images/skin/disallow.png) 5px 50% no-repeat;
+    padding-left: 28px;
+	padding-top: 1px;
+}

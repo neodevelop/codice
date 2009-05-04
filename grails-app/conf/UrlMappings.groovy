@@ -22,6 +22,8 @@ class UrlMappings {
 		"/saveContent"(controller:'content',action:'save')
 		"/tagList/$id"(controller:'tag',action:'list')
 		"/tagList"(controller:'cms',action:'index')
+		"/myContent"(controller:'content',action:'my')
+		"/administerContent"(controller:'content',action:'administer')
 		/***
 		Commment mapping
 		***/

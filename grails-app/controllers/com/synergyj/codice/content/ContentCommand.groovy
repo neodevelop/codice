@@ -14,7 +14,6 @@ class ContentCommand{
 	String textBody
 	Boolean allowComments = true
 	Boolean publish = true
-	Boolean showInMainPage = true
 	String tagList
 	String contentType
 	Integer priority
