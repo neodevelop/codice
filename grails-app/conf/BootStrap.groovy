@@ -84,7 +84,7 @@ class BootStrap {
 						title:'Now, You can post content...', 
 						allowComments:true,
 						publish:true,
-						contentType:'content')
+						contentType:'Entry')
 				//Modified by markitox		
 				content.textBody = """
 					<p>The <b>CMS</b> is up and running, now you can post new contents and that will be 
