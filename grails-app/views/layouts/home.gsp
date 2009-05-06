@@ -81,7 +81,6 @@
 			</div>
 			<!--left end -->
 
-			<!--****************************************Added by markitox****************************************-->
 			<!-- br class="spacer" / -->
 			<!-- left Tags start -->
 			<div id="leftTags">
@@ -89,7 +88,7 @@
 				<br class="spacer" />
 			</div>
 			<!-- left Tags end -->	
-			<!--****************************************Added by markitox****************************************-->
+
 		</div>
 		<!--left panel end -->
 		
@@ -112,45 +111,15 @@
 		<!--news start -->
 		<div id="news">
 			<h2>Notas Recientes</h2>
-			
-				<!-- div class="tags">
-					<g:each in="${content?.tags}" var="tag">
-						<span class="tag"><g:link action="list" controller="tag" id="${tag}">${tag}</g:link></span>
-					</g:each>
-				</div -->
-			<g:each in="${lastContent}" status="i" var="content">
-				<h3 style="margin-bottom: 5px;"> 
-					<span>
-						<g:dateFormat format="dd-MM-yyyy hh:mm a" date="${content?.created}" />
-					</span> 
-				</h3>
-				<span><g:link action="show" controller="content" id="${content.id}">${content.title}</g:link> </span>
-				<g:if test="${content.textBody.length() > 130}" >
-					${content.textBody.substring(0,135)}...
-				</g:if>
-				<g:else>
-					${content.textBody}
-				</g:else>
-				<div class="comments">
-					<div class="commentsActions" style="text-align: right;">${content?.comments?.size()} Comments</div>
-				</div>
-			<br class="spacer" />
-			</g:each>
-			
-			
+			<g:news>
+			</g:news>
 		</div>
 		<!--news end -->
 		<!--services start -->
 		<div id="service">
 			<h2>Ultimos Comentarios</h2>
-			<h3>Nombre de Usuario</h3>
-			<ul>
-				<li><a href="#">Comentario reccortado</a></li>
-			</ul>
-			<h3>Nombre de Usuario</h3>
-			<ul>
-				<li><a href="#">Comentario reccortado</a></li>
-			</ul>
+			<g:comments>
+			</g:comments>
 			<br class="spacer" />
 		</div>
 		<!--services end -->
