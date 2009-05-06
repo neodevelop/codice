@@ -6,9 +6,12 @@ class CmsController {
     
     def index = { 
 		
-		//added by markitox
-		servletContext['listTags'] = Content.allTags
-		//added by markitox
+		//we obtain the tags
+		def allTags = Content.allTags
+		def contentTags = [:]
+		allTags.each{ tag ->
+			contentTags.put(tag,Content.countByTag(tag).toInteger()*5)
+		}
 		
 		//here goes a criteria search
 		def criteria = Content.createCriteria()
@@ -20,6 +23,6 @@ class CmsController {
 			order('created','desc')
 		}
 		def totalContents = Content.countByPublish(true)
-        [ lastContent: lastContent,totalContents:totalContents ]
+        [ lastContent: lastContent,totalContents:totalContents,contentTags:contentTags ]
 	}
 }

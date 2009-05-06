@@ -85,11 +85,7 @@
 			<!-- br class="spacer" / -->
 			<!-- left Tags start -->
 			<div id="leftTags">
-				<!-- p class="boxTxt1" -->
-					<g:each in="${application['listTags']}" status="iTag" var="tag">
-						<g:link action="list" controller="tag" id="${tag}">${tag}</g:link> 
-					</g:each>
-				<!-- /p -->
+				<richui:tagCloud values="${contentTags}" />
 				<br class="spacer" />
 			</div>
 			<!-- left Tags end -->	

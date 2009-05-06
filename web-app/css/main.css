@@ -282,6 +282,11 @@ th.desc a {
 	font-weight: bold;
 }
 
+.tags a{
+	color: #FF6633;
+    font-size: 10px;
+}
+
 .tag{
 	background: transparent url(../images/skin/tag1.png) 5px 50% no-repeat;
     padding-left: 28px;
