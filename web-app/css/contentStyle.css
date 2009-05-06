@@ -552,17 +552,24 @@ ul{
 	width:331px;
 	height:17px;
 	padding:0 0 0 7px;
-	margin:0 0 10px 0;
+	margin:0 0 5px 0;
 	font:bold 11px/17px Arial, Helvetica, sans-serif;
 	color:#974D04;
 	background-color:inherit;
 	text-transform:uppercase;
+	vertical-align: middle;
+}
+#news h3 span{
+	background-image: url('/codice/images/skin/date1.png');
+	background-position: left;
+	background-repeat: no-repeat;
+	padding-left: 20px;
 }
 #news p{
-	font:normal 12px/20px Arial, Helvetica, sans-serif;
+	font:normal 12px/15px Arial, Helvetica, sans-serif;
 	color:#F7F7EA;
 	background-color:inherit;
-	padding:0 0 13px 0;
+	padding:0 0 5px 0;
 }
 #news p span{
 	font:bold 12px/20px Arial, Helvetica, sans-serif;
@@ -590,7 +597,7 @@ ul{
 	width:327px;
 	height:17px;
 	padding:0 0 0 11px;
-	margin:0 0 14px 0;
+	margin:0 0 0px 0;
 	font:bold 11px/17px Arial, Helvetica, sans-serif;
 	color:#974D04;
 	background-color:inherit;
@@ -620,6 +627,19 @@ ul{
 	color:#974D04;
 	background:url(../images/arrow_white_hover.gif) 0 7px no-repeat #DDDDCB;
 	text-decoration:none;
+}
+#service p{
+	font:normal 12px/15px Arial, Helvetica, sans-serif;
+	color:#F7F7EA;
+	background-color:inherit;
+	padding:0 0 5px 0;
+}
+#service p span{
+	font:bold 12px/20px Arial, Helvetica, sans-serif;
+	color:#2C2C1B;
+	background-color:inherit;
+	text-decoration:underline;
+	display:block;
 }
 #member{
 	width:225px;
