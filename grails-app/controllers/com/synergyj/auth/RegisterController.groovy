@@ -181,6 +181,10 @@ class RegisterController {
  Email: ${person.email}
  Full Name: ${person.userRealName}
  Password: ${params.passwd}
+
+Thanks and Enjoy
+--
+grails.org.mx Staff
 """
 
 				def email = [

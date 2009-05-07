@@ -14,12 +14,12 @@ class BootStrap {
 		if(User.count() == 0){
 		
 			User admin = new User( username:'admin',
-					userRealName:'José Juan Reyes Zuñiga',
+					userRealName:'Codice Administrator',
 					email:'jjuan.reyes@synergyj.com',
 					passwd:authenticateService.passwordEncoder('root'),
 					enabled:true,
 					emailShow:true )
-			
+			/**********************
 			User registeredUser = new User(username:'user',
 					userRealName:'Domingo Suarez Torres',
 					email:'domingo.suarez@synergyj.com',
@@ -33,6 +33,7 @@ class BootStrap {
 					passwd:authenticateService.passwordEncoder('chicharo'),
 					enabled:true,
 					emailShow:true )
+			**********************/
 			
 			Role userRole = new Role(authority:'ROLE_USER',description:'User CMS')
 			userRole.save()
@@ -66,7 +67,7 @@ class BootStrap {
 				addToAuthorities(userRole)
 				.save(flush:true)
 		}
-
+		/**********************
 		if(Content.count() == 0){
 			println "Generating first content..."
 			
@@ -144,6 +145,7 @@ class BootStrap {
 				println "There's not user to create content.."
 			}
 		}
+		**********************/
 
 	}
 	def destroy = {
