@@ -13,7 +13,7 @@ class RegisterController {
 
 	def authenticateService
 	def daoAuthenticationProvider
-	def emailerService
+	def mailService
 
 	static Map allowedMethods = [save: 'POST', update: 'POST']
 
@@ -170,8 +170,8 @@ class RegisterController {
 		person.description = ''
 		if (person.save()) {
 			role.addToPeople(person)
-			if (config.security.useMail) {
-				String emailContent = """You have signed up for an account at:
+			
+			String emailContent = """You have signed up for an account at:
 
  ${request.scheme}://${request.serverName}:${request.serverPort}${request.contextPath}
 
@@ -186,15 +186,9 @@ Thanks and Enjoy
 --
 grails.org.mx Staff
 """
-
-				def email = [
-					to: [person.email], // 'to' expects a List, NOT a single email address
-					subject: "[${request.contextPath}] Account Signed Up",
-					text: emailContent // 'text' is the email body
-				]
-				emailerService.sendEmails([email])
-			}
-
+			//Using the mail plugin
+			sendInfo(person,emailContent)
+			flash.message = "You're successfully registered, a message was send it to your email..."
 			person.save(flush: true)
 
 			def auth = new AuthToken(person.username, params.passwd)
@@ -205,6 +199,20 @@ grails.org.mx Staff
 		else {
 			person.passwd = ''
 			render view: 'index', model: [person: person]
+		}
+	}
+	
+	private def sendInfo(person,emailContent){
+		try{
+			mailService.sendMail {
+				to person.email
+				from "admin@grails.org.mx"
+				subject "[Codice/grails.org.mx] Account Signed Up"
+				body emailContent
+			}
+		}catch(Throwable t) {
+			log.error "Error sending email"
+			t.printStackTrace()
 		}
 	}
 }

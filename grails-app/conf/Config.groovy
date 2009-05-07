@@ -35,7 +35,7 @@ grails.enable.native2ascii = true
 // set per-environment serverURL stem for creating absolute links
 environments {
     production {
-        grails.serverURL = "http://www.changeme.com"
+        grails.serverURL = "http://www.grails.org.mx"
     }
 }
 
@@ -60,4 +60,17 @@ log4j = {
 avatarPlugin {
 	defaultGravatarUrl="""http://localhost:8080/codice/images/anon80.gif"""
 	gravatarRating="G"
+}
+
+grails {
+   mail {
+     host = "mail.grails.org.mx"
+     port = 25
+     username = "admin@grails.org.mx"
+     password = "grails.org.mx"
+     props = ["mail.smtp.auth":"true", 					   
+              "mail.smtp.socketFactory.port":"25",
+             ]
+
+		}
 }
