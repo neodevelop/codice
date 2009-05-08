@@ -79,11 +79,12 @@ class BootStrap {
 				cms.save(flush:true)
 				
 				//println "Creating first post"
-				//Modified by markitox
+
 				def content = new Content(user:user,
 						title:'Now, You can post content...', 
 						allowComments:true,
 						publish:true,
+//						showInMainPage:true,
 						contentType:'content')
 				content.textBody = """
 					<p>The <b>CMS</b> is up and running, now you can post new contents and that will be 
@@ -113,7 +114,7 @@ class BootStrap {
 				def comment2 = new Comment(author:'mystic',mail:'josejuan09830@yahoo.com',notifyResponses:true,content:content)
 				comment2.textComment = """
 				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 
-				the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of 	
+				the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of 
 				type and scrambled it to make a type specimen book. It has survived not only five centuries, but also 
 				the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s 
 				with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop 
