@@ -29,8 +29,8 @@
 		
 		<ul>
 			<li><a href="${createLinkTo(dir:'')}" class="hover">Home</a></li>
-			<li><a href="#">¿como participar?</a></li>
-			<li><a href="#">¿quienes somos?</a></li>
+			<li><a href="#">como participar?</a></li>
+			<li><a href="#">quienes somos?</a></li>
 			<!--<li><a href="#">¿A donde vamos?</a></li>-->
 			<li><a href="http://groups.google.com.mx/group/grailsencastellano">Grupo en Google</a></li>
 			
@@ -89,7 +89,7 @@
 			<div id="left3">
 				<p class="pic3"></p>
 				<p class="boxTxt3">
-					<span>Mas información</span>
+					<span>Mas informaci&oacute;n</span>
 					<b>Descarga</b> e <b>instala</b> Grails y empieza a conocer como puedes desarrollar mejores aplicaciones...</p>
 				<!--left3 end -->
 				<br class="spacer" />
@@ -166,7 +166,7 @@
 			<h2>. : Welcome : .</h2>
 			<form action="#">
 				<div class="login">
-					<center>·!¦[·<g:loggedInUserInfo field="username"/>·]¦!·</center>
+					<center><b><g:loggedInUserInfo field="username"/></b></center>
 					<g:if test="${loggedInUserInfo(field:'emailShow')}">
 						<div class="mail"><g:loggedInUserInfo field="email"/></div>
 					</g:if>

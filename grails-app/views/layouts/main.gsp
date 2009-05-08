@@ -28,8 +28,8 @@
 	<div id="header">
 		<ul>
 			<li><a href="${createLinkTo(dir:'')}" class="hover">Home</a></li>
-			<li><a href="#">¿como participar?</a></li>
-			<li><a href="#">¿quienes somos?</a></li>
+			<li><a href="#">como participar?</a></li>
+			<li><a href="#">quienes somos?</a></li>
 			<li><a href="http://groups.google.com.mx/group/grailsencastellano">Grupo en Google</a></li>
 			
 			<g:isLoggedIn>
@@ -70,29 +70,29 @@
 			<ul>
 				<li>
 					<div class="news">
-						<a href="${createLink(controller:'content',action:'create',params:[contentType:'News'])}">» Send news</a>
+						<a href="${createLink(controller:'content',action:'create',params:[contentType:'News'])}">Send news</a>
 					</div>
 				</li>
 				<li>
 					<div class="entry">
-						<a href="${createLink(controller:'content',action:'create',params:[contentType:'Entry'])}">» Post one entry</a>
+						<a href="${createLink(controller:'content',action:'create',params:[contentType:'Entry'])}">Post one entry</a>
 					</div>
 				</li>
 				<li>
 					<div class="contents">
-						<a href="${createLink(controller:'content',action:'my')}">» View my content</a>
+						<a href="${createLink(controller:'content',action:'my')}">View my content</a>
 					</div>
 				</li>
 				<g:ifAllGranted role="ROLE_ADMIN">
 				<li>
 					<div class="administer">
-						<a href="${createLink(controller:'content',action:'administer')}">» Administer</a>
+						<a href="${createLink(controller:'content',action:'administer')}">Administer</a>
 					</div>
 				</li>
 				</g:ifAllGranted>
 				<li>
 					<div class="logout">
-						<g:link controller="logout">» Logout</g:link>
+						<g:link controller="logout">Logout</g:link>
 					</div>
 				</li>
 			</ul>
@@ -105,12 +105,12 @@
 			<ul>
 				<li>
 					<div class="loginMenu">
-						<a href="#member">» Login</a>
+						<a href="#member">Login</a>
 					</div>
 				</li>
 				<li>
 					<div class="register">
-						<g:link controller="register">» Register</g:link>
+						<g:link controller="register">Register</g:link>
 					</div>
 				</li>
 			</ul>
@@ -130,10 +130,10 @@
 		<div id="left4" class="left4">
 			<h2>.: Resources :.</h2>
 			<ul>
-				<li><a href="http://grails.org/Download">» Download</a></li>
-				<li><a href="http://grails.org/Installation">» Install</a></li>
-				<li><a href="http://grails.org/Documentation">» Documentation</a></li>
-				<li><a href="http://podcast.springhispano.org/grails.xml">» Podcast</a></li>
+				<li><a href="http://grails.org/Download">Download</a></li>
+				<li><a href="http://grails.org/Installation">Install</a></li>
+				<li><a href="http://grails.org/Documentation">Documentation</a></li>
+				<li><a href="http://podcast.springhispano.org/grails.xml">Podcast</a></li>
 			</ul>
 		</div>
 		</div>
@@ -197,7 +197,7 @@
 			<h2>. : Welcome : .</h2>
 			<form action="#">
 				<div class="login">
-					<center>·!¦[·<g:loggedInUserInfo field="username"/>·]¦!·</center>
+					<center><b><g:loggedInUserInfo field="username"/></b></center>
 					<g:if test="${loggedInUserInfo(field:'emailShow')}">
 						<div class="mail"><g:loggedInUserInfo field="email"/></div>
 					</g:if>
