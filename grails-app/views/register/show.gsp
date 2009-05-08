@@ -4,9 +4,6 @@
 </head>
 
 <body>
-	<div class="nav">
-		<span class="menuButton"><a class='home' href="${createLinkTo(dir:'')}">Home</a></span>
-	</div>
 
 	<div class="body">
 		<h1>User Profile</h1>
@@ -29,7 +26,14 @@
 
 			<tr class="prop">
 				<td valign="top" class="name">Enabled:</td>
-				<td valign="top" class="value">${person.enabled}</td>
+				<td valign="top" class="value">
+					<g:if test="${person.enabled}">
+						<span class="allow">Yes</span>
+					</g:if>
+					<g:else>
+						<span class="disallow">No</span>
+					</g:else>
+				</td>
 			</tr>
 
 			<tr class="prop">
@@ -39,20 +43,16 @@
 
 			<tr class="prop">
 				<td valign="top" class="name">Show Email:</td>
-				<td valign="top" class="value">${person.emailShow}</td>
-			</tr>
-
-			<tr class="prop">
-				<td valign="top" class="name">Roles:</td>
 				<td valign="top" class="value">
-					<ul>
-					<g:each var='authority' in="${person.authorities}">
-						<li>${authority.authority}</li>
-					</g:each>
-					</ul>
+					<g:if test="${person.emailShow}">
+						<span class="allow">Yes</span>
+					</g:if>
+					<g:else>
+						<span class="disallow">No</span>
+					</g:else>
 				</td>
 			</tr>
-
+			
 		</tbody>
 		</table>
 		</div>

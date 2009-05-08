@@ -5,10 +5,6 @@
 
 <body>
 
-	<div class="nav">
-		<span class="menuButton"><a class='home' href="${createLinkTo(dir:'')}">Home</a></span>
-	</div>
-
 	<div class="body">
 		<h1>Edit Profile</h1>
 		<g:if test="${flash.message}">
@@ -30,7 +26,7 @@
 					<td valign='top' class='name'><label for='username'>Login Name:</label></td>
 					<td valign='top' class='value ${hasErrors(bean:person,field:'username','errors')}'>
 						<input type="hidden" name='username' value="${person.username?.encodeAsHTML()}"/>
-						<div style="margin:3px">${person.username?.encodeAsHTML()}</div>
+						<div style="margin:3px"><b>${person.username?.encodeAsHTML()}</b></div>
 					</td>
 				</tr>
 
