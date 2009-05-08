@@ -53,6 +53,11 @@
 				</td>
 			</tr>
 			
+			<tr class="prop">
+				<td valign="top" class="name">Description:</td>
+				<td valign="top" class="value">${person.description}</td>
+			</tr>
+			
 		</tbody>
 		</table>
 		</div>

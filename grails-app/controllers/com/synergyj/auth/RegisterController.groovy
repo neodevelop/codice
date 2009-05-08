@@ -109,6 +109,7 @@ class RegisterController {
 
 		person.userRealName = params.userRealName
 		person.email = params.email
+		person.description = params.description
 		if (params.emailShow) {
 			person.emailShow = true
 		}
@@ -167,7 +168,6 @@ class RegisterController {
 		person.passwd = pass
 		person.enabled = true
 		person.emailShow = true
-		person.description = ''
 		if (person.save()) {
 			role.addToPeople(person)
 			
