@@ -171,23 +171,8 @@ class RegisterController {
 		if (person.save()) {
 			role.addToPeople(person)
 			
-			String emailContent = """You have signed up for an account at:
-
- ${request.scheme}://${request.serverName}:${request.serverPort}${request.contextPath}
-
- Here are the details of your account:
- -------------------------------------
- LoginName: ${person.username}
- Email: ${person.email}
- Full Name: ${person.userRealName}
- Password: ${params.passwd}
-
-Thanks and Enjoy
---
-grails.org.mx Staff
-"""
 			//Using the mail plugin
-			sendInfo(person,emailContent)
+			sendInfo(person)
 			flash.message = "You're successfully registered, a message was send it to your email..."
 			person.save(flush: true)
 
@@ -202,13 +187,17 @@ grails.org.mx Staff
 		}
 	}
 	
-	private def sendInfo(person,emailContent){
+	def welcomeMail = {
+		
+	}
+	
+	private def sendInfo(person){
 		try{
 			mailService.sendMail {
 				to person.email
-				from "admin@grails.org.mx"
+				from "administrator@grails.org.mx"
 				subject "[Codice/grails.org.mx] Account Signed Up"
-				body emailContent
+				body(view:"/register/welcomeMail",model:[person:person])
 			}
 		}catch(Throwable t) {
 			log.error "Error sending email"
