@@ -48,11 +48,11 @@
 			
 		</ul>
 
-		<a href="${createLinkTo(dir:'')}">
+		<a href="${createLinkTo(dir:'/')}">
 			<img src="${createLinkTo(dir:'images',file:'logo_mini.gif')}"  class="logo" border="0" />
 		</a>
 
-		<a href="${createLinkTo(dir:'')}">
+		<a href="${createLinkTo(dir:'/')}">
 			<h1>grails.org.mx</h1>
 		</a>
 		
