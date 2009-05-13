@@ -142,19 +142,14 @@
 		<!--news start -->
 		<div id="news">
 			<h2>Notas Recientes</h2>
-			<h3>Fecha de Publicación</h3>
-			<p><span>Titulo de la noticia</span>contenido de la noticia recortado</p>
-			<p><span>Titulo de la otra noticia</span>contenido de la noticia recortado</p>
+			<g:news />
 			<br class="spacer" />
 		</div>
 		<!--news end -->
 		<!--services start -->
 		<div id="service">
 			<h2>Ultimos Comentarios</h2>
-			<h3>Nombre de Usuario</h3>
-			<ul>
-				<li><a href="#">Comentario reccortado</a></li>
-			</ul>
+			<g:comments />
 			<br class="spacer" />
 		</div>
 		<!--services end -->

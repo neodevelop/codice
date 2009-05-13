@@ -83,7 +83,7 @@
 			<!-- br class="spacer" / -->
 			<!-- left Tags start -->
 			<div id="leftTags">
-				<richui:tagCloud values="${contentTags}" />
+				<richui:tagCloud values="${application['contentTags']}" />
 				<br class="spacer" />
 			</div>
 			<!-- left Tags end -->	

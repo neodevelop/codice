@@ -12,7 +12,6 @@ class BootStrap {
 
 	def init = { servletContext ->
 		if(User.count() == 0){
-		
 			User admin = new User( username:'admin',
 					userRealName:'José Juan Reyes Zuñiga',
 					email:'jjuan.reyes@synergyj.com',
@@ -68,7 +67,6 @@ class BootStrap {
 		}
 
 		if(Content.count() == 0){
-			println "Generating first content..."
 			
 			User user = User.findByUsername('admin')
 			
@@ -78,8 +76,6 @@ class BootStrap {
 						slogan:'Grails en tu idioma',admin:user)
 				cms.save(flush:true)
 				
-				//println "Creating first post"
-
 				def content = new Content(user:user,
 						title:'Now, You can post content...', 
 						allowComments:true,
@@ -99,12 +95,14 @@ class BootStrap {
 					odio sapien suscipit libero, fermentum tempus dui purus sit amet sapien. Duis luctus risus egestas nibh.
 					 Morbi vel risus. Vestibulum dui. Praesent vitae turpis nec sapien aliquam ultricies. </p>
 				"""
+
 				cms.addToContents(content)
 				content.save(flush:true)
+				
 				content
 					.addTag("new")
 					.addTag("sample")
-				
+					
 				def comment = new Comment(author:'anonymous',
 						body:'<p>Cool application the <b>CMS</b> is starting</p>',
 						mail:'josejuan09830@yahoo.com',
@@ -112,7 +110,10 @@ class BootStrap {
 						content:content )
 				comment.save(flush:true)
 				
-				def comment2 = new Comment(author:'mystic',mail:'josejuan09830@yahoo.com',notifyResponses:true,content:content)
+				def comment2 = new Comment(author:'mystic',
+						mail:'josejuan09830@yahoo.com',
+						notifyResponses:true,
+						content:content)
 				comment2.textComment = """
 				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 
 				the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of 
@@ -123,7 +124,11 @@ class BootStrap {
 				"""
 				comment2.save(flush:true)
 				
-				def content2 = new Content(user:user,title:'Welcome to Codice!!!',allowComments:true,publish:true,contentType:'Entry')
+				def content2 = new Content(user:user,
+					title:'Welcome to Codice!!!',
+					allowComments:true,
+					publish:true,
+					contentType:'Entry')
 				content2.textBody = """
 					<p>Codice is a Content Management System, is made in grails and you can use it
 					to generate your own contents, in a future this CMS will support <b>Blogs, Timeline,
@@ -132,13 +137,11 @@ class BootStrap {
 				
 				cms.addToContents(content2)
 				content2.save(flush:true)
-				
 				content2
 					.addTag("first")
 					.addTag("sample")
 				content2.save(flush:true)
 				//println content2.tags
-				
 				//println "Posts created..."
 			}else{
 				println "There's not user to create content.."
