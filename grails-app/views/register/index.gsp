@@ -1,11 +1,11 @@
 <head>
 	<meta name="layout" content="main" />
-	<title>User Registration</title>
+	<title>Registro Usuario</title>
 </head>
 
 <body>
 	<div class="body">
-		<h1>User Registration</h1>
+		<h1>Registro Usuario</h1>
 		<g:if test="${flash.message}">
 		<div class="message">${flash.message}</div>
 		</g:if>
@@ -20,14 +20,14 @@
 		<table>
 		<tbody>
 			<tr class='prop'>
-				<td valign='top' class='name'><label for='username'>Login Name:</label></td>
+				<td valign='top' class='name'><label for='username'>Nombre Usuario:</label></td>
 				<td valign='top' class='value ${hasErrors(bean:person,field:'username','errors')}'>
 					<input type="text" name='username' value="${person?.username?.encodeAsHTML()}"/>
 				</td>
 			</tr>
 
 			<tr class='prop'>
-				<td valign='top' class='name'><label for='userRealName'>Full Name:</label></td>
+				<td valign='top' class='name'><label for='userRealName'>Nombre Completo:</label></td>
 				<td valign='top' class='value ${hasErrors(bean:person,field:'userRealName','errors')}'>
 					<input type="text" name='userRealName' value="${person?.userRealName?.encodeAsHTML()}"/>
 				</td>
@@ -41,7 +41,7 @@
 			</tr>
 
 			<tr class='prop'>
-				<td valign='top' class='name'><label for='enabled'>Confirm Password:</label></td>
+				<td valign='top' class='name'><label for='enabled'>Confirmar Password:</label></td>
 				<td valign='top' class='value ${hasErrors(bean:person,field:'passwd','errors')}'>
 					<input type="password" name='repasswd' value="${person?.passwd?.encodeAsHTML()}"/>
 				</td>
@@ -55,7 +55,7 @@
 			</tr>
 
 			<tr class='prop'>
-				<td valign='bottom' class='name'><label for='code'>Enter Code: </label></td>
+				<td valign='bottom' class='name'><label for='code'>Ingrese el codigo: </label></td>
 				<td valign='top' class='name'>
 					<input type="text" name="captcha" size="8"/>
 					<img src="${createLink(controller:'captcha', action:'index')}" align="absmiddle"/>
@@ -68,7 +68,7 @@
 
 		<div class="buttons">
 			<span class="formButton">
-				<input class='save' type="submit" value="Create"></input>
+				<input class='save' type="submit" value="Crear Usuario"></input>
 			</span>
 		</div>
 

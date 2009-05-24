@@ -25,7 +25,7 @@
 
   <body>
     <h1>Grails Runtime Exception</h1>
-    <h2>Error Details</h2>
+    <h2>Detalle Error</h2>
 
   	<div class="message">
 		<strong>Error ${request.'javax.servlet.error.status_code'}:</strong> ${request.'javax.servlet.error.message'.encodeAsHTML()}<br/>
