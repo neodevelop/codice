@@ -151,7 +151,7 @@ class RegisterController {
 
 		if (params.captcha.toUpperCase() != session.captcha) {
 			person.passwd = ''
-			flash.message = 'Access code did not match.'
+			flash.message = 'El codigo de seguridad no es valido.'
 			render view: 'index', model: [person: person]
 			return
 		}
