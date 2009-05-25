@@ -4,3 +4,4 @@ test/reports/
 devDB.*
 web-app/plugins/
 web-app/WEB-INF/
+codice.esproj/
