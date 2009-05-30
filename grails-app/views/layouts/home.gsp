@@ -21,6 +21,7 @@
 	<link rel="shortcut icon" href="${createLinkTo(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
     <g:layoutHead />
     <g:javascript library="application" />
+	<feed:meta kind="rss" version="2.0" controller="feed" action="content"/>
 </head>
 <body>
 	<!--header start -->
@@ -195,7 +196,7 @@
 			<li><a href="http://groups.google.com.mx/group/grailsencastellano">Grupo en Google</a></li>
 		</ul>
 		<p class="copyright">&copy;Jet 30. All rights reserved.</p>
-		<a href="#" class="subscribe">Subscribe</a>
+		<a href="${createLink(controller:'feed',action:'content')}" class="Subscribe">Subscribe</a>
 		<a href="http://validator.w3.org/check?uri=referer" target="_blank" class="xht"></a>
 		<a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank" class="cs"></a>
 		<a href="index.html"><img src="${createLinkTo(dir:'images',file:'bottom_logo.gif')}" alt="Jet 30" title="Jet 30" width="84" height="26" border="0" /></a>

@@ -22,6 +22,7 @@ class UrlMappings {
 		"/saveContent"(controller:'content',action:'save')
 		"/myContent"(controller:'content',action:'my')
 		"/administerContent"(controller:'content',action:'administer')
+		"/feedContents"(controller:'feed',action:'content')
 		//Added by markitox...
 		"/tagList/$id"(controller:'tag',action:'list')
 		"/tagList"(controller:'cms',action:'index')
@@ -30,6 +31,7 @@ class UrlMappings {
 		Commment mapping
 		***/
 		"/commentSave"(controller:'comment',action:'save')
+		"/feedComments"(controller:'feed',action:'comment')
 		/***
 		Error mapping
 		***/
