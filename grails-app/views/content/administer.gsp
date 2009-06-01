@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="main" />
-        <title>Content List</title>
+        <title>Lista de Contenido</title>
     </head>
     <body>
         <div class="body">
@@ -16,15 +16,15 @@
                     <thead>
                         <tr>
                         
-                   	        <g:sortableColumn property="title" title="Title" />
+                   	        <g:sortableColumn property="title" title="Titulo" />
                         
-                   	        <g:sortableColumn property="allowComments" title="Comments" />
+                   	        <g:sortableColumn property="allowComments" title="Comentarios" />
                    	    
-                   	        <g:sortableColumn property="contentType" title="Type" />
+                   	        <g:sortableColumn property="contentType" title="Tipo" />
 
-							<g:sortableColumn property="created" title="Created" />
+							<g:sortableColumn property="created" title="Creado" />
                         
-							<g:sortableColumn property="publish" title="Published" />
+							<g:sortableColumn property="publish" title="Publicar" />
 							
 							<g:ifAnyGranted role="ROLE_ADMIN,ROLE_MANAGER">
 								<g:sortableColumn property="priority" title="Priority" />
