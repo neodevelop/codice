@@ -18,7 +18,7 @@ class BootStrap {
 					passwd:authenticateService.passwordEncoder('root'),
 					enabled:true,
 					emailShow:true )
-			
+
 			User registeredUser = new User(username:'user',
 					userRealName:'Domingo Suarez Torres',
 					email:'domingo.suarez@synergyj.com',
@@ -32,7 +32,7 @@ class BootStrap {
 					passwd:authenticateService.passwordEncoder('chicharo'),
 					enabled:true,
 					emailShow:true )
-			
+
 			Role userRole = new Role(authority:'ROLE_USER',description:'User CMS')
 			userRole.save()
 			
@@ -58,12 +58,14 @@ class BootStrap {
 				.addToAuthorities(managerRole)
 				.addToAuthorities(adminRole)
 				.save(flush:true)
+			/*
 			registeredUser
 				.addToAuthorities(userRole)
 				.save(flush:true)
 			registeredUser2.
 				addToAuthorities(userRole)
 				.save(flush:true)
+			*/
 		}
 
 		if(Content.count() == 0){
@@ -141,8 +143,7 @@ class BootStrap {
 					.addTag("first")
 					.addTag("sample")
 				content2.save(flush:true)
-				//println content2.tags
-				//println "Posts created..."
+				
 			}else{
 				println "There's not user to create content.."
 			}

@@ -3,6 +3,21 @@
 	<title><g:layoutTitle default=". : Codice CMS : ." /></title>
 	<link rel="stylesheet" href="${createLinkTo(dir:'css',file:'main.css')}" />
 	<link rel="stylesheet" href="${createLinkTo(dir:'css',file:'contentStyle.css')}" />
+	<!--Syntax highlight-->
+	<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css" /> 
+	<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" /> 
+	<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js"></script> 
+	<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJScript.js"></script> 
+	<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCss.js"></script>
+	<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushGroovy.js"></script>
+	<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJava.js"></script>
+	<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPlain.js"></script>
+	<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushSql.js"></script>
+	<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushXml.js"></script>
+	<script type="text/javascript">
+		SyntaxHighlighter.all();
+	</script>
+	<!--Syntax highlight-->
 	<link rel="shortcut icon" href="${createLinkTo(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
 	<g:layoutHead />
 	<g:javascript library="application" />
@@ -13,8 +28,8 @@
 	<div id="header">
 		<ul>
 			<li><a href="${createLinkTo(dir:'')}" class="hover">Home</a></li>
-			<li><a href="#">¿como participar?</a></li>
-			<li><a href="#">¿quienes somos?</a></li>
+			<li><a href="#">como participar?</a></li>
+			<li><a href="#">quienes somos?</a></li>
 			<li><a href="http://groups.google.com.mx/group/grailsencastellano">Grupo en Google</a></li>
 			
 			<g:isLoggedIn>
@@ -33,11 +48,11 @@
 			
 		</ul>
 
-		<a href="${createLinkTo(dir:'')}">
+		<a href="${createLinkTo(dir:'/')}">
 			<img src="${createLinkTo(dir:'images',file:'logo_mini.gif')}"  class="logo" border="0" />
 		</a>
 
-		<a href="${createLinkTo(dir:'')}">
+		<a href="${createLinkTo(dir:'/')}">
 			<h1>grails.org.mx</h1>
 		</a>
 		
@@ -55,29 +70,29 @@
 			<ul>
 				<li>
 					<div class="news">
-						<a href="${createLink(controller:'content',action:'create',params:[contentType:'News'])}">» Send news</a>
+						<a href="${createLink(controller:'content',action:'create',params:[contentType:'News'])}">Send news</a>
 					</div>
 				</li>
 				<li>
 					<div class="entry">
-						<a href="${createLink(controller:'content',action:'create',params:[contentType:'Entry'])}">» Post one entry</a>
+						<a href="${createLink(controller:'content',action:'create',params:[contentType:'Entry'])}">Post one entry</a>
 					</div>
 				</li>
 				<li>
 					<div class="contents">
-						<a href="${createLink(controller:'content',action:'my')}">» View my content</a>
+						<a href="${createLink(controller:'content',action:'my')}">View my content</a>
 					</div>
 				</li>
 				<g:ifAllGranted role="ROLE_ADMIN">
 				<li>
 					<div class="administer">
-						<a href="${createLink(controller:'content',action:'administer')}">» Administer</a>
+						<a href="${createLink(controller:'content',action:'administer')}">Administer</a>
 					</div>
 				</li>
 				</g:ifAllGranted>
 				<li>
 					<div class="logout">
-						<g:link controller="logout">» Logout</g:link>
+						<g:link controller="logout">Logout</g:link>
 					</div>
 				</li>
 			</ul>
@@ -90,12 +105,12 @@
 			<ul>
 				<li>
 					<div class="loginMenu">
-						<a href="#member">» Login</a>
+						<a href="#member">Login</a>
 					</div>
 				</li>
 				<li>
 					<div class="register">
-						<g:link controller="register">» Register</g:link>
+						<g:link controller="register">Register</g:link>
 					</div>
 				</li>
 			</ul>
@@ -115,10 +130,10 @@
 		<div id="left4" class="left4">
 			<h2>.: Resources :.</h2>
 			<ul>
-				<li><a href="http://grails.org/Download">» Download</a></li>
-				<li><a href="http://grails.org/Installation">» Install</a></li>
-				<li><a href="http://grails.org/Documentation">» Documentation</a></li>
-				<li><a href="http://podcast.springhispano.org/grails.xml">» Podcast</a></li>
+				<li><a href="http://grails.org/Download">Download</a></li>
+				<li><a href="http://grails.org/Installation">Install</a></li>
+				<li><a href="http://grails.org/Documentation">Documentation</a></li>
+				<li><a href="http://podcast.springhispano.org/grails.xml">Podcast</a></li>
 			</ul>
 		</div>
 		</div>
@@ -142,15 +157,19 @@
 		<!--news start -->
 		<div id="news">
 			<h2>Notas Recientes</h2>
+
 			<g:news />
 			<br class="spacer" />
+			
 		</div>
 		<!--news end -->
 		<!--services start -->
 		<div id="service">
 			<h2>Ultimos Comentarios</h2>
+
 			<g:comments />
 			<br class="spacer" />
+
 		</div>
 		<!--services end -->
 		<!--member start -->
@@ -181,7 +200,7 @@
 			<h2>. : Welcome : .</h2>
 			<form action="#">
 				<div class="login">
-					<center>·!¦[·<g:loggedInUserInfo field="username"/>·]¦!·</center>
+					<center><b><g:loggedInUserInfo field="username"/></b></center>
 					<g:if test="${loggedInUserInfo(field:'emailShow')}">
 						<div class="mail"><g:loggedInUserInfo field="email"/></div>
 					</g:if>
@@ -210,7 +229,7 @@
 			<li><a href="http://groups.google.com.mx/group/grailsencastellano">Grupo en Google</a></li>
 		</ul>
 		<p class="copyright">&copy;Jet 30. All rights reserved.</p>
-		<a href="#" class="subscribe">Subscribe</a>
+		<a href="${createLink(controller:'feed',action:'content')}" class="Subscribe">Subscribe</a>
 		<a href="http://validator.w3.org/check?uri=referer" target="_blank" class="xht"></a>
 		<a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank" class="cs"></a>
 		<a href="index.html"><img src="${createLinkTo(dir:'images',file:'bottom_logo.gif')}" alt="Jet 30" title="Jet 30" width="84" height="26" border="0" /></a>

@@ -383,7 +383,7 @@ ul{
 }
 
 .textBody{
-	padding: 5px 0px 5px 20px;
+	padding: 5px 10px 5px 20px;
 }
 /*------------------------------------------------right--------------------*/
 
@@ -528,7 +528,7 @@ ul{
 	padding-left: 20px;
 }
 #news p{
-	font:normal 12px/20px Arial, Helvetica, sans-serif;
+	font:normal 12px/15px Arial, Helvetica, sans-serif;
 	color:#F7F7EA;
 	background-color:inherit;
 	padding:0 0 5px 0;
@@ -594,7 +594,7 @@ ul{
 	text-decoration:none;
 }
 #service p{
-	font:normal 12px/20px Arial, Helvetica, sans-serif;
+	font:normal 12px/15px Arial, Helvetica, sans-serif;
 	color:#F7F7EA;
 	background-color:inherit;
 	padding:0 0 5px 0;

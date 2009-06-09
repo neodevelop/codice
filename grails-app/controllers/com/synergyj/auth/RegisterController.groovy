@@ -13,7 +13,7 @@ class RegisterController {
 
 	def authenticateService
 	def daoAuthenticationProvider
-	def emailerService
+	def mailService
 
 	static Map allowedMethods = [save: 'POST', update: 'POST']
 
@@ -109,6 +109,7 @@ class RegisterController {
 
 		person.userRealName = params.userRealName
 		person.email = params.email
+		person.description = params.description
 		if (params.emailShow) {
 			person.emailShow = true
 		}
@@ -167,30 +168,12 @@ class RegisterController {
 		person.passwd = pass
 		person.enabled = true
 		person.emailShow = true
-		person.description = ''
 		if (person.save()) {
 			role.addToPeople(person)
-			if (config.security.useMail) {
-				String emailContent = """You have signed up for an account at:
-
- ${request.scheme}://${request.serverName}:${request.serverPort}${request.contextPath}
-
- Here are the details of your account:
- -------------------------------------
- LoginName: ${person.username}
- Email: ${person.email}
- Full Name: ${person.userRealName}
- Password: ${params.passwd}
-"""
-
-				def email = [
-					to: [person.email], // 'to' expects a List, NOT a single email address
-					subject: "[${request.contextPath}] Account Signed Up",
-					text: emailContent // 'text' is the email body
-				]
-				emailerService.sendEmails([email])
-			}
-
+			
+			//Using the mail plugin
+			sendInfo(person)
+			flash.message = "You're successfully registered, a message was send it to your email..."
 			person.save(flush: true)
 
 			def auth = new AuthToken(person.username, params.passwd)
@@ -201,6 +184,24 @@ class RegisterController {
 		else {
 			person.passwd = ''
 			render view: 'index', model: [person: person]
+		}
+	}
+	
+	def welcomeMail = {
+		
+	}
+	
+	private def sendInfo(person){
+		try{
+			mailService.sendMail {
+				to person.email
+				from "administrator@grails.org.mx"
+				subject "[Codice/grails.org.mx] Account Signed Up"
+				body(view:"/register/welcomeMail",model:[person:person])
+			}
+		}catch(Throwable t) {
+			log.error "Error sending email"
+			t.printStackTrace()
 		}
 	}
 }

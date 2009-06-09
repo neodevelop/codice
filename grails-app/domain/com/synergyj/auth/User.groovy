@@ -35,6 +35,7 @@ class User {
 		username(blank: false, unique: true)
 		userRealName(blank: false)
 		passwd(blank: false)
+		description(maxSize:1000)
 		enabled()
 	}
 }

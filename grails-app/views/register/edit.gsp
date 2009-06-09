@@ -1,3 +1,4 @@
+<resource:richTextEditor/>
 <head>
 	<meta name="layout" content="main" />
 	<title>Edit Profile</title>
@@ -65,6 +66,13 @@
 					</td>
 				</tr>
 
+				<tr class='prop'>
+					<td valign='top' class='name'><label for='description'>Description:</label></td>
+					<td valign='top' class='value ${hasErrors(bean:person,field:'description','errors')}'>
+						<richui:richTextEditor name="description" value="${person?.description}" width="300" height="200" />
+					</td>
+				</tr>
+				
 				</tbody>
 			</table>
 			</div>
