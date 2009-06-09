@@ -13,7 +13,7 @@ class BootStrap {
 	def init = { servletContext ->
 		if(User.count() == 0){
 			User admin = new User( username:'admin',
-					userRealName:'Jos√© Juan Reyes Zu√±iga',
+					userRealName:'José Juan Reyes Zuñiga',
 					email:'jjuan.reyes@synergyj.com',
 					passwd:authenticateService.passwordEncoder('root'),
 					enabled:true,
@@ -58,14 +58,14 @@ class BootStrap {
 				.addToAuthorities(managerRole)
 				.addToAuthorities(adminRole)
 				.save(flush:true)
-			/*
+			
 			registeredUser
 				.addToAuthorities(userRole)
 				.save(flush:true)
 			registeredUser2.
 				addToAuthorities(userRole)
 				.save(flush:true)
-			*/
+			
 		}
 
 		if(Content.count() == 0){
