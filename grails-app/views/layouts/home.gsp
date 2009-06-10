@@ -3,9 +3,25 @@
 	<title><g:layoutTitle default=". : Codice CMS : ." /></title>
 	<link rel="stylesheet" href="${createLinkTo(dir:'css',file:'main.css')}" />
 	<link rel="stylesheet" href="${createLinkTo(dir:'css',file:'style.css')}" />
+	<!--Syntax highlight-->
+	<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css" /> 
+	<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" /> 
+	<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js"></script> 
+	<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJScript.js"></script> 
+	<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCss.js"></script>
+	<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushGroovy.js"></script>
+	<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJava.js"></script>
+	<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPlain.js"></script>
+	<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushSql.js"></script>
+	<script type="text/javascript" src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushXml.js"></script>
+	<script type="text/javascript">
+		SyntaxHighlighter.all();
+	</script>
+	<!--Syntax highlight-->
 	<link rel="shortcut icon" href="${createLinkTo(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
     <g:layoutHead />
     <g:javascript library="application" />
+	<feed:meta kind="rss" version="2.0" controller="feed" action="content"/>
 </head>
 <body>
 	<!--header start -->
@@ -14,8 +30,8 @@
 		
 		<ul>
 			<li><a href="${createLinkTo(dir:'')}" class="hover">Home</a></li>
-			<li><a href="#">¿como participar?</a></li>
-			<li><a href="#">¿quienes somos?</a></li>
+			<li><a href="#">como participar?</a></li>
+			<li><a href="#">quienes somos?</a></li>
 			<!--<li><a href="#">¿A donde vamos?</a></li>-->
 			<li><a href="http://groups.google.com.mx/group/grailsencastellano">Grupo en Google</a></li>
 			
@@ -74,7 +90,7 @@
 			<div id="left3">
 				<p class="pic3"></p>
 				<p class="boxTxt3">
-					<span>Mas información</span>
+					<span>Mas informaci&oacute;n</span>
 					<b>Descarga</b> e <b>instala</b> Grails y empieza a conocer como puedes desarrollar mejores aplicaciones...</p>
 				<!--left3 end -->
 				<br class="spacer" />
@@ -150,7 +166,7 @@
 			<h2>. : Welcome : .</h2>
 			<form action="#">
 				<div class="login">
-					<center>·!¦[·<g:loggedInUserInfo field="username"/>·]¦!·</center>
+					<center><b><g:loggedInUserInfo field="username"/></b></center>
 					<g:if test="${loggedInUserInfo(field:'emailShow')}">
 						<div class="mail"><g:loggedInUserInfo field="email"/></div>
 					</g:if>
@@ -179,7 +195,7 @@
 			<li><a href="http://groups.google.com.mx/group/grailsencastellano">Grupo en Google</a></li>
 		</ul>
 		<p class="copyright">&copy;Jet 30. All rights reserved.</p>
-		<a href="#" class="subscribe">Subscribe</a>
+		<a href="${createLink(controller:'feed',action:'content')}" class="Subscribe">Subscribe</a>
 		<a href="http://validator.w3.org/check?uri=referer" target="_blank" class="xht"></a>
 		<a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank" class="cs"></a>
 		<a href="index.html"><img src="${createLinkTo(dir:'images',file:'bottom_logo.gif')}" alt="Jet 30" title="Jet 30" width="84" height="26" border="0" /></a>

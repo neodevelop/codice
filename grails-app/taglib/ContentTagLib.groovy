@@ -4,7 +4,15 @@ import java.text.SimpleDateFormat
 class ContentTagLib {
 	
 	def news = { attrs, body ->
-		def lastContent = Content.list(offset:0,max:5,sort:"created",order:"desc")
+		def lastContent = Content.withCriteria{
+			not{
+				like("textBody","%<pre class=\"brush:%\">%")
+			}
+			firstResult 0
+			maxResults 5
+			order "created","desc"
+		}
+		Content.list()
 		lastContent.each{
 			out << "<h3>"
 			out << "	Publicado: ${new SimpleDateFormat("E, dd-MMM-yyyy").format(it?.created)}"
@@ -20,7 +28,11 @@ class ContentTagLib {
 	}
 	
 	def comments = { attrs, body ->
-		def lastComments = Comment.list(offset:0,max:5,sort:"creationDate",order:"desc")
+		def lastComments = Comment.withCriteria{
+			firstResult 0
+			maxResults 5
+			order "creationDate","desc"
+		}
 		lastComments.each{
 			out << "<h3>"
 			out << "	Autor: ${it.author} -  ${new SimpleDateFormat("dd/MMM/yyyy hh:mm").format(it?.creationDate)}"

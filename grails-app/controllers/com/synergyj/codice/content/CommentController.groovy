@@ -102,4 +102,5 @@ class CommentController {
 			render view:"/content/show",model:[ contentInstance : contentInstance, commentInstance:cmd ]
 		}
     }
+
 }
