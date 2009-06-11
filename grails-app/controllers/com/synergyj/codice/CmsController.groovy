@@ -27,4 +27,19 @@ class CmsController {
 		def totalContents = Content.countByPublish(true)
         [ lastContent: lastContent,totalContents:totalContents,contentTags:contentTags ]
 	}
+	
+	def error = {
+		def message = """
+		Page not found....<br/>
+		Details:<br/>
+		Error ${request.'javax.servlet.error.status_code'}: ${request.'javax.servlet.error.message'.encodeAsHTML()}<br/>
+		Servlet: ${request.'javax.servlet.error.servlet_name'}<br/>
+		URI:</strong> ${request.'javax.servlet.error.request_uri'}<br/>
+		"""
+		if(exception){
+			println "${exception.message}"
+		}
+		flash.message = message
+		redirect(action:'index',params:params)
+	}
 }
