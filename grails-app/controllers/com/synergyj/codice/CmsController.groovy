@@ -36,9 +36,6 @@ class CmsController {
 		Servlet: ${request.'javax.servlet.error.servlet_name'}<br/>
 		URI:</strong> ${request.'javax.servlet.error.request_uri'}<br/>
 		"""
-		if(exception){
-			println "${exception.message}"
-		}
 		flash.message = message
 		redirect(action:'index',params:params)
 	}
