@@ -30,12 +30,12 @@ class CmsController {
 	
 	def error = {
 		def message = """
-		Page not found....<br/>
-		Details:<br/>
-		Error ${request.'javax.servlet.error.status_code'}: ${request.'javax.servlet.error.message'.encodeAsHTML()}<br/>
-		Servlet: ${request.'javax.servlet.error.servlet_name'}<br/>
-		URI:</strong> ${request.'javax.servlet.error.request_uri'}<br/>
+		Page ${request.scheme}://${request.serverName}${request.'javax.servlet.error.request_uri'} not found....<br/>
 		"""
+		//Details:<br/>
+		//Error ${request.'javax.servlet.error.status_code'}: ${request.'javax.servlet.error.message'.encodeAsHTML()}<br/>
+		//Servlet: ${request.'javax.servlet.error.servlet_name'}<br/>
+		//URI:</strong> ${request.'javax.servlet.error.request_uri'}<br/>
 		flash.message = message
 		redirect(action:'index',params:params)
 	}
