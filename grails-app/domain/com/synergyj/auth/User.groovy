@@ -38,4 +38,8 @@ class User {
 		description(maxSize:1000)
 		enabled()
 	}
+	
+	String toString(){
+		username
+	}
 }

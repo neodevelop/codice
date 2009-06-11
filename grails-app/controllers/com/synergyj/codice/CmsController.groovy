@@ -3,6 +3,8 @@ package com.synergyj.codice
 import com.synergyj.codice.content.*
 
 class CmsController {
+	
+	def scaffold = Cms
     
     def index = { 
 		

@@ -4,13 +4,18 @@ class MenuItem {
 	
 	String title
 	String description
-	String ruta
-	Integer priority
+	String url
+	Integer priority = 0
+	Menu menu
 
     static constraints = {
 		title nullable:false,blank:false
 		description()
-		ruta nullable:false,blank:false,url:true
+		url nullable:false,blank:false,url:true
 		priority range:-5..5
     }
+
+	String toString(){
+		title
+	}
 }
