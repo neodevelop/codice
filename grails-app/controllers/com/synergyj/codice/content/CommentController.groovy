@@ -97,7 +97,7 @@ class CommentController {
 			recaptchaOK = false
 		}
 		if(!cmd.hasErrors() && recaptchaOK){
-			recaptchaService.cleanUp(session)
+			recaptchaService.cleanUp(session) 
 			def commentInstance = new Comment()
 			bindData(commentInstance, cmd.properties)
 			commentInstance.content = Content.get(cmd.contentId)
