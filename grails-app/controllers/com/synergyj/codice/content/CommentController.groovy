@@ -1,8 +1,10 @@
 package com.synergyj.codice.content
 
 import com.synergyj.codice.content.Content
+import com.megatome.grails.RecaptchaService
 
 class CommentController {
+	def recaptchaService
     
     def index = { redirect(action:list,params:params) }
 
@@ -55,6 +57,7 @@ class CommentController {
         }
     }
 
+	/*
     def update = {
         def commentInstance = Comment.get( params.id )
         if(commentInstance) {
@@ -64,7 +67,6 @@ class CommentController {
                     
                     commentInstance.errors.rejectValue("version", "comment.optimistic.locking.failure", "Another user has updated this Comment while you were editing.")
                     render(view:'edit',model:[commentInstance:commentInstance])
-                    return
                 }
             }
             commentInstance.properties = params
@@ -81,6 +83,7 @@ class CommentController {
             redirect(action:edit,id:params.id)
         }
     }
+	*/
 
     def create = {
         def commentInstance = new Comment()
@@ -88,19 +91,23 @@ class CommentController {
         return ['commentInstance':commentInstance]
     }
 
-    def save = { CommentCommand cmd ->
-		if(!cmd.hasErrors()){
+	def save = { CommentCommand cmd ->
+		def recaptchaOK = true
+		if (!recaptchaService.verifyAnswer(session, request.getRemoteAddr(), params)) {
+			recaptchaOK = false
+		}
+		if(!cmd.hasErrors() && recaptchaOK){
+			recaptchaService.cleanUp(session)
 			def commentInstance = new Comment()
 			bindData(commentInstance, cmd.properties)
 			commentInstance.content = Content.get(cmd.contentId)
 			commentInstance.save()
 			flash.message = "Your comment has been submited..."
-            redirect(controller:'content',action:'show',id:cmd.contentId)
-		}else{
-			flash.message = "Errors has ocurred in the comment..."
-			def contentInstance = Content.get( cmd.contentId )
-			render view:"/content/show",model:[ contentInstance : contentInstance, commentInstance:cmd ]
+			redirect(controller:'content',action:'show',id:cmd.contentId)
+			}else{
+				flash.message = "Errors has ocurred in the comment..."
+				def contentInstance = Content.get( cmd.contentId )
+				render view:"/content/show",model:[ contentInstance : contentInstance, commentInstance:cmd ]
+			}
 		}
-    }
-
 }
