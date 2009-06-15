@@ -2,5 +2,7 @@
 lib
 test/reports/
 devDB.*
+devDb.*
+CodeNarcAntReport.html
 web-app/plugins/
 web-app/WEB-INF/
