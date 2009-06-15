@@ -52,6 +52,9 @@ class BootStrap {
 			new RequestMap(url:'/requestMap/**',configAttribute:'ROLE_ADMIN').save()
 			new RequestMap(url:'/user/**',configAttribute:'ROLE_ADMIN').save()
 			new RequestMap(url:'/role/**',configAttribute:'ROLE_ADMIN').save()
+			new RequestMap(url:'/cms/**',configAttribute:'ROLE_ADMIN').save()
+			new RequestMap(url:'/menu/**',configAttribute:'ROLE_MANAGER').save()
+			new RequestMap(url:'/menuItem/**',configAttribute:'ROLE_MANAGER').save()
 
 			admin
 				.addToAuthorities(userRole)

@@ -26,12 +26,7 @@
 	<!--header start -->
 	<!--menu authorities-->
 	<div id="header">
-		<ul>
-			<li><a href="${createLinkTo(dir:'')}" class="hover">Home</a></li>
-			<li><a href="#">como participar?</a></li>
-			<li><a href="#">quienes somos?</a></li>
-			<li><a href="http://groups.google.com.mx/group/grailsencastellano">Grupo en Google</a></li>
-			
+		<cms:primaryLinks>
 			<g:isLoggedIn>
 				<li>
 					<a href="${createLink(controller:'content',action:'create',params:[contentType:'News'])}">Send news</a>
@@ -45,8 +40,7 @@
 			</g:isLoggedIn>
 			
 			<li class="last"></li>
-			
-		</ul>
+		</cms:primaryLinks>
 
 		<a href="${createLinkTo(dir:'/')}">
 			<img src="${createLinkTo(dir:'images',file:'logo_mini.gif')}"  class="logo" border="0" />

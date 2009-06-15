@@ -3,6 +3,8 @@ package com.synergyj.codice
 import com.synergyj.codice.content.*
 
 class CmsController {
+	
+	def scaffold = Cms
     
     def index = { 
 	
@@ -24,5 +26,17 @@ class CmsController {
 		}
 		def totalContents = Content.countByPublish(true)
         [ lastContent: lastContent,totalContents:totalContents ]
+	}
+	
+	def error = {
+		def message = """
+		Page ${request.scheme}://${request.serverName}${request.'javax.servlet.error.request_uri'} not found....<br/>
+		"""
+		//Details:<br/>
+		//Error ${request.'javax.servlet.error.status_code'}: ${request.'javax.servlet.error.message'.encodeAsHTML()}<br/>
+		//Servlet: ${request.'javax.servlet.error.servlet_name'}<br/>
+		//URI:</strong> ${request.'javax.servlet.error.request_uri'}<br/>
+		flash.message = message
+		redirect(action:'index',params:params)
 	}
 }

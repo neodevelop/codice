@@ -36,6 +36,6 @@ class UrlMappings {
 		Error mapping
 		***/
 		"500"(view:'/error')
-		"404"(view:'/error')
+		"404"(controller:'cms',action:'error')
 	}
 }
