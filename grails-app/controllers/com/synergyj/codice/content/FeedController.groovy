@@ -33,6 +33,7 @@ class FeedController {
 
 			Comment.list().sort { c1,c2 -> c2.id - c1.id }.each() { comment -> 
 				entry(comment.content.title) { 
+					publishedDate = comment.created
 					link = "${request.scheme}://${request.serverName}:${request.serverPort}${request.contextPath}/showContent/${comment.content.id}" 
 					author = comment.author
 					comment.textComment // return the content 
