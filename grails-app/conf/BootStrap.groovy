@@ -130,7 +130,8 @@ class BootStrap {
 					title:'Welcome to Codice!!!',
 					allowComments:true,
 					publish:true,
-					contentType:'Entry')
+					contentType:'Entry',
+					created:new Date())
 				content2.textBody = """
 					<p>Codice is a Content Management System, is made in grails and you can use it
 					to generate your own contents, in a future this CMS will support <b>Blogs, Timeline,

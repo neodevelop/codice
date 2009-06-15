@@ -1,5 +1,7 @@
 package com.synergyj.codice.content
 
+import java.text.SimpleDateFormat
+
 class FeedController {
 
     def content = {
@@ -12,6 +14,7 @@ class FeedController {
 
 			Content.list().sort { c1,c2 -> c2.id - c1.id }.each() { content -> 
 				entry(content.title) { 
+					publishedDate = content.created
 					link = "${request.scheme}://${request.serverName}:${request.serverPort}${request.contextPath}/showContent/${content.id}" 
 					content.textBody // return the content 
 				} 
