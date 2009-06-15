@@ -8,7 +8,10 @@ class TagController {
     }
     
 	def list = { 
-    		def contentInstanceList = Content.findAllByTag( params.id )
+		
+			println "Tag seleccionado ${params.id}, ${params.selectedTag}"
+		
+    		def contentInstanceList = Content.findAllByTag( (params.id?:params.selectedTag) )
     		if( !contentInstanceList ) {
     			flash.message = "No hay contenidos para la tag ${params.id} !!!"
     			redirect(controller:'cms')

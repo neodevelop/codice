@@ -51,7 +51,7 @@
 			
 		</ul>
 		
-		<a href="#">
+		<a href="${createLinkTo(dir:'')}">
 			<img src="${createLinkTo(dir:'images', file:'logo.jpg')}"  class="logo" border="0" />
 		</a>
 		<h1>Bienvenido a la comunidad de desarrolladores G/G</h1>
@@ -99,7 +99,7 @@
 			<!-- br class="spacer" / -->
 			<!-- left Tags start -->
 			<div id="leftTags">
-				<richui:tagCloud values="${application['contentTags']}" />
+				<richui:tagCloud values="${application['contentTags']}" controller="tag" action="list" />
 				<br class="spacer" />
 			</div>
 			<!-- left Tags end -->	
