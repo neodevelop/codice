@@ -1,7 +1,6 @@
 dataSource {
 	pooled = true
 	driverClassName = "com.mysql.jdbc.Driver"
-	dialect = org.hibernate.dialect.MySQLInnoDBDialect
 	username = "root"
 	password = ""
 }
@@ -15,7 +14,12 @@ environments {
 	development {
 		dataSource {
 			dbCreate = "update" // one of 'create', 'create-drop','update'
-			url = "jdbc:mysql://localhost:3306/codice_dev"
+			//url = "jdbc:mysql://localhost:3306/codice_dev"
+			url = "jdbc:hsqldb:file:devDb;shutdown=true"
+			username = "sa"
+			password = ""
+			driverClassName = "org.hsqldb.jdbcDriver"
+			
 		}
 	}
 	test {

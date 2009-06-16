@@ -61,6 +61,12 @@
 			</div>
 		</div>
 		
+		<div class="">
+			<recaptcha:ifEnabled>
+			    <recaptcha:recaptcha theme="white" lang="es"/>
+			</recaptcha:ifEnabled>
+		</div>
+		
 	</div>
 	
 	<div class="buttons">

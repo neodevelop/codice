@@ -23,6 +23,7 @@ class Cms {
 	String domain
 	String slogan
 	User admin
+	Menu primaryLinks
 	
 	static hasMany = [contents:Content]
 	
