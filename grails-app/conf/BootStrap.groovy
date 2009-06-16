@@ -3,6 +3,8 @@ import com.synergyj.auth.Role
 import com.synergyj.auth.RequestMap
 import org.grails.plugins.springsecurity.service.AuthenticateService
 import com.synergyj.codice.Cms
+import com.synergyj.codice.Menu
+import com.synergyj.codice.MenuItem
 import com.synergyj.codice.content.Content
 import com.synergyj.codice.content.Comment
 
@@ -19,7 +21,7 @@ class BootStrap {
 					passwd:authenticateService.passwordEncoder('root'),
 					enabled:true,
 					emailShow:true )
-			/*
+			
 			User registeredUser = new User(username:'user',
 					userRealName:'Domingo Suarez Torres',
 					email:'domingo.suarez@synergyj.com',
@@ -33,7 +35,7 @@ class BootStrap {
 					passwd:authenticateService.passwordEncoder('chicharo'),
 					enabled:true,
 					emailShow:true )
-			*/
+			
 			Role userRole = new Role(authority:'ROLE_USER',description:'User CMS')
 			userRole.save()
 			
@@ -62,14 +64,14 @@ class BootStrap {
 				.addToAuthorities(managerRole)
 				.addToAuthorities(adminRole)
 				.save(flush:true)
-			/*
+			
 			registeredUser
 				.addToAuthorities(userRole)
 				.save(flush:true)
 			registeredUser2.
 				addToAuthorities(userRole)
 				.save(flush:true)
-			*/
+			
 		}
 
 		if(Content.count() == 0){
@@ -78,21 +80,21 @@ class BootStrap {
 			User user = User.findByUsername('admin')
 			
 			if(user){
+				def menu = new Menu(title:'Main Menu',priority:-5,).save()
+				def menuItem = new MenuItem(title:'Home',description:'Home menu',url:'http://grails.org.mx/codice/',priority:-5,menu:menu).save()
 				def cms = new Cms(name:'grails.org.mx',
 						domain:'http://grails.org.mx',
-						slogan:'Grails en tu idioma',admin:user)
-				cms.save(flush:true)
+						slogan:'Grails en tu idioma',admin:user,primaryLinks:menu).save(flush:true)
 				
-				//println "Creating first post"
-				//Modified by markitox
-				/***
+				println "Creating first post"
+				
 				def content = new Content(user:user,
 						title:'Now, You can post content...', 
 						allowComments:true,
 						publish:true,
 						contentType:'Entry',
 						created:new Date()-1)
-				//Modified by markitox		
+						
 				content.textBody = """
 					<p>The <b>CMS</b> is up and running, now you can post new contents and that will be 
 					showed here in the main page, you can put tags to your new content and edit them
@@ -143,10 +145,10 @@ class BootStrap {
 					.addTag("first")
 					.addTag("sample")
 				content2.save(flush:true)
-				//println content2.tags
+				println content2.tags
 				
-				//println "Posts created..."
-				***/
+				println "Posts created..."
+				
 			}else{
 				println "There's not user to create content.."
 			}
