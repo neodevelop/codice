@@ -20,6 +20,7 @@
 	<!--Syntax highlight-->
 	<link rel="shortcut icon" href="${createLinkTo(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
     <g:layoutHead />
+	<g:javascript library="scriptaculous" />
     <g:javascript library="application" />
 	<feed:meta kind="rss" version="2.0" controller="feed" action="content"/>
 </head>
@@ -97,6 +98,19 @@
 			</div>
 			<!-- left Tags end -->	
 
+			<!--Search-->
+			<div id="leftBox">
+				Search:
+				<g:remoteField name="searchBox" action="search" controller="cms" update="searchResults" paramName="q" /> 
+				<div id="spinner" style="display:none;">
+					<img src="${createLinkTo(dir:'images',file:'spinner.gif')}" alt="Spinner" />
+				</div>
+				<div id="searchResults">
+				</div>
+				<br class="spacer" />
+			</div>
+			<!--Search-->
+			
 		</div>
 		<!--left panel end -->
 		

@@ -1,6 +1,9 @@
 package com.synergyj.codice.content
 
 class Comment {
+	
+	static searchable = [only:['textComment']]
+	
 	String author
 	String textComment
 	String mail

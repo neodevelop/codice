@@ -289,6 +289,20 @@ ul{
 	
 }
 
+#leftBox{
+	
+	width: 330px;
+	background: #EAEADA;
+	border: #DDDDCA solid 7px;
+	margin: 0 0 4px 0;
+	padding: 5px;
+	color: #D76E08;
+
+	text-align: center;
+	font-weight: bold;
+	
+}
+
 /*------------------------------------------------left--------------------*/
 
 /*------------------------------------------------right--------------------*/

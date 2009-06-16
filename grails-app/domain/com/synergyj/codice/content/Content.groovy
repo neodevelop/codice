@@ -7,6 +7,8 @@ import org.grails.taggable.*
 
 class Content implements Taggable{
 	
+	static searchable = [only:['title']]
+	
 	User user
 	String title
 	String textBody

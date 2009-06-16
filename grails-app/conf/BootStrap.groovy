@@ -56,6 +56,7 @@ class BootStrap {
 			new RequestMap(url:'/user/**',configAttribute:'ROLE_ADMIN').save()
 			new RequestMap(url:'/role/**',configAttribute:'ROLE_ADMIN').save()
 			new RequestMap(url:'/cms/**',configAttribute:'ROLE_ADMIN').save()
+			new RequestMap(url:'/cms/search/**',configAttribute:'IS_AUTHENTICATED_ANONYMOUSLY').save()
 			new RequestMap(url:'/menu/**',configAttribute:'ROLE_MANAGER').save()
 			new RequestMap(url:'/menuItem/**',configAttribute:'ROLE_MANAGER').save()
 

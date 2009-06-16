@@ -39,4 +39,23 @@ class CmsController {
 		flash.message = message
 		redirect(action:'index',params:params)
 	}
+	
+	def search = {
+		def q = params.q ?: null
+		def results = [ 
+			contents:makeSearch { Content.search(q,[max:5]) },
+			comments:makeSearch { Comment.search(q,[max:5]) },
+			q:q.encodeAsHTML()
+		]
+		render(template:'searchResults',model:results)
+	}
+	
+	def makeSearch(Closure closure){
+		try{
+			return closure.call()
+		}catch(Exception e){
+			log.debug e.getMessage()
+			return []
+		}
+	}
 }
