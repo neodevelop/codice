@@ -45,9 +45,7 @@
 			<li class="last"></li>
 		</cms:primaryLinks>
 		
-		<a href="${createLinkTo(dir:'')}">
-			<img src="${createLinkTo(dir:'images', file:'logo.jpg')}"  class="logo" border="0" />
-		</a>
+		<img src="${createLinkTo(dir:'images', file:'logo.jpg')}"  class="logo" border="0" />
 
 		<h1>Bienvenido a la comunidad de desarrolladores G/G</h1>
 		<p>herramientas para el desarrollo <span class="txt1">agil</span> de software basado en Java con <span class="txt1">Groovy</span> y <span class="txt1">Grails</span></p>
