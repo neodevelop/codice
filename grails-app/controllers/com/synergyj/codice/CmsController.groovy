@@ -44,7 +44,6 @@ class CmsController {
 		def q = params.q ?: null
 		def results = [ 
 			contents:makeSearch { Content.search(q,[max:5]) },
-			comments:makeSearch { Comment.search(q,[max:5]) },
 			q:q.encodeAsHTML()
 		]
 		render(template:'searchResults',model:results)

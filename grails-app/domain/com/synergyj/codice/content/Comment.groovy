@@ -2,7 +2,7 @@ package com.synergyj.codice.content
 
 class Comment {
 	
-	static searchable = [only:['textComment']]
+	static searchable = [only:['author','textComment']]
 	
 	String author
 	String textComment

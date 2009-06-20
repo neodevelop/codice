@@ -1,6 +1,7 @@
 <head>
 	<meta name="layout" content="home" />	
 	<title>. : Welcome to Codice - the Grails CMS : .</title>
+	<gui:resources components="['accordion']"/>
 </head>
 
 <body>

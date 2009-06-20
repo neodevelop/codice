@@ -24,7 +24,7 @@
     <g:javascript library="application" />
 	<feed:meta kind="rss" version="2.0" controller="feed" action="content"/>
 </head>
-<body>
+<body class="yui-skin-sam">
 	<!--header start -->
 	<!--menu authorities-->
 	<div id="header">
@@ -102,9 +102,9 @@
 			<div id="leftBox">
 				Search:
 				<g:remoteField name="searchBox" action="search" controller="cms" update="searchResults" paramName="q" /> 
-				<div id="spinner" style="display:none;">
-					<img src="${createLinkTo(dir:'images',file:'spinner.gif')}" alt="Spinner" />
-				</div>
+				<span id="spinner" style="display:none;">
+					<img src="${createLinkTo(dir:'images',file:'spinner.gif')}" alt="Spinner" width="13" height="13" />
+				</span>
 				<div id="searchResults">
 				</div>
 				<br class="spacer" />

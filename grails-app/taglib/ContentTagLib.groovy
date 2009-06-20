@@ -44,4 +44,21 @@ class ContentTagLib {
 			}
 		}
 	}
+	
+	def shortVersion = { attrs,body ->
+		def keyword = attrs.keyword.replace('*','')
+		def longVersion = attrs.longVersion
+		def offset = longVersion.indexOf(keyword)
+		def maxSize = attrs.maxSize.toInteger()
+		def output
+		if(offset>=maxSize && ((offset+maxSize)<longVersion.size()))
+			output = longVersion.getAt(offset-maxSize..offset+maxSize)
+		else if( ((offset+maxSize)>longVersion.size()) && (longVersion.size()>maxSize) )
+			output = longVersion.getAt((offset-maxSize)..(longVersion.size()-1))
+		else if(longVersion.size()<maxSize)
+			output = longVersion
+		else
+			output = longVersion.getAt(0..offset+maxSize)
+		out << "..." + output + "..."
+	}
 }
