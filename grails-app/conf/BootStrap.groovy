@@ -81,13 +81,20 @@ class BootStrap {
 			User user = User.findByUsername('admin')
 
 			if(user){
-				def cms = new Cms(name:'Grails.org.mx',domain:'http://grails.org.mx',slogan:'Armas contra la complejidad de JEE',admin:user,primaryLinks:[]).save()
+				def cms = new Cms(name:'Grails.org.mx',
+					domain:'http://grails.org.mx',
+					slogan:'Armas contra la complejidad de JEE',
+					admin:user,
+					primaryLinks:new Menu(
+						title:'main',priority:0,menuItems:[
+							new MenuItem(title:'Home',description:'Main link',url:'http://grails.org.mx',priority:-5).save(),
+							new MenuItem(title:'Other',description:'Main link',url:'http://grails.org.mx',priority:-4).save()
+						]
+					).save()).save()
 			}else{
 				println "There's not user to create content.."
 			}
 		}
-
-
 	}
 	def destroy = {
 	}
