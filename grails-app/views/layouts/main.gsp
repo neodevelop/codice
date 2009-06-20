@@ -21,6 +21,7 @@
 	<link rel="shortcut icon" href="${createLinkTo(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
 	<g:layoutHead />
 	<g:javascript library="application" />
+	<feed:meta kind="rss" version="2.0" controller="feed" action="content"/>
 </head>
 <body>
 	<!--header start -->
