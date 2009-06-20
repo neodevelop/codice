@@ -7,14 +7,14 @@ class CmsController {
 	def scaffold = Cms
     
     def index = { 
-		
+	
 		//we obtain the tags
 		def allTags = Content.allTags
 		def contentTags = [:]
 		allTags.each{ tag ->
 			contentTags.put(tag,Content.countByTag(tag).toInteger()*5)
 		}
-		
+		servletContext['contentTags'] = contentTags
 		//here goes a criteria search
 		def criteria = Content.createCriteria()
 		def lastContent = criteria.list {
@@ -25,7 +25,7 @@ class CmsController {
 			order('created','desc')
 		}
 		def totalContents = Content.countByPublish(true)
-        [ lastContent: lastContent,totalContents:totalContents,contentTags:contentTags ]
+        [ lastContent: lastContent,totalContents:totalContents ]
 	}
 	
 	def error = {

@@ -9,11 +9,11 @@
 <g:form controller="comment" action="save" method="post" >
 
 	<div class="dialog">
-		<h1>Comment this entry</h1>
+		<h1>Agrega un comentario</h1>
 
 		<div class="prop">
 			<div class="name">
-				<b>Author:</b>
+				<b>Autor:</b>
 			</div>
 			<div class="value ${hasErrors(bean:comment,field:'author','errors')}">
 				<g:isLoggedIn>
@@ -45,7 +45,7 @@
 
 		<div class="prop">
 			<div class="name">
-				<b>Your comment:</b>
+				<b>Tu comentario:</b>
 			</div>
 			<div class="value ${hasErrors(bean:comment,field:'textComment','errors')}">
 				<richui:richTextEditor name="textComment" value="${comment?.textComment}" width="300" height="200" />
@@ -54,7 +54,7 @@
 		
 		<div class="prop">
 			<div class="name">
-				<b>Notify Responses:</b>
+				<b>Notificar respuesta:</b>
 			</div>
 			<div class="value ${hasErrors(bean:comment,field:'notifyResponses','errors')}">
 				<g:checkBox name="notifyResponses" value="${comment?.notifyResponses}" ></g:checkBox>

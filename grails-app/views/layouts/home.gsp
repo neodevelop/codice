@@ -45,8 +45,10 @@
 			<li class="last"></li>
 		</cms:primaryLinks>
 		
-		<img src="${createLinkTo(dir:'images', file:'logo.jpg')}"  class="logo" border="0" />
-		
+		<a href="${createLinkTo(dir:'')}">
+			<img src="${createLinkTo(dir:'images', file:'logo.jpg')}"  class="logo" border="0" />
+		</a>
+
 		<h1>Bienvenido a la comunidad de desarrolladores G/G</h1>
 		<p>herramientas para el desarrollo <span class="txt1">agil</span> de software basado en Java con <span class="txt1">Groovy</span> y <span class="txt1">Grails</span></p>
 		<p class="topText">Nos gusta el desarrollo de software, y por eso compartimos el conocimiento contigo a traves de :<span class="smallTxt">podcast, articulos, screencast, foros</span></p>
@@ -89,11 +91,10 @@
 				<br class="spacer" />
 			</div>
 			<!--left end -->
-
 			<!-- br class="spacer" / -->
 			<!-- left Tags start -->
 			<div id="leftTags">
-				<richui:tagCloud values="${contentTags}" />
+				<richui:tagCloud values="${application['contentTags']}" controller="tag" action="list" />
 				<br class="spacer" />
 			</div>
 			<!-- left Tags end -->	

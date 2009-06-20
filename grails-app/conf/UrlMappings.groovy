@@ -23,10 +23,10 @@ class UrlMappings {
 		"/myContent"(controller:'content',action:'my')
 		"/administerContent"(controller:'content',action:'administer')
 		"/feedContents"(controller:'feed',action:'content')
-		//Added by markitox...
 		"/tagList/$id"(controller:'tag',action:'list')
 		"/tagList"(controller:'cms',action:'index')
-		//Added by markitox...
+		"/myContent"(controller:'content',action:'my')
+		"/administerContent"(controller:'content',action:'administer')
 		/***
 		Commment mapping
 		***/

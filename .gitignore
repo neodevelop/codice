@@ -6,3 +6,5 @@ devDb.*
 CodeNarcAntReport.html
 web-app/plugins/
 web-app/WEB-INF/
+codice.esproj/
+bin/

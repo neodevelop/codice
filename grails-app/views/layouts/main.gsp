@@ -35,7 +35,7 @@
 					<a href="${createLink(controller:'content',action:'create',params:[contentType:'Entry'])}">Post one entry</a>
 				</li>
 				<li>
-					<a href="${createLink(controller:'content',action:'my')}">My content</a>
+					<a href="${createLink(controller:'content',action:'my')}">Mi contenido</a>
 				</li>
 			</g:isLoggedIn>
 			
@@ -74,13 +74,13 @@
 				</li>
 				<li>
 					<div class="contents">
-						<a href="${createLink(controller:'content',action:'my')}">View my content</a>
+						<a href="${createLink(controller:'content',action:'my')}">Ver mi contenido</a>
 					</div>
 				</li>
 				<g:ifAllGranted role="ROLE_ADMIN">
 				<li>
 					<div class="administer">
-						<a href="${createLink(controller:'content',action:'administer')}">Administer</a>
+						<a href="${createLink(controller:'content',action:'administer')}">Administrar</a>
 					</div>
 				</li>
 				</g:ifAllGranted>
@@ -104,7 +104,7 @@
 				</li>
 				<li>
 					<div class="register">
-						<g:link controller="register">Register</g:link>
+						<g:link controller="register">Registrar</g:link>
 					</div>
 				</li>
 			</ul>
@@ -122,11 +122,11 @@
 		-->
 		<br/>
 		<div id="left4" class="left4">
-			<h2>.: Resources :.</h2>
+			<h2>.: Recursos :.</h2>
 			<ul>
-				<li><a href="http://grails.org/Download">Download</a></li>
-				<li><a href="http://grails.org/Installation">Install</a></li>
-				<li><a href="http://grails.org/Documentation">Documentation</a></li>
+				<li><a href="http://grails.org/Download" target="_blank">Descargar</a></li>
+				<li><a href="http://grails.org/Installation">Instalar</a></li>
+				<li><a href="http://grails.org/Documentation">Documentacion</a></li>
 				<li><a href="http://podcast.springhispano.org/grails.xml">Podcast</a></li>
 			</ul>
 		</div>
@@ -151,16 +151,19 @@
 		<!--news start -->
 		<div id="news">
 			<h2>Notas Recientes</h2>
-			<g:news>
-			</g:news>
+
+			<g:news />
+			<br class="spacer" />
+			
 		</div>
 		<!--news end -->
 		<!--services start -->
 		<div id="service">
 			<h2>Ultimos Comentarios</h2>
-			<g:comments>
-			</g:comments>
+
+			<g:comments />
 			<br class="spacer" />
+
 		</div>
 		<!--services end -->
 		<!--member start -->
@@ -188,7 +191,7 @@
 		
 		<g:isLoggedIn>
 		<div id="member">
-			<h2>. : Welcome : .</h2>
+			<h2>. : Bienvenido : .</h2>
 			<form action="#">
 				<div class="login">
 					<center><b><g:loggedInUserInfo field="username"/></b></center>
@@ -196,7 +199,7 @@
 						<div class="mail"><g:loggedInUserInfo field="email"/></div>
 					</g:if>
 					<div class="date1">
-						<b>Last login:</b><br/>
+						<b>Ultimo login:</b><br/>
 						<g:dateFormat format="dd-MM-yyyy hh:mm a" date="${loggedInUserInfo(field:'lastLogin')}" />
 					</div>
 				</div>

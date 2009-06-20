@@ -7,7 +7,7 @@ import com.synergyj.codice.Menu
 import com.synergyj.codice.MenuItem
 import com.synergyj.codice.content.Content
 import com.synergyj.codice.content.Comment
-
+ 
 class BootStrap {
 
 	def authenticateService
