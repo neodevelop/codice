@@ -207,5 +207,14 @@
 		<a href="index.html"><img src="${createLinkTo(dir:'images',file:'bottom_logo.gif')}" alt="Jet 30" title="Jet 30" width="84" height="26" border="0" /></a>
 		<p class="design">Designed By : <a href="http://www.templateworld.com">Template World</a></p></div>
 		<!--footer end -->
+		<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		<script type="text/javascript">
+		try {
+		var pageTracker = _gat._getTracker("UA-3051009-5");
+		pageTracker._trackPageview();
+		} catch(err) {}</script>
 	</body>
 	</html>
