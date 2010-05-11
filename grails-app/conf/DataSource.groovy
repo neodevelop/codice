@@ -1,6 +1,6 @@
 dataSource {
 	pooled = true
-	driverClassName = "com.mysql.jdbc.Driver"
+	driverClassName = "org.hsqldb.jdbcDriver"
 	username = "root"
 	password = ""
 }
