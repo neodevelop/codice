@@ -8,3 +8,4 @@ web-app/plugins/
 web-app/WEB-INF/
 codice.esproj/
 bin/
+target/
