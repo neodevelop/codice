@@ -1,6 +1,9 @@
 package com.synergyj.codice
 
-class Content{
+import org.grails.comments.*
+import org.grails.taggable.*
+
+class Content implements Commentable,Taggable{
 	
 	User user
 	String title
@@ -9,6 +12,7 @@ class Content{
 	Date lastUpdated =  new Date()
 	Boolean allowComments
 	Boolean publish
+	//String contentType
 	Integer priority = 0
 	
 	static constraints = {
