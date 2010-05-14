@@ -1,3 +1,5 @@
+package com.synergyj.codice
+
 import grails.converters.JSON
 
 import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
